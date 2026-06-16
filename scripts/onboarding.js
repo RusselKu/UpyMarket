@@ -2,18 +2,30 @@ const STORAGE_KEY = 'upyStoreUserProfile';
 const modal = document.getElementById('onboarding-modal');
 const form = document.getElementById('onboarding-form');
 
+function encodeProfile(profile) {
+  return window.btoa(unescape(encodeURIComponent(JSON.stringify(profile))));
+}
+
+function decodeProfile(value) {
+  return JSON.parse(decodeURIComponent(escape(window.atob(value))));
+}
+
 // Reads profile metadata that will be attached to telemetry events.
 export function getUserProfile() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    const sessionValue = sessionStorage.getItem(STORAGE_KEY);
+    const localValue = localStorage.getItem(STORAGE_KEY);
+    const storedValue = sessionValue || localValue;
+    return storedValue ? decodeProfile(storedValue) : null;
   } catch {
     return null;
   }
 }
 
 export function saveUserProfile(profile) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
-  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
+  const encoded = encodeProfile(profile);
+  localStorage.setItem(STORAGE_KEY, encoded);
+  sessionStorage.setItem(STORAGE_KEY, encoded);
 }
 
 if (modal && form) {
