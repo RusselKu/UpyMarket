@@ -10,5 +10,14 @@ export async function insertTelemetry(payload) {
     return { error: 'Supabase client unavailable' };
   }
 
-  return supabase.from('interacciones_crudas').insert(payload);
+  try {
+    const result = await supabase.from('interacciones_crudas').insert(payload);
+    if (result.error) {
+      console.error('Failed to insert telemetry event', result.error);
+    }
+    return result;
+  } catch (error) {
+    console.error('Failed to insert telemetry event', error);
+    return { error };
+  }
 }

@@ -29,11 +29,19 @@ export function trackDwellTime(pageName = 'catalog') {
   return insertTelemetry(telemetryPayload);
 }
 
-document.querySelectorAll('.product-action').forEach((button) => {
-  button.addEventListener('click', () => {
-    trackClickEvent(button);
+function initTelemetryTracking() {
+  document.querySelectorAll('.product-action').forEach((button) => {
+    button.addEventListener('click', () => {
+      trackClickEvent(button);
+    });
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTelemetryTracking, { once: true });
+} else {
+  initTelemetryTracking();
+}
 
 window.addEventListener('pageshow', () => {
   pageEnterTimestamp = Date.now();

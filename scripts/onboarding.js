@@ -1,13 +1,16 @@
 const STORAGE_KEY = 'upyStoreUserProfile';
-const modal = document.getElementById('onboarding-modal');
-const form = document.getElementById('onboarding-form');
 
 function encodeProfile(profile) {
-  return window.btoa(unescape(encodeURIComponent(JSON.stringify(profile))));
+  const utf8Binary = encodeURIComponent(JSON.stringify(profile)).replace(/%([0-9A-F]{2})/g, (_, hex) =>
+    String.fromCharCode(Number.parseInt(hex, 16))
+  );
+  return window.btoa(utf8Binary);
 }
 
 function decodeProfile(value) {
-  return JSON.parse(decodeURIComponent(escape(window.atob(value))));
+  const binary = window.atob(value);
+  const percentEncoded = Array.from(binary, (char) => `%${char.charCodeAt(0).toString(16).padStart(2, '0')}`).join('');
+  return JSON.parse(decodeURIComponent(percentEncoded));
 }
 
 // Reads profile metadata that will be attached to telemetry events.
@@ -28,7 +31,13 @@ export function saveUserProfile(profile) {
   sessionStorage.setItem(STORAGE_KEY, encoded);
 }
 
-if (modal && form) {
+function initOnboarding() {
+  const modal = document.getElementById('onboarding-modal');
+  const form = document.getElementById('onboarding-form');
+  if (!modal || !form) {
+    return;
+  }
+
   if (!getUserProfile()) {
     modal.classList.add('is-open');
   }
@@ -49,4 +58,10 @@ if (modal && form) {
     saveUserProfile(profile);
     modal.classList.remove('is-open');
   });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initOnboarding, { once: true });
+} else {
+  initOnboarding();
 }
