@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpyStore Marketplace</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>UpyStore Marketplace</h1>
+      <p>Student-focused product catalog and interaction telemetry sandbox.</p>
+    </header>
+
+    <main>
+      <section class="catalog" aria-label="Product catalog">
+        <h2>Catalog</h2>
+        <div id="catalog-grid" class="catalog-grid">
+          <article class="product-card" data-product-id="p1" data-category="Academic">
+            <h3>Study Planner Pro</h3>
+            <p>Category: Academic</p>
+            <button type="button" class="product-action">View Product</button>
+          </article>
+          <article class="product-card" data-product-id="p2" data-category="Leisure">
+            <h3>Campus Headphones</h3>
+            <p>Category: Leisure</p>
+            <button type="button" class="product-action">View Product</button>
+          </article>
+          <article class="product-card" data-product-id="p3" data-category="Laptop with GPU">
+            <h3>NovaBook G15</h3>
+            <p>Category: Laptop with GPU</p>
+            <button type="button" class="product-action">View Product</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="analytics" aria-label="Analytics preview">
+        <h2>Telemetry Snapshot</h2>
+        <canvas id="telemetryChart" width="400" height="200"></canvas>
+      </section>
+    </main>
+
+    <div id="onboarding-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+      <div class="modal-content">
+        <h2 id="onboarding-title">Welcome to UpyStore</h2>
+        <p>Tell us a little about yourself before continuing.</p>
+        <form id="onboarding-form">
+          <label for="career">Career</label>
+          <input id="career" name="career" type="text" placeholder="e.g., Systems Engineering" required />
+
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="" selected disabled>Select an option</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="non-binary">Non-binary</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+          </select>
+
+          <button type="submit">Save and Continue</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="scripts/onboarding.js"></script>
+    <script type="module" src="scripts/telemetry.js"></script>
+    <script type="module" src="charts/analytics.js"></script>
+  </body>
+</html>
