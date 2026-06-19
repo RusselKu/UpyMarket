@@ -3,50 +3,279 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UpyStore Marketplace</title>
+    <title>UPY STORE</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+    <div class="background-shape shape-three"></div>
+
     <header class="site-header">
-      <h1>UpyStore Marketplace</h1>
-      <p>Student-focused product catalog and interaction telemetry sandbox.</p>
+      <nav class="top-nav" aria-label="Main navigation">
+        <div class="brand">
+          <div class="brand-logo">US</div>
+          <div>
+            <h1>UPY STORE</h1>
+            <p>Luxury Student Marketplace</p>
+          </div>
+        </div>
+
+        <div class="search-wrapper">
+          <span class="search-icon">⌕</span>
+          <input
+            id="product-search"
+            type="search"
+            aria-label="Search products"
+            placeholder="Search academic, leisure or tech products..."
+          />
+        </div>
+
+        <div class="nav-actions">
+          <button
+            id="notification-toggle"
+            class="icon-button"
+            type="button"
+            aria-label="Open notifications"
+          >
+            🔔
+            <span class="notification-dot"></span>
+          </button>
+
+          <button
+            id="cart-toggle"
+            class="icon-button cart-button"
+            type="button"
+            aria-label="Open cart"
+          >
+            🛒
+            <span id="cart-count" class="cart-count">0</span>
+          </button>
+
+          <div class="user-avatar" aria-label="User profile">DN</div>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">UPY student marketplace</span>
+          <h2>Explore premium products, compare options, and shop smarter.</h2>
+          <p>
+            A student-focused marketplace prototype designed to help users discover
+            academic, leisure, and technology products while generating useful
+            interaction data for analysis.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="primary-link">Explore Catalog</a>
+            <a href="#insights" class="secondary-link">View Insights</a>
+          </div>
+        </div>
+      </section>
     </header>
 
     <main>
-      <section class="catalog" aria-label="Product catalog">
-        <h2>Catalog</h2>
+      <section id="catalog" class="catalog" aria-label="Product catalog">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Product catalog</span>
+            <h2>Featured student products</h2>
+          </div>
+
+          <div class="category-filters" aria-label="Category filters">
+            <button type="button" class="filter-chip active" data-filter="all">
+              All
+            </button>
+            <button type="button" class="filter-chip" data-filter="Academic">
+              Academic
+            </button>
+            <button type="button" class="filter-chip" data-filter="Leisure">
+              Leisure
+            </button>
+            <button type="button" class="filter-chip" data-filter="Laptop with GPU">
+              Tech
+            </button>
+          </div>
+        </div>
+
         <div id="catalog-grid" class="catalog-grid">
-          <article class="product-card" data-product-id="p1" data-category="Academic">
+          <article
+            class="product-card glass-card"
+            data-product-id="p1"
+            data-category="Academic"
+          >
+            <div class="product-icon academic-icon">📘</div>
+
+            <div class="product-topline">
+              <span class="category-badge academic">Academic</span>
+              <span class="price">$19.99</span>
+            </div>
+
             <h3>Study Planner Pro</h3>
-            <p>Category: Academic</p>
-            <button type="button" class="product-action">View Product</button>
+            <p>
+              A productivity planner designed for students who want to organize
+              assignments, projects, and exam weeks.
+            </p>
+
+            <div class="product-buttons">
+              <button
+                type="button"
+                class="product-action"
+                data-action="view_product"
+              >
+                View Product
+              </button>
+              <button
+                type="button"
+                class="product-action add-cart-action"
+                data-action="add_to_cart"
+              >
+                Add to Cart
+              </button>
+            </div>
           </article>
-          <article class="product-card" data-product-id="p2" data-category="Leisure">
+
+          <article
+            class="product-card glass-card"
+            data-product-id="p2"
+            data-category="Leisure"
+          >
+            <div class="product-icon leisure-icon">🎧</div>
+
+            <div class="product-topline">
+              <span class="category-badge leisure">Leisure</span>
+              <span class="price">$34.50</span>
+            </div>
+
             <h3>Campus Headphones</h3>
-            <p>Category: Leisure</p>
-            <button type="button" class="product-action">View Product</button>
+            <p>
+              Lightweight headphones for study breaks, online classes, and everyday
+              campus use.
+            </p>
+
+            <div class="product-buttons">
+              <button
+                type="button"
+                class="product-action"
+                data-action="view_product"
+              >
+                View Product
+              </button>
+              <button
+                type="button"
+                class="product-action add-cart-action"
+                data-action="add_to_cart"
+              >
+                Add to Cart
+              </button>
+            </div>
           </article>
-          <article class="product-card" data-product-id="p3" data-category="Laptop with GPU">
+
+          <article
+            class="product-card glass-card"
+            data-product-id="p3"
+            data-category="Laptop with GPU"
+          >
+            <div class="product-icon tech-icon">💻</div>
+
+            <div class="product-topline">
+              <span class="category-badge tech">Laptop with GPU</span>
+              <span class="price">$799.00</span>
+            </div>
+
             <h3>NovaBook G15</h3>
-            <p>Category: Laptop with GPU</p>
-            <button type="button" class="product-action">View Product</button>
+            <p>
+              A GPU-powered laptop option for programming, design, data workloads,
+              and high-performance student projects.
+            </p>
+
+            <div class="product-buttons">
+              <button
+                type="button"
+                class="product-action"
+                data-action="view_product"
+              >
+                View Product
+              </button>
+              <button
+                type="button"
+                class="product-action add-cart-action"
+                data-action="add_to_cart"
+              >
+                Add to Cart
+              </button>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="analytics" aria-label="Analytics preview">
-        <h2>Telemetry Snapshot</h2>
-        <canvas id="telemetryChart" width="400" height="200"></canvas>
+      <section id="insights" class="analytics glass-card" aria-label="Analytics preview">
+        <div class="section-heading insights-heading">
+          <div>
+            <span class="eyebrow">Telemetry preview</span>
+            <h2>Global Usage Insights</h2>
+          </div>
+
+          <div class="time-filters" aria-label="Time range filters">
+            <button type="button" class="filter-chip active">7d</button>
+            <button type="button" class="filter-chip">30d</button>
+            <button type="button" class="filter-chip">1y</button>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-icon">👁️</span>
+            <div>
+              <p>Total Views</p>
+              <strong>128</strong>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-icon">👤</span>
+            <div>
+              <p>Unique Visitors</p>
+              <strong>42</strong>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-icon">⏱️</span>
+            <div>
+              <p>Avg. Dwell Time</p>
+              <strong>36s</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <canvas id="telemetryChart" width="400" height="200"></canvas>
+        </div>
       </section>
     </main>
 
-    <div id="onboarding-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
-      <div class="modal-content">
-        <h2 id="onboarding-title">Welcome to UpyStore</h2>
+    <div
+      id="onboarding-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="onboarding-title"
+    >
+      <div class="modal-content glass-card">
+        <h2 id="onboarding-title">Welcome to UPY STORE</h2>
         <p>Tell us a little about yourself before continuing.</p>
+
         <form id="onboarding-form">
           <label for="career">Career</label>
-          <input id="career" name="career" type="text" placeholder="e.g., Systems Engineering" required />
+          <input
+            id="career"
+            name="career"
+            type="text"
+            placeholder="e.g., Data Engineering"
+            required
+          />
 
           <label for="gender">Gender</label>
           <select id="gender" name="gender" required>
@@ -62,9 +291,138 @@
       </div>
     </div>
 
+    <div
+      id="product-detail-modal"
+      class="modal product-detail-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-detail-title"
+    >
+      <div class="modal-content glass-card product-detail-content">
+        <button
+          id="product-detail-close"
+          class="cart-close product-detail-close"
+          type="button"
+          aria-label="Close product detail"
+        >
+          ✕
+        </button>
+
+        <div class="product-detail-layout">
+          <div id="product-detail-icon" class="product-detail-icon">📦</div>
+
+          <div class="product-detail-info">
+            <span id="product-detail-category" class="category-badge academic">
+              Category
+            </span>
+
+            <h2 id="product-detail-title">Product name</h2>
+
+            <p id="product-detail-description">
+              Product description will appear here.
+            </p>
+
+            <ul id="product-detail-features" class="product-detail-features"></ul>
+
+            <div class="product-detail-footer">
+              <strong id="product-detail-price">$0.00</strong>
+
+              <button
+                id="product-detail-add"
+                type="button"
+                class="product-action add-cart-action"
+                data-action="add_to_cart"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside
+      id="notification-panel"
+      class="notification-panel glass-card"
+      aria-label="Notifications panel"
+    >
+      <div class="notification-header">
+        <div>
+          <span class="eyebrow">Updates</span>
+          <h2>Notifications</h2>
+        </div>
+
+        <button
+          id="notification-close"
+          class="cart-close"
+          type="button"
+          aria-label="Close notifications"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="notification-list">
+        <div class="notification-item">
+          <strong>Catalog ready</strong>
+          <p>Students can browse products and interact with the marketplace.</p>
+        </div>
+
+        <div class="notification-item">
+          <strong>Cart tracking active</strong>
+          <p>Add-to-cart actions are ready to support interaction analysis.</p>
+        </div>
+
+        <div class="notification-item">
+          <strong>Telemetry preview</strong>
+          <p>Usage insights are available in the analytics section.</p>
+        </div>
+      </div>
+    </aside>
+
+    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Shopping cart">
+      <div class="cart-header">
+        <div>
+          <span class="eyebrow">Current selection</span>
+          <h2>Shopping Cart</h2>
+        </div>
+
+        <button
+          id="cart-close"
+          class="cart-close"
+          type="button"
+          aria-label="Close cart"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div id="cart-empty" class="cart-empty">
+        No products added yet.
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">$0.00</strong>
+        </div>
+
+        <button type="button" class="checkout-button">
+          Continue
+        </button>
+      </div>
+    </aside>
+
+    <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
+      Product added to cart
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="scripts/onboarding.js"></script>
+    <script type="module" src="scripts/ui.js"></script>
     <script type="module" src="scripts/telemetry.js"></script>
     <script type="module" src="charts/analytics.js"></script>
   </body>
