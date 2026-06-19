@@ -43,7 +43,7 @@ El corazón del proyecto. Registra cada acción (clic, tiempo, compra) que los u
 2. **Russel (GPUs y Carrera):** Se cruza `dwell_time_segundos` con `carrera` (de usuarios) y `tiene_gpu_dedicada` (de productos).
 3. **Edgardo (Gasto Académico vs Ocio):** Se suma `precio_pagado` (cuando `tipo_evento='purchase'`) agrupado por `categoria_general` (Académico/Entretenimiento).
 4. **Damian Novelo (Descuentos >= 15%):** Se calcula la tasa de conversión (purchase / view) agrupando por `porcentaje_descuento >= 0.15`.
-5. **Lukaku Jr (Dwell time previo al carrito):** Se mide el `dwell_time_segundos` enviado en el momento exacto en que `tipo_evento = 'add_to_cart'`, agrupado por `categoria_general`.
+5. **Rivaldo Canché (Dwell time previo al carrito):** Se mide el `dwell_time_segundos` enviado en el momento exacto en que `tipo_evento = 'add_to_cart'`, agrupado por `categoria_general`.
 6. **Bianca Acosta (Compras por Género):** Se cuenta el total de `tipo_evento = 'purchase'` agrupado por `genero` de la tabla usuarios.
 7. **Jonathan (Impacto general de descuentos):** Se compara el volumen de `purchase` en productos donde `porcentaje_descuento > 0` vs `porcentaje_descuento = 0`.
 8. **Isaac (Beca Benito Juárez y carrera):** Se filtran las compras con `metodo_pago = 'Beca Benito Juárez'` y se revisa si la `carrera` del usuario coincide con la `carrera_objetivo` del producto.

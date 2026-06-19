@@ -135,7 +135,7 @@ def pregunta_4_descuentos_conversion(df: pd.DataFrame) -> pd.DataFrame:
 
 def pregunta_5_dwell_carrito(df: pd.DataFrame) -> pd.DataFrame:
     """
-    P5 (Lukaku Jr): ¿Cuál es el dwell time promedio antes de añadir al carrito?
+    P5 (Rivaldo Canché): ¿Cuál es el dwell time promedio antes de añadir al carrito?
     
     Hipótesis: Los productos académicos requieren más tiempo de evaluación.
     
