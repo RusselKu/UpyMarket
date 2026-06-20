@@ -20,3 +20,5 @@ To connect telemetry inserts to Supabase in production, expose:
 
 - `window.UPYSTORE_SUPABASE_URL`
 - `window.UPYSTORE_SUPABASE_ANON_KEY`
+
+.
