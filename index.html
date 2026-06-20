@@ -3,33 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UpyMarket — Marketplace Estudiantil UPY</title>
+    <title>UpyMarket - Marketplace Estudiantil UPY</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
 
   <body>
-    <div class="background-shape shape-one"></div>
-    <div class="background-shape shape-two"></div>
-    <div class="background-shape shape-three"></div>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-grid" aria-hidden="true"></div>
 
-    <!-- ── Header ──────────────────────────────────────────────────────────── -->
     <header class="site-header">
-      <nav class="top-nav" aria-label="Navegación principal">
+      <nav class="top-nav" aria-label="Navegacion principal">
         <div class="brand">
-          <div class="brand-logo">UM</div>
-          <div>
+          <div class="brand-logo" aria-hidden="true">
+            <img class="brand-logo-full" src="assets/upy-logo-full.png" alt="" />
+            <img class="brand-logo-mark" src="assets/upy-emblem.png" alt="" />
+          </div>
+          <div class="brand-copy">
             <h1>UpyMarket</h1>
-            <p>Marketplace Estudiantil UPY</p>
+            <p>UPY Student Marketplace</p>
+            <small>Buy, sell and discover within the UPY community.</small>
           </div>
         </div>
 
         <div class="search-wrapper">
-          <span class="search-icon">⌕</span>
+          <span class="search-icon" aria-hidden="true"></span>
           <input
             id="product-search"
             type="search"
-            aria-label="Buscar productos"
-            placeholder="Busca por nombre, categoría o carrera..."
+            aria-label="Search products"
+            placeholder="Search products, categories or careers..."
           />
         </div>
 
@@ -38,9 +41,11 @@
             id="notification-toggle"
             class="icon-button"
             type="button"
-            aria-label="Abrir notificaciones"
+            aria-label="Open notifications"
           >
-            🔔
+            <span class="icon-bell" aria-hidden="true">
+              <span class="icon-bell-clapper"></span>
+            </span>
             <span class="notification-dot"></span>
           </button>
 
@@ -48,109 +53,220 @@
             id="cart-toggle"
             class="icon-button cart-button"
             type="button"
-            aria-label="Abrir carrito"
+            aria-label="Open cart"
           >
-            🛒
+            <span class="icon-cart" aria-hidden="true">
+              <span class="icon-cart-handle"></span>
+            </span>
             <span id="cart-count" class="cart-count">0</span>
           </button>
 
-          <div class="user-avatar" title="Perfil de estudiante" aria-label="Perfil">ES</div>
+          <div class="user-avatar" title="Student profile" aria-label="Profile">ES</div>
         </div>
       </nav>
 
       <section class="hero">
         <div class="hero-content">
-          <span class="eyebrow">✦ Marketplace oficial UPY</span>
-          <h2>Todo lo que necesitas para tu vida universitaria.</h2>
-          <p>
-            Encuentra material académico, tecnología y entretenimiento seleccionados
-            para estudiantes UPY. Descuentos exclusivos y opciones para pagar con tu beca.
-          </p>
+          <span class="eyebrow">UPY community marketplace</span>
+          <h2>Find what you need within UPY</h2>
+          <p>Discover products, services and opportunities offered by students.</p>
 
           <div class="hero-actions">
-            <a href="#catalog" class="primary-link">Explorar Catálogo</a>
-            <a href="#catalog" class="secondary-link" id="offers-link">Ver Ofertas</a>
+            <a href="#catalog" class="primary-link">Explore catalog</a>
+            <a href="#community" class="secondary-link">View community</a>
           </div>
         </div>
 
-        <div class="hero-badges">
-          <div class="hero-badge">
-            <span class="hero-badge-icon">🎓</span>
-            <span>Precios estudiantiles</span>
+        <aside class="hero-panel glass-card" aria-label="Resumen del marketplace">
+          <div class="hero-panel-card">
+            <strong>Student-first</strong>
+            <p>Designed for practical exchanges, class needs and opportunities inside campus life.</p>
           </div>
-          <div class="hero-badge">
-            <span class="hero-badge-icon">💳</span>
-            <span>Acepta Beca Benito Juárez</span>
+          <div class="hero-panel-card">
+            <strong>Community driven</strong>
+            <p>From academic resources to technology, books, food and student-created services.</p>
           </div>
-          <div class="hero-badge">
-            <span class="hero-badge-icon">🔒</span>
-            <span>Compra segura</span>
+          <div class="hero-panel-metrics">
+            <div class="hero-metric">
+              <span>UPY</span>
+              <small>Institutional and student-centered</small>
+            </div>
+            <div class="hero-metric">
+              <span>50%</span>
+              <small>Top discount now visible</small>
+            </div>
           </div>
-        </div>
+        </aside>
       </section>
     </header>
 
-    <!-- ── Catálogo ─────────────────────────────────────────────────────────── -->
     <main>
-      <section id="catalog" class="catalog" aria-label="Catálogo de productos">
+      <section class="quick-categories" aria-label="Main categories">
+        <div class="section-heading compact-heading">
+          <div>
+            <span class="eyebrow">Browse by category</span>
+            <h2>Main categories</h2>
+          </div>
+        </div>
+
+        <div class="quick-category-grid">
+          <article class="quick-category-card">
+            <strong>Academic</strong>
+            <p>Notes, digital resources and tools for better study routines.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Technology</strong>
+            <p>Devices, kits and accessories useful for projects and labs.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Books</strong>
+            <p>Reference material, used textbooks and practical guides.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Food</strong>
+            <p>Campus-friendly options for affordable meals and quick snacks.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Services</strong>
+            <p>Tutoring, creative support and peer-to-peer student work.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Sports</strong>
+            <p>Shared activities, training gear and community wellness offers.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Other</strong>
+            <p>Opportunities and campus discoveries beyond the usual groups.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog" aria-label="Product catalog">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">Catálogo completo</span>
-            <h2>Productos para estudiantes</h2>
+            <span class="eyebrow">Featured listings</span>
+            <h2>Products and services from students</h2>
           </div>
 
-          <div class="category-filters" aria-label="Filtros de categoría">
-            <button type="button" class="filter-chip active" data-filter="all">Todos</button>
-            <button type="button" class="filter-chip" data-filter="Académico">Académico</button>
-            <button type="button" class="filter-chip" data-filter="Entretenimiento">Entretenimiento</button>
-            <button type="button" class="filter-chip" data-filter="Laptop">Laptop</button>
+          <div class="category-filters" aria-label="Category filters">
+            <button type="button" class="filter-chip active" data-filter="all">All</button>
+            <button type="button" class="filter-chip" data-filter="Académico">Academic</button>
+            <button type="button" class="filter-chip" data-filter="Books">Books</button>
+            <button type="button" class="filter-chip" data-filter="Food">Food</button>
+            <button type="button" class="filter-chip" data-filter="Services">Services</button>
+            <button type="button" class="filter-chip" data-filter="Entretenimiento">Entertainment</button>
+            <button type="button" class="filter-chip" data-filter="Sports">Sports</button>
+            <button type="button" class="filter-chip" data-filter="Other">Other</button>
+            <button type="button" class="filter-chip" data-filter="Laptop">Technology</button>
           </div>
         </div>
 
         <div id="catalog-grid" class="catalog-grid">
-          <!-- Renderizado dinámico por ui.js -->
+          <!-- Renderizado dinamico por ui.js -->
         </div>
       </section>
+
+      <section id="community" class="community-columns" aria-label="Community activity">
+        <article class="community-card glass-card">
+          <div class="section-heading compact-heading">
+            <div>
+              <span class="eyebrow">Recent posts</span>
+              <h2>Latest from the UPY community</h2>
+            </div>
+          </div>
+
+          <div class="post-list">
+            <div class="post-item">
+              <strong>Study resources updated</strong>
+              <p>Students are sharing more digital packs, references and class support materials.</p>
+            </div>
+            <div class="post-item">
+              <strong>Campus services growing</strong>
+              <p>Creative help, tutoring and student support offers are easier to discover.</p>
+            </div>
+            <div class="post-item">
+              <strong>Faster catalog browsing</strong>
+              <p>The homepage now brings categories and featured listings much closer to first view.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="community-card glass-card">
+          <div class="section-heading compact-heading">
+            <div>
+              <span class="eyebrow">Student offers</span>
+              <h2>Services and opportunities</h2>
+            </div>
+          </div>
+
+          <div class="service-list">
+            <div class="service-item">
+              <strong>Tutoring and peer support</strong>
+              <p>Quick help for programming, math, project setup and class preparation.</p>
+            </div>
+            <div class="service-item">
+              <strong>Creative work</strong>
+              <p>Photography, visual design and practical digital services made by students.</p>
+            </div>
+            <div class="service-item">
+              <strong>Useful campus offers</strong>
+              <p>Technology, books and everyday items presented with a cleaner and clearer interface.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="about-marketplace glass-card" aria-label="About the marketplace">
+        <div class="about-copy">
+          <span class="eyebrow">About the marketplace</span>
+          <h2>A marketplace designed for the UPY community</h2>
+          <p>
+            This experience keeps the existing marketplace logic intact while presenting it
+            with a more institutional, modern and student-appropriate visual identity for UPY.
+          </p>
+        </div>
+      </section>
+
     </main>
 
-    <!-- ── Modal: Onboarding ────────────────────────────────────────────────── -->
     <div
       id="onboarding-modal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="onboarding-title"
-    >
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="onboarding-title"
+      >
       <div class="modal-content glass-card">
-        <div class="onboarding-logo">UM</div>
-        <h2 id="onboarding-title">Bienvenido a UpyMarket</h2>
-        <p>Cuéntanos un poco sobre ti para personalizar tu experiencia.</p>
+        <div class="onboarding-logo">
+          <img src="assets/upy-emblem.png" alt="Logo UPY" />
+        </div>
+        <h2 id="onboarding-title">Welcome to UpyMarket</h2>
+        <p>Tell us a bit about you to personalize your experience.</p>
 
         <form id="onboarding-form">
-          <label for="carrera">Carrera</label>
+          <label for="carrera">Career</label>
           <select id="carrera" name="carrera" required>
-            <option value="" selected disabled>Selecciona tu carrera</option>
+            <option value="" selected disabled>Select your career</option>
             <option value="Ingeniería en Ciberseguridad">Ingeniería en Ciberseguridad</option>
             <option value="Ingeniería en Datos e IA">Ingeniería en Datos e IA</option>
             <option value="Ingeniería en Robótica Computacional">Ingeniería en Robótica Computacional</option>
             <option value="Ingeniería en Sistemas Embebidos Computacionales">Ing. en Sistemas Embebidos Computacionales</option>
           </select>
 
-          <label for="genero">Género</label>
+          <label for="genero">Gender</label>
           <select id="genero" name="genero" required>
-            <option value="" selected disabled>Selecciona una opción</option>
+            <option value="" selected disabled>Select an option</option>
             <option value="Femenino">Femenino</option>
             <option value="Masculino">Masculino</option>
             <option value="No binario">No binario</option>
             <option value="Prefiero no decir">Prefiero no decir</option>
           </select>
 
-          <button type="submit">Guardar y continuar</button>
+          <button type="submit">Save and continue</button>
         </form>
       </div>
     </div>
 
-    <!-- ── Modal: Detalle de producto ──────────────────────────────────────── -->
     <div
       id="product-detail-modal"
       class="modal product-detail-modal"
@@ -163,21 +279,18 @@
           id="product-detail-close"
           class="cart-close product-detail-close"
           type="button"
-          aria-label="Cerrar detalle"
+          aria-label="Close details"
         >
-          ✕
+          &times;
         </button>
 
         <div class="product-detail-layout">
           <div id="product-detail-icon" class="product-detail-icon">📦</div>
 
           <div class="product-detail-info">
-            <span id="product-detail-category" class="category-badge academic">Categoría</span>
-
-            <h2 id="product-detail-title">Nombre del producto</h2>
-
-            <p id="product-detail-description">Descripción del producto.</p>
-
+            <span id="product-detail-category" class="category-badge academic">Category</span>
+            <h2 id="product-detail-title">Product name</h2>
+            <p id="product-detail-description">Product description.</p>
             <ul id="product-detail-features" class="product-detail-features"></ul>
 
             <div class="product-detail-footer">
@@ -192,7 +305,7 @@
                 class="product-action add-cart-action"
                 data-action="add_to_cart"
               >
-                Agregar al Carrito
+                Add to cart
               </button>
             </div>
           </div>
@@ -200,51 +313,49 @@
       </div>
     </div>
 
-    <!-- ── Panel: Notificaciones ────────────────────────────────────────────── -->
     <aside
       id="notification-panel"
       class="notification-panel glass-card"
-      aria-label="Panel de notificaciones"
+      aria-label="Notifications panel"
     >
       <div class="notification-header">
         <div>
-          <span class="eyebrow">Novedades</span>
-          <h2>Notificaciones</h2>
+          <span class="eyebrow">Updates</span>
+          <h2>Notifications</h2>
         </div>
-        <button id="notification-close" class="cart-close" type="button" aria-label="Cerrar">✕</button>
+        <button id="notification-close" class="cart-close" type="button" aria-label="Close">
+          &times;
+        </button>
       </div>
 
       <div class="notification-list">
-        <div class="notification-item notif-offer">
-          <strong>🔥 Ofertas activas</strong>
-          <p>Descuentos de hasta 50% en productos seleccionados del catálogo.</p>
+        <div class="notification-item">
+          <strong>UPY visual refresh</strong>
+          <p>The interface now feels more aligned with an institutional student marketplace.</p>
         </div>
         <div class="notification-item">
-          <strong>🎓 Beca Benito Juárez</strong>
-          <p>Ahora puedes pagar tus productos directamente con tu beca estudiantil.</p>
+          <strong>Core flows intact</strong>
+          <p>Search, filters, cart, product detail, onboarding and insights remain functional.</p>
         </div>
         <div class="notification-item">
-          <strong>💻 Nuevas laptops con GPU</strong>
-          <p>6 modelos disponibles para programación, diseño y simulaciones.</p>
-        </div>
-        <div class="notification-item">
-          <strong>📚 Material académico</strong>
-          <p>Cursos, libros y software actualizados para el semestre en curso.</p>
+          <strong>Cleaner first view</strong>
+          <p>Categories, products and student activity appear faster after the hero section.</p>
         </div>
       </div>
     </aside>
 
-    <!-- ── Panel: Carrito ───────────────────────────────────────────────────── -->
-    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Carrito de compras">
+    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Shopping cart">
       <div class="cart-header">
         <div>
-          <span class="eyebrow">Selección actual</span>
-          <h2>Carrito</h2>
+          <span class="eyebrow">Current selection</span>
+          <h2>Cart</h2>
         </div>
-        <button id="cart-close" class="cart-close" type="button" aria-label="Cerrar carrito">✕</button>
+        <button id="cart-close" class="cart-close" type="button" aria-label="Close cart">
+          &times;
+        </button>
       </div>
 
-      <div id="cart-empty" class="cart-empty">No hay productos en el carrito.</div>
+      <div id="cart-empty" class="cart-empty">No items added yet.</div>
       <div id="cart-items" class="cart-items"></div>
 
       <div class="cart-footer">
@@ -254,26 +365,24 @@
         </div>
 
         <div class="payment-select-wrapper">
-          <label for="payment-method" class="payment-label">Método de pago</label>
+          <label for="payment-method" class="payment-label">Payment method</label>
           <select id="payment-method">
-            <option value="">Selecciona método de pago...</option>
-            <option value="Beca Benito Juárez">🎓 Beca Benito Juárez</option>
-            <option value="Efectivo">💵 Efectivo</option>
-            <option value="Tarjeta Bancaria">💳 Tarjeta Bancaria</option>
-            <option value="Transferencia SPEI">🏦 Transferencia SPEI</option>
+            <option value="">Select payment method...</option>
+            <option value="Beca Benito Juárez">Beca Benito Juarez</option>
+            <option value="Efectivo">Cash</option>
+            <option value="Tarjeta Bancaria">Card</option>
+            <option value="Transferencia SPEI">Bank transfer</option>
           </select>
         </div>
 
-        <button type="button" class="checkout-button">Finalizar Compra</button>
+        <button type="button" class="checkout-button">Complete purchase</button>
       </div>
     </aside>
 
-    <!-- ── Toast ────────────────────────────────────────────────────────────── -->
     <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
-      Producto agregado al carrito
+      Product added to cart
     </div>
 
-    <!-- ── Scripts ──────────────────────────────────────────────────────────── -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <script type="module" src="scripts/onboarding.js"></script>

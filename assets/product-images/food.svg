@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Food product thumbnail</title>
+  <desc id="desc">Illustration of a meal tray and drink</desc>
+  <rect width="320" height="240" rx="28" fill="#FFF7EE"/>
+  <rect x="54" y="110" width="170" height="72" rx="18" fill="#FFFFFF" stroke="#E5D6C7" stroke-width="4"/>
+  <circle cx="100" cy="146" r="24" fill="#D6A21E"/>
+  <circle cx="100" cy="146" r="10" fill="#F7F7F8"/>
+  <rect x="132" y="126" width="62" height="18" rx="9" fill="#5B167D"/>
+  <rect x="132" y="150" width="48" height="12" rx="6" fill="#6DBA7B"/>
+  <rect x="226" y="84" width="40" height="86" rx="16" fill="#7C4D96"/>
+  <path d="M246 66v20" stroke="#D6A21E" stroke-width="8" stroke-linecap="round"/>
+  <path d="M74 194h176" stroke="#321047" stroke-width="8" stroke-linecap="round" opacity=".16"/>
+</svg>

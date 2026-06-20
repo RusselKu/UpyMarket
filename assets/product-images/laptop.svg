@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop product thumbnail</title>
+  <desc id="desc">Illustration of a lightweight laptop</desc>
+  <rect width="320" height="240" rx="28" fill="#F3F3F6"/>
+  <rect x="80" y="56" width="160" height="102" rx="16" fill="#FFFFFF" stroke="#CFCBDD" stroke-width="6"/>
+  <rect x="96" y="72" width="128" height="70" rx="10" fill="#5B167D"/>
+  <circle cx="160" cy="108" r="18" fill="#D6A21E"/>
+  <path d="M60 172h200l-18 16H78z" fill="#D8D5E3"/>
+  <rect x="136" y="178" width="48" height="6" rx="3" fill="#B7B0C8"/>
+</svg>

@@ -1,44 +1,41 @@
 import { productos } from '../assets/catalog.js';
 import { trackView, trackAddToCart, trackPurchase } from './telemetry.js';
 
-// ── Estado ────────────────────────────────────────────────────────────────────
 let activeFilter = 'all';
-let searchValue  = '';
+let searchValue = '';
 let cart = JSON.parse(sessionStorage.getItem('upymarket_cart')) || [];
 
-// ── Nodos estáticos ───────────────────────────────────────────────────────────
-const catalogGrid       = document.querySelector('#catalog-grid');
-const searchInput       = document.querySelector('#product-search');
-const filterButtons     = document.querySelectorAll('.filter-chip[data-filter]');
+const catalogGrid = document.querySelector('#catalog-grid');
+const searchInput = document.querySelector('#product-search');
+const filterButtons = document.querySelectorAll('.filter-chip[data-filter]');
 
-const cartPanel         = document.querySelector('#cart-panel');
-const cartToggle        = document.querySelector('#cart-toggle');
-const cartClose         = document.querySelector('#cart-close');
-const cartCount         = document.querySelector('#cart-count');
-const cartItems         = document.querySelector('#cart-items');
-const cartEmpty         = document.querySelector('#cart-empty');
-const cartTotalEl       = document.querySelector('#cart-total');
-const paymentSelect     = document.querySelector('#payment-method');
-const checkoutBtn       = document.querySelector('.checkout-button');
+const cartPanel = document.querySelector('#cart-panel');
+const cartToggle = document.querySelector('#cart-toggle');
+const cartClose = document.querySelector('#cart-close');
+const cartCount = document.querySelector('#cart-count');
+const cartItems = document.querySelector('#cart-items');
+const cartEmpty = document.querySelector('#cart-empty');
+const cartTotalEl = document.querySelector('#cart-total');
+const paymentSelect = document.querySelector('#payment-method');
+const checkoutBtn = document.querySelector('.checkout-button');
 
-const notifToggle       = document.querySelector('#notification-toggle');
-const notifClose        = document.querySelector('#notification-close');
-const notifPanel        = document.querySelector('#notification-panel');
+const notifToggle = document.querySelector('#notification-toggle');
+const notifClose = document.querySelector('#notification-close');
+const notifPanel = document.querySelector('#notification-panel');
 
-const detailModal       = document.querySelector('#product-detail-modal');
-const detailClose       = document.querySelector('#product-detail-close');
-const detailIcon        = document.querySelector('#product-detail-icon');
-const detailTitle       = document.querySelector('#product-detail-title');
-const detailCategory    = document.querySelector('#product-detail-category');
+const detailModal = document.querySelector('#product-detail-modal');
+const detailClose = document.querySelector('#product-detail-close');
+const detailIcon = document.querySelector('#product-detail-icon');
+const detailTitle = document.querySelector('#product-detail-title');
+const detailCategory = document.querySelector('#product-detail-category');
 const detailDescription = document.querySelector('#product-detail-description');
-const detailFeatures    = document.querySelector('#product-detail-features');
-const detailPrice       = document.querySelector('#product-detail-price');
-const detailPriceOrig   = document.querySelector('#product-detail-price-original');
-const detailAdd         = document.querySelector('#product-detail-add');
+const detailFeatures = document.querySelector('#product-detail-features');
+const detailPrice = document.querySelector('#product-detail-price');
+const detailPriceOrig = document.querySelector('#product-detail-price-original');
+const detailAdd = document.querySelector('#product-detail-add');
 
-const cartToast         = document.querySelector('#cart-toast');
+const cartToast = document.querySelector('#cart-toast');
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
 function precioConDescuento(producto) {
   return producto.precio_original * (1 - producto.porcentaje_descuento);
 }
@@ -48,72 +45,133 @@ function formatPrice(amount) {
 }
 
 function categoryClass(categoria) {
-  if (categoria === 'Académico')       return 'academic';
+  if (categoria === 'Académico') return 'academic';
+  if (categoria === 'Books') return 'books';
+  if (categoria === 'Food') return 'food';
+  if (categoria === 'Services') return 'services';
   if (categoria === 'Entretenimiento') return 'leisure';
-  if (categoria === 'Laptop')          return 'tech';
+  if (categoria === 'Sports') return 'sports';
+  if (categoria === 'Other') return 'other';
+  if (categoria === 'Laptop') return 'tech';
   return 'tech';
 }
 
 function iconClass(categoria) {
-  if (categoria === 'Académico')       return 'academic-icon';
+  if (categoria === 'Académico') return 'academic-icon';
+  if (categoria === 'Books') return 'books-icon';
+  if (categoria === 'Food') return 'food-icon';
+  if (categoria === 'Services') return 'services-icon';
   if (categoria === 'Entretenimiento') return 'leisure-icon';
-  if (categoria === 'Laptop')          return 'tech-icon';
+  if (categoria === 'Sports') return 'sports-icon';
+  if (categoria === 'Other') return 'other-icon';
+  if (categoria === 'Laptop') return 'tech-icon';
   return 'tech-icon';
 }
 
-// ── Renderizado del catálogo ──────────────────────────────────────────────────
-function buildCard(p) {
-  const precioFinal = precioConDescuento(p);
-  const tieneDescuento = p.porcentaje_descuento > 0;
-  const pct = Math.round(p.porcentaje_descuento * 100);
-  const carreraTag = p.carrera_objetivo !== 'Todas'
-    ? `<span class="career-tag">🎓 ${p.carrera_objetivo}</span>`
+function displayCategory(categoria) {
+  if (categoria === 'Académico') return 'Academic';
+  if (categoria === 'Entretenimiento') return 'Entertainment';
+  if (categoria === 'Laptop') return 'Technology';
+  return categoria;
+}
+
+function productImage(producto) {
+  const text = `${producto.nombre} ${producto.descripcion}`.toLowerCase();
+
+  if (producto.categoria === 'Laptop') {
+    return producto.tiene_gpu_dedicada
+      ? 'assets/product-images/laptop-gpu.svg'
+      : 'assets/product-images/laptop.svg';
+  }
+
+  if (producto.categoria === 'Académico') {
+    if (text.includes('curso') || text.includes('tutoria') || text.includes('certific')) {
+      return 'assets/product-images/services.svg';
+    }
+    return 'assets/product-images/academic.svg';
+  }
+
+  if (producto.categoria === 'Books') return 'assets/product-images/books.svg';
+  if (producto.categoria === 'Food') return 'assets/product-images/food.svg';
+  if (producto.categoria === 'Services') return 'assets/product-images/services.svg';
+  if (producto.categoria === 'Sports') return 'assets/product-images/sports.svg';
+  if (producto.categoria === 'Other') return 'assets/product-images/other.svg';
+  return 'assets/product-images/entertainment.svg';
+}
+
+function sellerLabel(producto) {
+  if (producto.carrera_objetivo && producto.carrera_objetivo !== 'Todas') {
+    return `Seller: ${producto.carrera_objetivo}`;
+  }
+  if (producto.categoria === 'Laptop') return 'Seller: UPY Tech Circle';
+  if (producto.categoria === 'Académico') return 'Seller: Student Academic Hub';
+  return 'Seller: UPY Community';
+}
+
+function conditionLabel(producto) {
+  if (producto.categoria === 'Laptop') return 'Condition: Verified listing';
+  if (producto.porcentaje_descuento > 0) return 'Condition: Featured offer';
+  return 'Condition: Active listing';
+}
+
+function buildCard(producto) {
+  const precioFinal = precioConDescuento(producto);
+  const tieneDescuento = producto.porcentaje_descuento > 0;
+  const pct = Math.round(producto.porcentaje_descuento * 100);
+  const carreraTag = producto.carrera_objetivo !== 'Todas'
+    ? `<span class="career-tag">Career: ${producto.carrera_objetivo}</span>`
     : '';
   const discountBadge = tieneDescuento
     ? `<span class="discount-badge">-${pct}%</span>`
     : '';
   const priceHTML = tieneDescuento
     ? `<div class="price-wrapper">
-         <span class="price-original">${formatPrice(p.precio_original)}</span>
+         <span class="price-original">${formatPrice(producto.precio_original)}</span>
          <span class="price">${formatPrice(precioFinal)}</span>
        </div>`
-    : `<span class="price">${formatPrice(p.precio_original)}</span>`;
+    : `<span class="price">${formatPrice(producto.precio_original)}</span>`;
 
-  const gpuBadge = p.tiene_gpu_dedicada
-    ? `<span class="gpu-badge">GPU</span>`
+  const gpuBadge = producto.tiene_gpu_dedicada
+    ? '<span class="gpu-badge">GPU</span>'
     : '';
 
   const article = document.createElement('article');
   article.className = 'product-card glass-card';
-  article.dataset.productId = p.id;
-  article.dataset.category  = p.categoria;
+  article.dataset.productId = producto.id;
+  article.dataset.category = producto.categoria;
   article.innerHTML = `
     ${discountBadge}${gpuBadge}
-    <div class="product-icon ${iconClass(p.categoria)}">${p.icono}</div>
+    <div class="product-icon ${iconClass(producto.categoria)}">
+      <img src="${productImage(producto)}" alt="${producto.nombre}" loading="lazy" />
+    </div>
     <div class="product-topline">
-      <span class="category-badge ${categoryClass(p.categoria)}">${p.categoria}</span>
+      <span class="category-badge ${categoryClass(producto.categoria)}">${displayCategory(producto.categoria)}</span>
       ${priceHTML}
     </div>
-    <h3>${p.nombre}</h3>
+    <h3>${producto.nombre}</h3>
     ${carreraTag}
-    <p>${p.descripcion}</p>
+    <p>${producto.descripcion}</p>
+    <div class="product-meta">
+      <span class="product-seller">${sellerLabel(producto)}</span>
+      <span class="product-state">${conditionLabel(producto)}</span>
+    </div>
     <div class="product-buttons">
-      <button type="button" class="product-action" data-action="view_product">Ver Producto</button>
-      <button type="button" class="product-action add-cart-action" data-action="add_to_cart">Agregar al Carrito</button>
+      <button type="button" class="product-action" data-action="view_product">View details</button>
+      <button type="button" class="product-action add-cart-action" data-action="add_to_cart">Add to cart</button>
     </div>
   `;
   return article;
 }
 
 function filteredProducts() {
-  return productos.filter(p => {
-    const matchCat = activeFilter === 'all' || p.categoria === activeFilter;
+  return productos.filter((producto) => {
+    const matchCat = activeFilter === 'all' || producto.categoria === activeFilter;
     const q = searchValue.toLowerCase();
     const matchSearch = !q
-      || p.nombre.toLowerCase().includes(q)
-      || p.categoria.toLowerCase().includes(q)
-      || p.descripcion.toLowerCase().includes(q)
-      || p.carrera_objetivo.toLowerCase().includes(q);
+      || producto.nombre.toLowerCase().includes(q)
+      || producto.categoria.toLowerCase().includes(q)
+      || producto.descripcion.toLowerCase().includes(q)
+      || producto.carrera_objetivo.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
 }
@@ -123,13 +181,12 @@ function renderCatalog() {
   catalogGrid.innerHTML = '';
   const list = filteredProducts();
   if (list.length === 0) {
-    catalogGrid.innerHTML = '<p class="no-results">No se encontraron productos.</p>';
+    catalogGrid.innerHTML = '<p class="no-results">No products matched your search.</p>';
     return;
   }
-  list.forEach(p => catalogGrid.appendChild(buildCard(p)));
+  list.forEach((producto) => catalogGrid.appendChild(buildCard(producto)));
 }
 
-// ── Carrito ───────────────────────────────────────────────────────────────────
 function saveCart() {
   sessionStorage.setItem('upymarket_cart', JSON.stringify(cart));
 }
@@ -137,13 +194,13 @@ function saveCart() {
 function renderCart() {
   if (!cartItems || !cartCount || !cartTotalEl || !cartEmpty) return;
   cartItems.innerHTML = '';
-  const totalQty    = cart.reduce((s, i) => s + i.quantity, 0);
-  const totalAmount = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-  cartCount.textContent  = totalQty;
+  const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  cartCount.textContent = totalQty;
   cartTotalEl.textContent = formatPrice(totalAmount);
   cartEmpty.hidden = cart.length > 0;
 
-  cart.forEach(item => {
+  cart.forEach((item) => {
     const div = document.createElement('div');
     div.className = 'cart-item';
     div.innerHTML = `
@@ -152,43 +209,51 @@ function renderCart() {
         <p>${item.category} · ${formatPrice(item.price)}</p>
       </div>
       <div class="cart-item-actions">
-        <span>Cant: ${item.quantity}</span>
-        <button type="button" data-remove-id="${item.id}">Quitar</button>
+        <span>Qty: ${item.quantity}</span>
+        <button type="button" data-remove-id="${item.id}">Remove</button>
       </div>`;
     cartItems.appendChild(div);
   });
 
-  document.querySelectorAll('[data-remove-id]').forEach(btn => {
+  document.querySelectorAll('[data-remove-id]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      cart = cart.filter(i => i.id !== btn.dataset.removeId);
+      cart = cart.filter((item) => item.id !== btn.dataset.removeId);
       saveCart();
       renderCart();
     });
   });
 }
 
-function addToCart(product) {
-  const existing = cart.find(i => i.id === product.id);
-  if (existing) { existing.quantity += 1; }
-  else { cart.push({ ...product, quantity: 1 }); }
+function addToCart(producto) {
+  const existing = cart.find((item) => item.id === producto.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...producto, quantity: 1 });
+  }
   saveCart();
   renderCart();
   openCart();
-  showToast(`${product.name} agregado al carrito`);
+  showToast(`${producto.name || producto.nombre || 'Product'} added to cart`);
 }
 
-// ── Paneles ───────────────────────────────────────────────────────────────────
 function openCart() {
   closeNotif();
   cartPanel?.classList.add('is-open');
 }
-function closeCart() { cartPanel?.classList.remove('is-open'); }
+
+function closeCart() {
+  cartPanel?.classList.remove('is-open');
+}
 
 function openNotif() {
   closeCart();
   notifPanel?.classList.add('is-open');
 }
-function closeNotif() { notifPanel?.classList.remove('is-open'); }
+
+function closeNotif() {
+  notifPanel?.classList.remove('is-open');
+}
 
 function showToast(msg) {
   if (!cartToast) return;
@@ -197,41 +262,42 @@ function showToast(msg) {
   setTimeout(() => cartToast.classList.remove('is-visible'), 2400);
 }
 
-// ── Modal de detalle ──────────────────────────────────────────────────────────
 function openDetail(productId) {
-  const p = productos.find(x => x.id === productId);
-  if (!p || !detailModal) return;
+  const producto = productos.find((item) => item.id === productId);
+  if (!producto || !detailModal) return;
 
-  trackView(p.id);
+  trackView(producto.id);
 
-  const tieneDescuento = p.porcentaje_descuento > 0;
-  const pct = Math.round(p.porcentaje_descuento * 100);
-  const precioFinal = precioConDescuento(p);
+  const tieneDescuento = producto.porcentaje_descuento > 0;
+  const pct = Math.round(producto.porcentaje_descuento * 100);
+  const precioFinal = precioConDescuento(producto);
 
-  detailIcon.textContent = p.icono;
-  detailTitle.textContent = p.nombre;
-  detailCategory.textContent = p.categoria;
-  detailCategory.className = `category-badge ${categoryClass(p.categoria)}`;
-  detailDescription.textContent = p.descripcion;
+  detailIcon.innerHTML = `<img src="${productImage(producto)}" alt="${producto.nombre}" />`;
+  detailTitle.textContent = producto.nombre;
+  detailCategory.textContent = displayCategory(producto.categoria);
+  detailCategory.className = `category-badge ${categoryClass(producto.categoria)}`;
+  detailDescription.textContent = producto.descripcion;
 
   if (detailPrice) detailPrice.textContent = formatPrice(precioFinal);
   if (detailPriceOrig) {
-    detailPriceOrig.textContent = tieneDescuento ? `${formatPrice(p.precio_original)} (-${pct}%)` : '';
+    detailPriceOrig.textContent = tieneDescuento
+      ? `${formatPrice(producto.precio_original)} (-${pct}%)`
+      : '';
     detailPriceOrig.hidden = !tieneDescuento;
   }
 
   detailFeatures.innerHTML = '';
-  (p.caracteristicas || []).forEach(f => {
+  (producto.caracteristicas || []).forEach((feature) => {
     const li = document.createElement('li');
-    li.textContent = f;
+    li.textContent = feature;
     detailFeatures.appendChild(li);
   });
 
   if (detailAdd) {
-    detailAdd.dataset.productId = p.id;
-    detailAdd.dataset.price     = precioFinal.toFixed(2);
-    detailAdd.dataset.name      = p.nombre;
-    detailAdd.dataset.category  = p.categoria;
+    detailAdd.dataset.productId = producto.id;
+    detailAdd.dataset.price = precioFinal.toFixed(2);
+    detailAdd.dataset.name = producto.nombre;
+    detailAdd.dataset.category = producto.categoria;
   }
 
   closeCart();
@@ -239,10 +305,11 @@ function openDetail(productId) {
   detailModal.classList.add('is-open');
 }
 
-function closeDetail() { detailModal?.classList.remove('is-open'); }
+function closeDetail() {
+  detailModal?.classList.remove('is-open');
+}
 
-// ── Delegación de eventos sobre el catálogo ───────────────────────────────────
-catalogGrid?.addEventListener('click', event => {
+catalogGrid?.addEventListener('click', (event) => {
   const btn = event.target.closest('[data-action]');
   if (!btn) return;
   const card = btn.closest('.product-card');
@@ -252,32 +319,43 @@ catalogGrid?.addEventListener('click', event => {
   if (btn.dataset.action === 'view_product') {
     openDetail(productId);
   }
+
   if (btn.dataset.action === 'add_to_cart') {
-    const p = productos.find(x => x.id === productId);
-    if (!p) return;
-    const precio = precioConDescuento(p);
-    trackAddToCart(p.id, precio);
-    addToCart({ id: p.id, name: p.nombre, category: p.categoria, price: precio, porcentaje_descuento: p.porcentaje_descuento });
+    const producto = productos.find((item) => item.id === productId);
+    if (!producto) return;
+    const precio = precioConDescuento(producto);
+    trackAddToCart(producto.id, precio);
+    addToCart({
+      id: producto.id,
+      name: producto.nombre,
+      category: producto.categoria,
+      price: precio,
+      porcentaje_descuento: producto.porcentaje_descuento
+    });
   }
 });
 
-// Botón "Agregar" dentro del modal de detalle
 detailAdd?.addEventListener('click', () => {
-  const id    = detailAdd.dataset.productId;
+  const id = detailAdd.dataset.productId;
   const price = parseFloat(detailAdd.dataset.price) || 0;
-  const name  = detailAdd.dataset.name  || 'Producto';
-  const cat   = detailAdd.dataset.category || '';
-  const p     = productos.find(x => x.id === id);
+  const name = detailAdd.dataset.name || 'Producto';
+  const category = detailAdd.dataset.category || '';
+  const producto = productos.find((item) => item.id === id);
   trackAddToCart(id, price);
-  addToCart({ id, name, category: cat, price, porcentaje_descuento: p?.porcentaje_descuento ?? 0 });
+  addToCart({
+    id,
+    name,
+    category,
+    price,
+    porcentaje_descuento: producto?.porcentaje_descuento ?? 0
+  });
   closeDetail();
 });
 
-// ── Filtros y búsqueda ────────────────────────────────────────────────────────
-filterButtons.forEach(btn => {
+filterButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
     activeFilter = btn.dataset.filter;
-    filterButtons.forEach(b => b.classList.remove('active'));
+    filterButtons.forEach((item) => item.classList.remove('active'));
     btn.classList.add('active');
     renderCatalog();
   });
@@ -288,48 +366,52 @@ searchInput?.addEventListener('input', () => {
   renderCatalog();
 });
 
-// ── Checkout ──────────────────────────────────────────────────────────────────
 checkoutBtn?.addEventListener('click', () => {
-  if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
+  if (cart.length === 0) {
+    showToast('Your cart is empty');
+    return;
+  }
+
   const metodo = paymentSelect?.value || 'No especificado';
-  if (!metodo || metodo === '') { showToast('Selecciona un método de pago'); return; }
+  if (!metodo || metodo === '') {
+    showToast('Select a payment method');
+    return;
+  }
+
   trackPurchase(cart, metodo);
   cart = [];
   saveCart();
   renderCart();
   closeCart();
-  showToast('¡Compra registrada! Gracias por tu pedido');
+  showToast('Purchase recorded successfully');
 });
 
-// ── Controles de paneles ──────────────────────────────────────────────────────
-cartToggle?.addEventListener('click', () => cartPanel?.classList.contains('is-open') ? closeCart() : openCart());
+cartToggle?.addEventListener('click', () => (
+  cartPanel?.classList.contains('is-open') ? closeCart() : openCart()
+));
 cartClose?.addEventListener('click', closeCart);
-notifToggle?.addEventListener('click', () => notifPanel?.classList.contains('is-open') ? closeNotif() : openNotif());
+notifToggle?.addEventListener('click', () => (
+  notifPanel?.classList.contains('is-open') ? closeNotif() : openNotif()
+));
 notifClose?.addEventListener('click', closeNotif);
 detailClose?.addEventListener('click', closeDetail);
-detailModal?.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
-
-document.addEventListener('click', e => {
-  if (!notifPanel?.contains(e.target) && !notifToggle?.contains(e.target)) closeNotif();
+detailModal?.addEventListener('click', (event) => {
+  if (event.target === detailModal) closeDetail();
 });
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeCart(); closeDetail(); closeNotif(); }
+document.addEventListener('click', (event) => {
+  if (!notifPanel?.contains(event.target) && !notifToggle?.contains(event.target)) {
+    closeNotif();
+  }
 });
 
-// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeCart();
+    closeDetail();
+    closeNotif();
+  }
+});
+
 renderCatalog();
 renderCart();
-
-// "Ver Ofertas" muestra solo productos con descuento activo
-document.querySelector('#offers-link')?.addEventListener('click', () => {
-  activeFilter = 'all';
-  searchValue  = '';
-  if (searchInput) searchInput.value = '';
-  filterButtons.forEach(b => b.classList.remove('active'));
-  filterButtons[0]?.classList.add('active');
-  catalogGrid.innerHTML = '';
-  productos
-    .filter(p => p.porcentaje_descuento > 0)
-    .forEach(p => catalogGrid.appendChild(buildCard(p)));
-});
