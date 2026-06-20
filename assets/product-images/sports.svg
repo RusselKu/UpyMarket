@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Sports product thumbnail</title>
+  <desc id="desc">Illustration of a sports ball and training card</desc>
+  <rect width="320" height="240" rx="28" fill="#F3EEF6"/>
+  <circle cx="112" cy="124" r="48" fill="#5B167D"/>
+  <path d="M84 104c20 10 36 10 56 0M84 144c20-10 36-10 56 0M112 76c-8 18-8 78 0 96" stroke="#EADCF1" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <rect x="184" y="88" width="72" height="68" rx="16" fill="#FFFFFF" stroke="#D8CBE0" stroke-width="4"/>
+  <rect x="198" y="104" width="44" height="10" rx="5" fill="#D6A21E"/>
+  <rect x="198" y="124" width="34" height="10" rx="5" fill="#C9B4D7"/>
+</svg>

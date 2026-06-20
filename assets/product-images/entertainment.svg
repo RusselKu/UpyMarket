@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Entertainment product thumbnail</title>
+  <desc id="desc">Illustration of headphones and media controls</desc>
+  <rect width="320" height="240" rx="28" fill="#F3EDF8"/>
+  <path d="M108 140v-18c0-30 23-54 52-54s52 24 52 54v18" fill="none" stroke="#5B167D" stroke-width="18" stroke-linecap="round"/>
+  <rect x="98" y="132" width="24" height="48" rx="12" fill="#7C4D96"/>
+  <rect x="198" y="132" width="24" height="48" rx="12" fill="#7C4D96"/>
+  <circle cx="84" cy="84" r="18" fill="#D6A21E" opacity=".26"/>
+  <rect x="82" y="188" width="156" height="12" rx="6" fill="#321047" opacity=".16"/>
+  <rect x="128" y="96" width="64" height="10" rx="5" fill="#D6A21E"/>
+</svg>

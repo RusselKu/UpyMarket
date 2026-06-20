@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Books product thumbnail</title>
+  <desc id="desc">Illustration of stacked books</desc>
+  <rect width="320" height="240" rx="28" fill="#F8F4EA"/>
+  <rect x="52" y="150" width="208" height="22" rx="10" fill="#D6A21E"/>
+  <rect x="66" y="126" width="176" height="26" rx="12" fill="#7C4D96"/>
+  <rect x="84" y="96" width="142" height="30" rx="12" fill="#5B167D"/>
+  <rect x="106" y="64" width="104" height="32" rx="12" fill="#FFFFFF" stroke="#D8CBE0" stroke-width="4"/>
+  <rect x="116" y="72" width="18" height="16" rx="4" fill="#D6A21E"/>
+  <rect x="146" y="72" width="48" height="8" rx="4" fill="#C9B4D7"/>
+  <path d="M92 178h136" stroke="#321047" stroke-width="8" stroke-linecap="round" opacity=".18"/>
+</svg>
