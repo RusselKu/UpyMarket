@@ -1,345 +1,335 @@
-const searchInput = document.querySelector('#product-search');
-const filterButtons = document.querySelectorAll('.filter-chip[data-filter]');
-const productCards = document.querySelectorAll('.product-card');
+import { productos } from '../assets/catalog.js';
+import { trackView, trackAddToCart, trackPurchase } from './telemetry.js';
 
-const cartToast = document.querySelector('#cart-toast');
-const cartToggle = document.querySelector('#cart-toggle');
-const cartClose = document.querySelector('#cart-close');
-const cartPanel = document.querySelector('#cart-panel');
-const cartCount = document.querySelector('#cart-count');
-const cartItems = document.querySelector('#cart-items');
-const cartEmpty = document.querySelector('#cart-empty');
-const cartTotal = document.querySelector('#cart-total');
-
-const notificationToggle = document.querySelector('#notification-toggle');
-const notificationClose = document.querySelector('#notification-close');
-const notificationPanel = document.querySelector('#notification-panel');
-
-const productDetailModal = document.querySelector('#product-detail-modal');
-const productDetailClose = document.querySelector('#product-detail-close');
-const productDetailIcon = document.querySelector('#product-detail-icon');
-const productDetailTitle = document.querySelector('#product-detail-title');
-const productDetailCategory = document.querySelector('#product-detail-category');
-const productDetailDescription = document.querySelector('#product-detail-description');
-const productDetailFeatures = document.querySelector('#product-detail-features');
-const productDetailPrice = document.querySelector('#product-detail-price');
-const productDetailAdd = document.querySelector('#product-detail-add');
-
+// ── Estado ────────────────────────────────────────────────────────────────────
 let activeFilter = 'all';
-let cart = JSON.parse(sessionStorage.getItem('upystore_cart')) || [];
+let searchValue  = '';
+let cart = JSON.parse(sessionStorage.getItem('upymarket_cart')) || [];
 
-const productExtraDetails = {
-  p1: {
-    icon: '📘',
-    description:
-      'Study Planner Pro helps students organize assignments, exams, projects, and weekly academic goals in one simple tool.',
-    features: ['Academic planning', 'Weekly organization', 'Exam tracking']
-  },
-  p2: {
-    icon: '🎧',
-    description:
-      'Campus Headphones are designed for online classes, focus sessions, campus breaks, and everyday entertainment.',
-    features: ['Lightweight design', 'Online class ready', 'Portable audio']
-  },
-  p3: {
-    icon: '💻',
-    description:
-      'NovaBook G15 is a GPU-powered laptop for programming, data projects, design work, and high-performance student tasks.',
-    features: ['Dedicated GPU', 'Data workload support', 'High-performance projects']
+// ── Nodos estáticos ───────────────────────────────────────────────────────────
+const catalogGrid       = document.querySelector('#catalog-grid');
+const searchInput       = document.querySelector('#product-search');
+const filterButtons     = document.querySelectorAll('.filter-chip[data-filter]');
+
+const cartPanel         = document.querySelector('#cart-panel');
+const cartToggle        = document.querySelector('#cart-toggle');
+const cartClose         = document.querySelector('#cart-close');
+const cartCount         = document.querySelector('#cart-count');
+const cartItems         = document.querySelector('#cart-items');
+const cartEmpty         = document.querySelector('#cart-empty');
+const cartTotalEl       = document.querySelector('#cart-total');
+const paymentSelect     = document.querySelector('#payment-method');
+const checkoutBtn       = document.querySelector('.checkout-button');
+
+const notifToggle       = document.querySelector('#notification-toggle');
+const notifClose        = document.querySelector('#notification-close');
+const notifPanel        = document.querySelector('#notification-panel');
+
+const detailModal       = document.querySelector('#product-detail-modal');
+const detailClose       = document.querySelector('#product-detail-close');
+const detailIcon        = document.querySelector('#product-detail-icon');
+const detailTitle       = document.querySelector('#product-detail-title');
+const detailCategory    = document.querySelector('#product-detail-category');
+const detailDescription = document.querySelector('#product-detail-description');
+const detailFeatures    = document.querySelector('#product-detail-features');
+const detailPrice       = document.querySelector('#product-detail-price');
+const detailPriceOrig   = document.querySelector('#product-detail-price-original');
+const detailAdd         = document.querySelector('#product-detail-add');
+
+const cartToast         = document.querySelector('#cart-toast');
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function precioConDescuento(producto) {
+  return producto.precio_original * (1 - producto.porcentaje_descuento);
+}
+
+function formatPrice(amount) {
+  return `$${amount.toFixed(2)}`;
+}
+
+function categoryClass(categoria) {
+  if (categoria === 'Académico')       return 'academic';
+  if (categoria === 'Entretenimiento') return 'leisure';
+  if (categoria === 'Laptop')          return 'tech';
+  return 'tech';
+}
+
+function iconClass(categoria) {
+  if (categoria === 'Académico')       return 'academic-icon';
+  if (categoria === 'Entretenimiento') return 'leisure-icon';
+  if (categoria === 'Laptop')          return 'tech-icon';
+  return 'tech-icon';
+}
+
+// ── Renderizado del catálogo ──────────────────────────────────────────────────
+function buildCard(p) {
+  const precioFinal = precioConDescuento(p);
+  const tieneDescuento = p.porcentaje_descuento > 0;
+  const pct = Math.round(p.porcentaje_descuento * 100);
+  const carreraTag = p.carrera_objetivo !== 'Todas'
+    ? `<span class="career-tag">🎓 ${p.carrera_objetivo}</span>`
+    : '';
+  const discountBadge = tieneDescuento
+    ? `<span class="discount-badge">-${pct}%</span>`
+    : '';
+  const priceHTML = tieneDescuento
+    ? `<div class="price-wrapper">
+         <span class="price-original">${formatPrice(p.precio_original)}</span>
+         <span class="price">${formatPrice(precioFinal)}</span>
+       </div>`
+    : `<span class="price">${formatPrice(p.precio_original)}</span>`;
+
+  const gpuBadge = p.tiene_gpu_dedicada
+    ? `<span class="gpu-badge">GPU</span>`
+    : '';
+
+  const article = document.createElement('article');
+  article.className = 'product-card glass-card';
+  article.dataset.productId = p.id;
+  article.dataset.category  = p.categoria;
+  article.innerHTML = `
+    ${discountBadge}${gpuBadge}
+    <div class="product-icon ${iconClass(p.categoria)}">${p.icono}</div>
+    <div class="product-topline">
+      <span class="category-badge ${categoryClass(p.categoria)}">${p.categoria}</span>
+      ${priceHTML}
+    </div>
+    <h3>${p.nombre}</h3>
+    ${carreraTag}
+    <p>${p.descripcion}</p>
+    <div class="product-buttons">
+      <button type="button" class="product-action" data-action="view_product">Ver Producto</button>
+      <button type="button" class="product-action add-cart-action" data-action="add_to_cart">Agregar al Carrito</button>
+    </div>
+  `;
+  return article;
+}
+
+function filteredProducts() {
+  return productos.filter(p => {
+    const matchCat = activeFilter === 'all' || p.categoria === activeFilter;
+    const q = searchValue.toLowerCase();
+    const matchSearch = !q
+      || p.nombre.toLowerCase().includes(q)
+      || p.categoria.toLowerCase().includes(q)
+      || p.descripcion.toLowerCase().includes(q)
+      || p.carrera_objetivo.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+}
+
+function renderCatalog() {
+  if (!catalogGrid) return;
+  catalogGrid.innerHTML = '';
+  const list = filteredProducts();
+  if (list.length === 0) {
+    catalogGrid.innerHTML = '<p class="no-results">No se encontraron productos.</p>';
+    return;
   }
-};
-
-function normalizeText(text) {
-  return text.toLowerCase().trim();
+  list.forEach(p => catalogGrid.appendChild(buildCard(p)));
 }
 
-function updateCatalogVisibility() {
-  const searchValue = normalizeText(searchInput?.value || '');
-
-  productCards.forEach((card) => {
-    const productName = normalizeText(card.querySelector('h3')?.textContent || '');
-    const productCategory = card.dataset.category || '';
-    const productDescription = normalizeText(card.querySelector('p')?.textContent || '');
-
-    const matchesSearch =
-      productName.includes(searchValue) ||
-      normalizeText(productCategory).includes(searchValue) ||
-      productDescription.includes(searchValue);
-
-    const matchesFilter = activeFilter === 'all' || productCategory === activeFilter;
-
-    card.hidden = !(matchesSearch && matchesFilter);
-  });
-}
-
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    activeFilter = button.dataset.filter;
-
-    filterButtons.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-
-    updateCatalogVisibility();
-  });
-});
-
-searchInput?.addEventListener('input', updateCatalogVisibility);
-
-function getProductData(button) {
-  const productCard = button.closest('.product-card');
-
-  const id =
-    productCard?.dataset.productId ||
-    button.dataset.productId ||
-    'unknown';
-
-  const category =
-    productCard?.dataset.category ||
-    button.dataset.category ||
-    'Unknown';
-
-  const name =
-    productCard?.querySelector('h3')?.textContent ||
-    button.dataset.productName ||
-    'Product';
-
-  const priceText =
-    productCard?.querySelector('.price')?.textContent ||
-    button.dataset.price ||
-    '$0';
-
-  const price = Number(priceText.replace('$', '').trim()) || 0;
-
-  return {
-    id,
-    name,
-    category,
-    price
-  };
-}
-
+// ── Carrito ───────────────────────────────────────────────────────────────────
 function saveCart() {
-  sessionStorage.setItem('upystore_cart', JSON.stringify(cart));
+  sessionStorage.setItem('upymarket_cart', JSON.stringify(cart));
 }
 
 function renderCart() {
-  if (!cartItems || !cartCount || !cartTotal || !cartEmpty) return;
-
+  if (!cartItems || !cartCount || !cartTotalEl || !cartEmpty) return;
   cartItems.innerHTML = '';
-
-  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-  cartCount.textContent = totalQuantity;
-  cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
-
+  const totalQty    = cart.reduce((s, i) => s + i.quantity, 0);
+  const totalAmount = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+  cartCount.textContent  = totalQty;
+  cartTotalEl.textContent = formatPrice(totalAmount);
   cartEmpty.hidden = cart.length > 0;
 
-  cart.forEach((item) => {
-    const cartItem = document.createElement('div');
-    cartItem.className = 'cart-item';
-
-    cartItem.innerHTML = `
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
       <div>
         <h3>${item.name}</h3>
-        <p>${item.category} · $${item.price.toFixed(2)}</p>
+        <p>${item.category} · ${formatPrice(item.price)}</p>
       </div>
-
       <div class="cart-item-actions">
-        <span>Qty: ${item.quantity}</span>
-        <button type="button" data-remove-id="${item.id}">Remove</button>
-      </div>
-    `;
-
-    cartItems.appendChild(cartItem);
+        <span>Cant: ${item.quantity}</span>
+        <button type="button" data-remove-id="${item.id}">Quitar</button>
+      </div>`;
+    cartItems.appendChild(div);
   });
 
-  document.querySelectorAll('[data-remove-id]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const productId = button.dataset.removeId;
-      cart = cart.filter((item) => item.id !== productId);
+  document.querySelectorAll('[data-remove-id]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      cart = cart.filter(i => i.id !== btn.dataset.removeId);
       saveCart();
       renderCart();
     });
   });
 }
 
-function openCart() {
-  closeNotifications();
-  cartPanel?.classList.add('is-open');
-}
-
-function closeCart() {
-  cartPanel?.classList.remove('is-open');
-}
-
-function openNotifications() {
-  closeCart();
-  notificationPanel?.classList.add('is-open');
-}
-
-function closeNotifications() {
-  notificationPanel?.classList.remove('is-open');
-}
-
-function showToast(message) {
-  if (!cartToast) return;
-
-  cartToast.textContent = message;
-  cartToast.classList.add('is-visible');
-
-  setTimeout(() => {
-    cartToast.classList.remove('is-visible');
-  }, 2200);
-}
-
-function addProductToCart(product) {
-  const existingProduct = cart.find((item) => item.id === product.id);
-
-  if (existingProduct) {
-    existingProduct.quantity += 1;
-  } else {
-    cart.push({
-      ...product,
-      quantity: 1
-    });
-  }
-
+function addToCart(product) {
+  const existing = cart.find(i => i.id === product.id);
+  if (existing) { existing.quantity += 1; }
+  else { cart.push({ ...product, quantity: 1 }); }
   saveCart();
   renderCart();
   openCart();
-  showToast(`${product.name} added to cart`);
+  showToast(`${product.name} agregado al carrito`);
 }
 
-function setCategoryBadgeStyle(category) {
-  if (!productDetailCategory) return;
+// ── Paneles ───────────────────────────────────────────────────────────────────
+function openCart() {
+  closeNotif();
+  cartPanel?.classList.add('is-open');
+}
+function closeCart() { cartPanel?.classList.remove('is-open'); }
 
-  productDetailCategory.className = 'category-badge';
+function openNotif() {
+  closeCart();
+  notifPanel?.classList.add('is-open');
+}
+function closeNotif() { notifPanel?.classList.remove('is-open'); }
 
-  if (category === 'Academic') {
-    productDetailCategory.classList.add('academic');
-  } else if (category === 'Leisure') {
-    productDetailCategory.classList.add('leisure');
-  } else {
-    productDetailCategory.classList.add('tech');
-  }
+function showToast(msg) {
+  if (!cartToast) return;
+  cartToast.textContent = msg;
+  cartToast.classList.add('is-visible');
+  setTimeout(() => cartToast.classList.remove('is-visible'), 2400);
 }
 
-function openProductDetail(button) {
-  const product = getProductData(button);
-  const details = productExtraDetails[product.id] || {
-    icon: '📦',
-    description: 'Detailed information for this product.',
-    features: ['Student-focused product', 'Useful interaction data', 'Marketplace item']
-  };
+// ── Modal de detalle ──────────────────────────────────────────────────────────
+function openDetail(productId) {
+  const p = productos.find(x => x.id === productId);
+  if (!p || !detailModal) return;
 
-  if (
-    !productDetailModal ||
-    !productDetailIcon ||
-    !productDetailTitle ||
-    !productDetailCategory ||
-    !productDetailDescription ||
-    !productDetailFeatures ||
-    !productDetailPrice ||
-    !productDetailAdd
-  ) {
-    return;
+  trackView(p.id);
+
+  const tieneDescuento = p.porcentaje_descuento > 0;
+  const pct = Math.round(p.porcentaje_descuento * 100);
+  const precioFinal = precioConDescuento(p);
+
+  detailIcon.textContent = p.icono;
+  detailTitle.textContent = p.nombre;
+  detailCategory.textContent = p.categoria;
+  detailCategory.className = `category-badge ${categoryClass(p.categoria)}`;
+  detailDescription.textContent = p.descripcion;
+
+  if (detailPrice) detailPrice.textContent = formatPrice(precioFinal);
+  if (detailPriceOrig) {
+    detailPriceOrig.textContent = tieneDescuento ? `${formatPrice(p.precio_original)} (-${pct}%)` : '';
+    detailPriceOrig.hidden = !tieneDescuento;
   }
 
-  productDetailIcon.textContent = details.icon;
-  productDetailTitle.textContent = product.name;
-  productDetailCategory.textContent = product.category;
-  productDetailDescription.textContent = details.description;
-  productDetailPrice.textContent = `$${product.price.toFixed(2)}`;
-
-  setCategoryBadgeStyle(product.category);
-
-  productDetailFeatures.innerHTML = '';
-
-  details.features.forEach((feature) => {
-    const item = document.createElement('li');
-    item.textContent = feature;
-    productDetailFeatures.appendChild(item);
+  detailFeatures.innerHTML = '';
+  (p.caracteristicas || []).forEach(f => {
+    const li = document.createElement('li');
+    li.textContent = f;
+    detailFeatures.appendChild(li);
   });
 
-  productDetailAdd.dataset.productId = product.id;
-  productDetailAdd.dataset.category = product.category;
-  productDetailAdd.dataset.productName = product.name;
-  productDetailAdd.dataset.price = `$${product.price.toFixed(2)}`;
+  if (detailAdd) {
+    detailAdd.dataset.productId = p.id;
+    detailAdd.dataset.price     = precioFinal.toFixed(2);
+    detailAdd.dataset.name      = p.nombre;
+    detailAdd.dataset.category  = p.categoria;
+  }
 
   closeCart();
-  closeNotifications();
-  productDetailModal.classList.add('is-open');
+  closeNotif();
+  detailModal.classList.add('is-open');
 }
 
-function closeProductDetail() {
-  productDetailModal?.classList.remove('is-open');
-}
+function closeDetail() { detailModal?.classList.remove('is-open'); }
 
-document.querySelectorAll('[data-action="view_product"]').forEach((button) => {
-  button.addEventListener('click', () => {
-    openProductDetail(button);
-  });
-});
+// ── Delegación de eventos sobre el catálogo ───────────────────────────────────
+catalogGrid?.addEventListener('click', event => {
+  const btn = event.target.closest('[data-action]');
+  if (!btn) return;
+  const card = btn.closest('.product-card');
+  const productId = card?.dataset.productId;
+  if (!productId) return;
 
-document.querySelectorAll('[data-action="add_to_cart"]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const product = getProductData(button);
-    addProductToCart(product);
-
-    if (button.id === 'product-detail-add') {
-      closeProductDetail();
-    }
-  });
-});
-
-cartToggle?.addEventListener('click', () => {
-  const isOpen = cartPanel?.classList.contains('is-open');
-
-  if (isOpen) {
-    closeCart();
-  } else {
-    openCart();
+  if (btn.dataset.action === 'view_product') {
+    openDetail(productId);
+  }
+  if (btn.dataset.action === 'add_to_cart') {
+    const p = productos.find(x => x.id === productId);
+    if (!p) return;
+    const precio = precioConDescuento(p);
+    trackAddToCart(p.id, precio);
+    addToCart({ id: p.id, name: p.nombre, category: p.categoria, price: precio, porcentaje_descuento: p.porcentaje_descuento });
   }
 });
 
+// Botón "Agregar" dentro del modal de detalle
+detailAdd?.addEventListener('click', () => {
+  const id    = detailAdd.dataset.productId;
+  const price = parseFloat(detailAdd.dataset.price) || 0;
+  const name  = detailAdd.dataset.name  || 'Producto';
+  const cat   = detailAdd.dataset.category || '';
+  const p     = productos.find(x => x.id === id);
+  trackAddToCart(id, price);
+  addToCart({ id, name, category: cat, price, porcentaje_descuento: p?.porcentaje_descuento ?? 0 });
+  closeDetail();
+});
+
+// ── Filtros y búsqueda ────────────────────────────────────────────────────────
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    activeFilter = btn.dataset.filter;
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCatalog();
+  });
+});
+
+searchInput?.addEventListener('input', () => {
+  searchValue = searchInput.value.trim();
+  renderCatalog();
+});
+
+// ── Checkout ──────────────────────────────────────────────────────────────────
+checkoutBtn?.addEventListener('click', () => {
+  if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
+  const metodo = paymentSelect?.value || 'No especificado';
+  if (!metodo || metodo === '') { showToast('Selecciona un método de pago'); return; }
+  trackPurchase(cart, metodo);
+  cart = [];
+  saveCart();
+  renderCart();
+  closeCart();
+  showToast('¡Compra registrada! Gracias por tu pedido');
+});
+
+// ── Controles de paneles ──────────────────────────────────────────────────────
+cartToggle?.addEventListener('click', () => cartPanel?.classList.contains('is-open') ? closeCart() : openCart());
 cartClose?.addEventListener('click', closeCart);
+notifToggle?.addEventListener('click', () => notifPanel?.classList.contains('is-open') ? closeNotif() : openNotif());
+notifClose?.addEventListener('click', closeNotif);
+detailClose?.addEventListener('click', closeDetail);
+detailModal?.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
 
-notificationToggle?.addEventListener('click', () => {
-  const isOpen = notificationPanel?.classList.contains('is-open');
-
-  if (isOpen) {
-    closeNotifications();
-  } else {
-    openNotifications();
-  }
+document.addEventListener('click', e => {
+  if (!notifPanel?.contains(e.target) && !notifToggle?.contains(e.target)) closeNotif();
 });
 
-notificationClose?.addEventListener('click', closeNotifications);
-
-productDetailClose?.addEventListener('click', closeProductDetail);
-
-productDetailModal?.addEventListener('click', (event) => {
-  if (event.target === productDetailModal) {
-    closeProductDetail();
-  }
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeCart(); closeDetail(); closeNotif(); }
 });
 
-document.addEventListener('click', (event) => {
-  const clickedInsideNotifications = notificationPanel?.contains(event.target);
-  const clickedNotificationButton = notificationToggle?.contains(event.target);
-
-  if (!clickedInsideNotifications && !clickedNotificationButton) {
-    closeNotifications();
-  }
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    closeCart();
-    closeProductDetail();
-    closeNotifications();
-  }
-});
-
+// ── Init ──────────────────────────────────────────────────────────────────────
+renderCatalog();
 renderCart();
+
+// "Ver Ofertas" muestra solo productos con descuento activo
+document.querySelector('#offers-link')?.addEventListener('click', () => {
+  activeFilter = 'all';
+  searchValue  = '';
+  if (searchInput) searchInput.value = '';
+  filterButtons.forEach(b => b.classList.remove('active'));
+  filterButtons[0]?.classList.add('active');
+  catalogGrid.innerHTML = '';
+  productos
+    .filter(p => p.porcentaje_descuento > 0)
+    .forEach(p => catalogGrid.appendChild(buildCard(p)));
+});

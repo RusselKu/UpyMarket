@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UPY STORE</title>
+    <title>UpyMarket — Marketplace Estudiantil UPY</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
 
@@ -12,13 +12,14 @@
     <div class="background-shape shape-two"></div>
     <div class="background-shape shape-three"></div>
 
+    <!-- ── Header ──────────────────────────────────────────────────────────── -->
     <header class="site-header">
-      <nav class="top-nav" aria-label="Main navigation">
+      <nav class="top-nav" aria-label="Navegación principal">
         <div class="brand">
-          <div class="brand-logo">US</div>
+          <div class="brand-logo">UM</div>
           <div>
-            <h1>UPY STORE</h1>
-            <p>Luxury Student Marketplace</p>
+            <h1>UpyMarket</h1>
+            <p>Marketplace Estudiantil UPY</p>
           </div>
         </div>
 
@@ -27,8 +28,8 @@
           <input
             id="product-search"
             type="search"
-            aria-label="Search products"
-            placeholder="Search academic, leisure or tech products..."
+            aria-label="Buscar productos"
+            placeholder="Busca por nombre, categoría o carrera..."
           />
         </div>
 
@@ -37,7 +38,7 @@
             id="notification-toggle"
             class="icon-button"
             type="button"
-            aria-label="Open notifications"
+            aria-label="Abrir notificaciones"
           >
             🔔
             <span class="notification-dot"></span>
@@ -47,215 +48,72 @@
             id="cart-toggle"
             class="icon-button cart-button"
             type="button"
-            aria-label="Open cart"
+            aria-label="Abrir carrito"
           >
             🛒
             <span id="cart-count" class="cart-count">0</span>
           </button>
 
-          <div class="user-avatar" aria-label="User profile">DN</div>
+          <div class="user-avatar" title="Perfil de estudiante" aria-label="Perfil">ES</div>
         </div>
       </nav>
 
       <section class="hero">
         <div class="hero-content">
-          <span class="eyebrow">UPY student marketplace</span>
-          <h2>Explore premium products, compare options, and shop smarter.</h2>
+          <span class="eyebrow">✦ Marketplace oficial UPY</span>
+          <h2>Todo lo que necesitas para tu vida universitaria.</h2>
           <p>
-            A student-focused marketplace prototype designed to help users discover
-            academic, leisure, and technology products while generating useful
-            interaction data for analysis.
+            Encuentra material académico, tecnología y entretenimiento seleccionados
+            para estudiantes UPY. Descuentos exclusivos y opciones para pagar con tu beca.
           </p>
 
           <div class="hero-actions">
-            <a href="#catalog" class="primary-link">Explore Catalog</a>
-            <a href="#insights" class="secondary-link">View Insights</a>
+            <a href="#catalog" class="primary-link">Explorar Catálogo</a>
+            <a href="#catalog" class="secondary-link" id="offers-link">Ver Ofertas</a>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-icon">🎓</span>
+            <span>Precios estudiantiles</span>
+          </div>
+          <div class="hero-badge">
+            <span class="hero-badge-icon">💳</span>
+            <span>Acepta Beca Benito Juárez</span>
+          </div>
+          <div class="hero-badge">
+            <span class="hero-badge-icon">🔒</span>
+            <span>Compra segura</span>
           </div>
         </div>
       </section>
     </header>
 
+    <!-- ── Catálogo ─────────────────────────────────────────────────────────── -->
     <main>
-      <section id="catalog" class="catalog" aria-label="Product catalog">
+      <section id="catalog" class="catalog" aria-label="Catálogo de productos">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">Product catalog</span>
-            <h2>Featured student products</h2>
+            <span class="eyebrow">Catálogo completo</span>
+            <h2>Productos para estudiantes</h2>
           </div>
 
-          <div class="category-filters" aria-label="Category filters">
-            <button type="button" class="filter-chip active" data-filter="all">
-              All
-            </button>
-            <button type="button" class="filter-chip" data-filter="Academic">
-              Academic
-            </button>
-            <button type="button" class="filter-chip" data-filter="Leisure">
-              Leisure
-            </button>
-            <button type="button" class="filter-chip" data-filter="Laptop with GPU">
-              Tech
-            </button>
+          <div class="category-filters" aria-label="Filtros de categoría">
+            <button type="button" class="filter-chip active" data-filter="all">Todos</button>
+            <button type="button" class="filter-chip" data-filter="Académico">Académico</button>
+            <button type="button" class="filter-chip" data-filter="Entretenimiento">Entretenimiento</button>
+            <button type="button" class="filter-chip" data-filter="Laptop">Laptop</button>
           </div>
         </div>
 
         <div id="catalog-grid" class="catalog-grid">
-          <article
-            class="product-card glass-card"
-            data-product-id="p1"
-            data-category="Academic"
-          >
-            <div class="product-icon academic-icon">📘</div>
-
-            <div class="product-topline">
-              <span class="category-badge academic">Academic</span>
-              <span class="price">$19.99</span>
-            </div>
-
-            <h3>Study Planner Pro</h3>
-            <p>
-              A productivity planner designed for students who want to organize
-              assignments, projects, and exam weeks.
-            </p>
-
-            <div class="product-buttons">
-              <button
-                type="button"
-                class="product-action"
-                data-action="view_product"
-              >
-                View Product
-              </button>
-              <button
-                type="button"
-                class="product-action add-cart-action"
-                data-action="add_to_cart"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article
-            class="product-card glass-card"
-            data-product-id="p2"
-            data-category="Leisure"
-          >
-            <div class="product-icon leisure-icon">🎧</div>
-
-            <div class="product-topline">
-              <span class="category-badge leisure">Leisure</span>
-              <span class="price">$34.50</span>
-            </div>
-
-            <h3>Campus Headphones</h3>
-            <p>
-              Lightweight headphones for study breaks, online classes, and everyday
-              campus use.
-            </p>
-
-            <div class="product-buttons">
-              <button
-                type="button"
-                class="product-action"
-                data-action="view_product"
-              >
-                View Product
-              </button>
-              <button
-                type="button"
-                class="product-action add-cart-action"
-                data-action="add_to_cart"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <article
-            class="product-card glass-card"
-            data-product-id="p3"
-            data-category="Laptop with GPU"
-          >
-            <div class="product-icon tech-icon">💻</div>
-
-            <div class="product-topline">
-              <span class="category-badge tech">Laptop with GPU</span>
-              <span class="price">$799.00</span>
-            </div>
-
-            <h3>NovaBook G15</h3>
-            <p>
-              A GPU-powered laptop option for programming, design, data workloads,
-              and high-performance student projects.
-            </p>
-
-            <div class="product-buttons">
-              <button
-                type="button"
-                class="product-action"
-                data-action="view_product"
-              >
-                View Product
-              </button>
-              <button
-                type="button"
-                class="product-action add-cart-action"
-                data-action="add_to_cart"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="insights" class="analytics glass-card" aria-label="Analytics preview">
-        <div class="section-heading insights-heading">
-          <div>
-            <span class="eyebrow">Telemetry preview</span>
-            <h2>Global Usage Insights</h2>
-          </div>
-
-          <div class="time-filters" aria-label="Time range filters">
-            <button type="button" class="filter-chip active">7d</button>
-            <button type="button" class="filter-chip">30d</button>
-            <button type="button" class="filter-chip">1y</button>
-          </div>
-        </div>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <span class="metric-icon">👁️</span>
-            <div>
-              <p>Total Views</p>
-              <strong>128</strong>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <span class="metric-icon">👤</span>
-            <div>
-              <p>Unique Visitors</p>
-              <strong>42</strong>
-            </div>
-          </div>
-
-          <div class="metric-card">
-            <span class="metric-icon">⏱️</span>
-            <div>
-              <p>Avg. Dwell Time</p>
-              <strong>36s</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="chart-card">
-          <canvas id="telemetryChart" width="400" height="200"></canvas>
+          <!-- Renderizado dinámico por ui.js -->
         </div>
       </section>
     </main>
 
+    <!-- ── Modal: Onboarding ────────────────────────────────────────────────── -->
     <div
       id="onboarding-modal"
       class="modal"
@@ -264,33 +122,35 @@
       aria-labelledby="onboarding-title"
     >
       <div class="modal-content glass-card">
-        <h2 id="onboarding-title">Welcome to UPY STORE</h2>
-        <p>Tell us a little about yourself before continuing.</p>
+        <div class="onboarding-logo">UM</div>
+        <h2 id="onboarding-title">Bienvenido a UpyMarket</h2>
+        <p>Cuéntanos un poco sobre ti para personalizar tu experiencia.</p>
 
         <form id="onboarding-form">
-          <label for="career">Career</label>
-          <input
-            id="career"
-            name="career"
-            type="text"
-            placeholder="e.g., Data Engineering"
-            required
-          />
-
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender" required>
-            <option value="" selected disabled>Select an option</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="non-binary">Non-binary</option>
-            <option value="prefer-not-to-say">Prefer not to say</option>
+          <label for="carrera">Carrera</label>
+          <select id="carrera" name="carrera" required>
+            <option value="" selected disabled>Selecciona tu carrera</option>
+            <option value="Ingeniería en Ciberseguridad">Ingeniería en Ciberseguridad</option>
+            <option value="Ingeniería en Datos e IA">Ingeniería en Datos e IA</option>
+            <option value="Ingeniería en Robótica Computacional">Ingeniería en Robótica Computacional</option>
+            <option value="Ingeniería en Sistemas Embebidos Computacionales">Ing. en Sistemas Embebidos Computacionales</option>
           </select>
 
-          <button type="submit">Save and Continue</button>
+          <label for="genero">Género</label>
+          <select id="genero" name="genero" required>
+            <option value="" selected disabled>Selecciona una opción</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="No binario">No binario</option>
+            <option value="Prefiero no decir">Prefiero no decir</option>
+          </select>
+
+          <button type="submit">Guardar y continuar</button>
         </form>
       </div>
     </div>
 
+    <!-- ── Modal: Detalle de producto ──────────────────────────────────────── -->
     <div
       id="product-detail-modal"
       class="modal product-detail-modal"
@@ -303,7 +163,7 @@
           id="product-detail-close"
           class="cart-close product-detail-close"
           type="button"
-          aria-label="Close product detail"
+          aria-label="Cerrar detalle"
         >
           ✕
         </button>
@@ -312,20 +172,19 @@
           <div id="product-detail-icon" class="product-detail-icon">📦</div>
 
           <div class="product-detail-info">
-            <span id="product-detail-category" class="category-badge academic">
-              Category
-            </span>
+            <span id="product-detail-category" class="category-badge academic">Categoría</span>
 
-            <h2 id="product-detail-title">Product name</h2>
+            <h2 id="product-detail-title">Nombre del producto</h2>
 
-            <p id="product-detail-description">
-              Product description will appear here.
-            </p>
+            <p id="product-detail-description">Descripción del producto.</p>
 
             <ul id="product-detail-features" class="product-detail-features"></ul>
 
             <div class="product-detail-footer">
-              <strong id="product-detail-price">$0.00</strong>
+              <div>
+                <span id="product-detail-price-original" class="price-original" hidden></span>
+                <strong id="product-detail-price">$0.00</strong>
+              </div>
 
               <button
                 id="product-detail-add"
@@ -333,7 +192,7 @@
                 class="product-action add-cart-action"
                 data-action="add_to_cart"
               >
-                Add to Cart
+                Agregar al Carrito
               </button>
             </div>
           </div>
@@ -341,66 +200,51 @@
       </div>
     </div>
 
+    <!-- ── Panel: Notificaciones ────────────────────────────────────────────── -->
     <aside
       id="notification-panel"
       class="notification-panel glass-card"
-      aria-label="Notifications panel"
+      aria-label="Panel de notificaciones"
     >
       <div class="notification-header">
         <div>
-          <span class="eyebrow">Updates</span>
-          <h2>Notifications</h2>
+          <span class="eyebrow">Novedades</span>
+          <h2>Notificaciones</h2>
         </div>
-
-        <button
-          id="notification-close"
-          class="cart-close"
-          type="button"
-          aria-label="Close notifications"
-        >
-          ✕
-        </button>
+        <button id="notification-close" class="cart-close" type="button" aria-label="Cerrar">✕</button>
       </div>
 
       <div class="notification-list">
-        <div class="notification-item">
-          <strong>Catalog ready</strong>
-          <p>Students can browse products and interact with the marketplace.</p>
+        <div class="notification-item notif-offer">
+          <strong>🔥 Ofertas activas</strong>
+          <p>Descuentos de hasta 50% en productos seleccionados del catálogo.</p>
         </div>
-
         <div class="notification-item">
-          <strong>Cart tracking active</strong>
-          <p>Add-to-cart actions are ready to support interaction analysis.</p>
+          <strong>🎓 Beca Benito Juárez</strong>
+          <p>Ahora puedes pagar tus productos directamente con tu beca estudiantil.</p>
         </div>
-
         <div class="notification-item">
-          <strong>Telemetry preview</strong>
-          <p>Usage insights are available in the analytics section.</p>
+          <strong>💻 Nuevas laptops con GPU</strong>
+          <p>6 modelos disponibles para programación, diseño y simulaciones.</p>
+        </div>
+        <div class="notification-item">
+          <strong>📚 Material académico</strong>
+          <p>Cursos, libros y software actualizados para el semestre en curso.</p>
         </div>
       </div>
     </aside>
 
-    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Shopping cart">
+    <!-- ── Panel: Carrito ───────────────────────────────────────────────────── -->
+    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Carrito de compras">
       <div class="cart-header">
         <div>
-          <span class="eyebrow">Current selection</span>
-          <h2>Shopping Cart</h2>
+          <span class="eyebrow">Selección actual</span>
+          <h2>Carrito</h2>
         </div>
-
-        <button
-          id="cart-close"
-          class="cart-close"
-          type="button"
-          aria-label="Close cart"
-        >
-          ✕
-        </button>
+        <button id="cart-close" class="cart-close" type="button" aria-label="Cerrar carrito">✕</button>
       </div>
 
-      <div id="cart-empty" class="cart-empty">
-        No products added yet.
-      </div>
-
+      <div id="cart-empty" class="cart-empty">No hay productos en el carrito.</div>
       <div id="cart-items" class="cart-items"></div>
 
       <div class="cart-footer">
@@ -409,21 +253,30 @@
           <strong id="cart-total">$0.00</strong>
         </div>
 
-        <button type="button" class="checkout-button">
-          Continue
-        </button>
+        <div class="payment-select-wrapper">
+          <label for="payment-method" class="payment-label">Método de pago</label>
+          <select id="payment-method">
+            <option value="">Selecciona método de pago...</option>
+            <option value="Beca Benito Juárez">🎓 Beca Benito Juárez</option>
+            <option value="Efectivo">💵 Efectivo</option>
+            <option value="Tarjeta Bancaria">💳 Tarjeta Bancaria</option>
+            <option value="Transferencia SPEI">🏦 Transferencia SPEI</option>
+          </select>
+        </div>
+
+        <button type="button" class="checkout-button">Finalizar Compra</button>
       </div>
     </aside>
 
+    <!-- ── Toast ────────────────────────────────────────────────────────────── -->
     <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
-      Product added to cart
+      Producto agregado al carrito
     </div>
 
+    <!-- ── Scripts ──────────────────────────────────────────────────────────── -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="config.js"></script>
     <script type="module" src="scripts/onboarding.js"></script>
     <script type="module" src="scripts/ui.js"></script>
-    <script type="module" src="scripts/telemetry.js"></script>
-    <script type="module" src="charts/analytics.js"></script>
   </body>
 </html>
