@@ -1,6 +1,7 @@
-import { productos } from '../assets/catalog.js';
+import { cargarProductos } from './supabaseClient.js';
 import { trackView, trackAddToCart, trackPurchase } from './telemetry.js';
 
+let productos = [];
 let activeFilter = 'all';
 let searchValue = '';
 let cart = JSON.parse(sessionStorage.getItem('upymarket_cart')) || [];
@@ -413,5 +414,11 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-renderCatalog();
-renderCart();
+if (catalogGrid) {
+  catalogGrid.innerHTML = '<p class="no-results" style="grid-column:1/-1;text-align:center;padding:3rem 1rem">Cargando productos...</p>';
+}
+(async () => {
+  productos = await cargarProductos();
+  renderCatalog();
+  renderCart();
+})();

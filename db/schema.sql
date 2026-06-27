@@ -15,6 +15,9 @@ CREATE TABLE public.catalogo_productos (
     tiene_gpu_dedicada BOOLEAN DEFAULT false,
     precio_original DECIMAL(10, 2) NOT NULL,
     porcentaje_descuento DECIMAL(3, 2) DEFAULT 0.00,
+    icono                TEXT DEFAULT '📦',
+    descripcion          TEXT DEFAULT '',
+    caracteristicas      TEXT[] DEFAULT '{}',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

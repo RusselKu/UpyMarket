@@ -229,40 +229,60 @@
 
     </main>
 
+    <!-- ── Modal: Auth ──────────────────────────────────────────────────────── -->
     <div
-      id="onboarding-modal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="onboarding-title"
-      >
+      id="auth-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="auth-title"
+    >
       <div class="modal-content glass-card">
         <div class="onboarding-logo">
           <img src="assets/upy-emblem.png" alt="Logo UPY" />
         </div>
-        <h2 id="onboarding-title">Welcome to UpyMarket</h2>
-        <p>Tell us a bit about you to personalize your experience.</p>
+        <h2 id="auth-title">UpyMarket</h2>
+        <p>Accede con tu correo institucional UPY.</p>
 
-        <form id="onboarding-form">
-          <label for="carrera">Career</label>
-          <select id="carrera" name="carrera" required>
-            <option value="" selected disabled>Select your career</option>
+        <div class="auth-tabs" role="tablist">
+          <button id="tab-login"    class="auth-tab active" type="button" role="tab">Iniciar Sesión</button>
+          <button id="tab-register" class="auth-tab"        type="button" role="tab">Crear Cuenta</button>
+        </div>
+
+        <!-- Login -->
+        <form id="form-login" class="auth-form">
+          <label>Correo institucional</label>
+          <input type="email" name="email" placeholder="nombre@upy.edu.mx" autocomplete="email" required />
+          <label>Contraseña</label>
+          <input type="password" name="password" autocomplete="current-password" required />
+          <p class="auth-message" aria-live="polite"></p>
+          <button type="submit" data-label="Iniciar Sesión">Iniciar Sesión</button>
+        </form>
+
+        <!-- Register -->
+        <form id="form-register" class="auth-form" hidden>
+          <label>Correo institucional</label>
+          <input type="email" name="email" placeholder="nombre@upy.edu.mx" autocomplete="email" required />
+          <label>Contraseña <small>(mínimo 8 caracteres)</small></label>
+          <input type="password" name="password" minlength="8" autocomplete="new-password" required />
+          <label>Carrera</label>
+          <select name="carrera" required>
+            <option value="" disabled selected>Selecciona tu carrera</option>
             <option value="Ingeniería en Ciberseguridad">Ingeniería en Ciberseguridad</option>
             <option value="Ingeniería en Datos e IA">Ingeniería en Datos e IA</option>
             <option value="Ingeniería en Robótica Computacional">Ingeniería en Robótica Computacional</option>
-            <option value="Ingeniería en Sistemas Embebidos Computacionales">Ing. en Sistemas Embebidos Computacionales</option>
+            <option value="Ingeniería en Sistemas Embebidos Computacionales">Ing. Sistemas Embebidos Computacionales</option>
           </select>
-
-          <label for="genero">Gender</label>
-          <select id="genero" name="genero" required>
-            <option value="" selected disabled>Select an option</option>
+          <label>Género</label>
+          <select name="genero" required>
+            <option value="" disabled selected>Selecciona una opción</option>
             <option value="Femenino">Femenino</option>
             <option value="Masculino">Masculino</option>
             <option value="No binario">No binario</option>
             <option value="Prefiero no decir">Prefiero no decir</option>
           </select>
-
-          <button type="submit">Save and continue</button>
+          <p class="auth-message" aria-live="polite"></p>
+          <button type="submit" data-label="Crear Cuenta">Crear Cuenta</button>
         </form>
       </div>
     </div>
@@ -385,7 +405,7 @@
 
     <script src="assets/supabase.min.js"></script>
     <script src="config.js"></script>
-    <script type="module" src="scripts/onboarding.js"></script>
+    <script type="module" src="scripts/auth.js"></script>
     <script type="module" src="scripts/ui.js"></script>
   </body>
 </html>
