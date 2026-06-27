@@ -91,6 +91,7 @@ supabase?.auth.onAuthStateChange(async (event, session) => {
     const user = session.user;
     updateAvatar(user.email);
     modal?.classList.remove('is-open');
+    window.dispatchEvent(new CustomEvent('upymarket:signed-in'));
 
     // Crear perfil en usuarios_sesion si es la primera vez
     const { data: existing } = await supabase
@@ -123,11 +124,8 @@ function updateAvatar(email) {
 // Logout al hacer click en el avatar
 document.querySelector('.user-avatar')?.addEventListener('click', async () => {
   if (!supabase) return;
-  const { data: { session } } = await supabase.auth.getSession();
-  if (session) {
-    const ok = confirm('¿Cerrar sesión?');
-    if (ok) await supabase.auth.signOut();
-  }
+  const ok = confirm('¿Cerrar sesión?');
+  if (ok) await supabase.auth.signOut();
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────

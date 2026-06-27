@@ -422,3 +422,10 @@ if (catalogGrid) {
   renderCatalog();
   renderCart();
 })();
+
+window.addEventListener('upymarket:signed-in', async () => {
+  if (productos.length === 0) {
+    productos = await cargarProductos();
+    renderCatalog();
+  }
+});
