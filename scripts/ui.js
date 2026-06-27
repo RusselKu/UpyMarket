@@ -1,5 +1,5 @@
-import { cargarProductos } from './supabaseClient.js';
-import { trackView, trackAddToCart, trackPurchase } from './telemetry.js';
+import { cargarProductos } from './supabaseClient.js?v=3.2';
+import { trackView, trackAddToCart, trackPurchase } from './telemetry.js?v=3.2';
 
 let productos = [];
 let activeFilter = 'all';
@@ -419,7 +419,11 @@ if (catalogGrid) {
 }
 (async () => {
   productos = await cargarProductos();
-  renderCatalog();
+  if (productos.length === 0 && catalogGrid) {
+    catalogGrid.innerHTML = '<p class="no-results" style="grid-column:1/-1;text-align:center;padding:3rem 1rem">No se pudieron cargar los productos. Verifica tu conexión o intenta más tarde.</p>';
+  } else {
+    renderCatalog();
+  }
   renderCart();
 })();
 

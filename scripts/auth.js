@@ -1,4 +1,4 @@
-import { supabase, insertarPerfil } from './supabaseClient.js';
+import { supabase, insertarPerfil } from './supabaseClient.js?v=3.2';
 
 const DOMAIN = '@upy.edu.mx';
 
@@ -125,7 +125,16 @@ function updateAvatar(email) {
 document.querySelector('.user-avatar')?.addEventListener('click', async () => {
   if (!supabase) return;
   const ok = confirm('¿Cerrar sesión?');
-  if (ok) await supabase.auth.signOut();
+  if (!ok) return;
+  try {
+    await Promise.race([
+      supabase.auth.signOut(),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000)),
+    ]);
+  } catch {
+    // signOut tardó demasiado o falló — reload de todas formas
+  }
+  window.location.reload();
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────

@@ -1,4 +1,4 @@
-import { supabase, insertarTelemetria } from './supabaseClient.js';
+import { supabase, insertarTelemetria } from './supabaseClient.js?v=3.2';
 
 let productViewStart     = null;
 let currentViewProductId = null;

@@ -12,12 +12,20 @@ if (!supabase) {
 
 export async function cargarProductos() {
   if (!supabase) return [];
-  const { data, error } = await supabase
-    .from('catalogo_productos')
-    .select('*')
-    .order('id');
-  if (error) { console.warn('[UpyMarket] Error cargando productos:', error.message); return []; }
-  return (data || []).map(p => ({ ...p, categoria: p.categoria_general }));
+  try {
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 8000)
+    );
+    const { data, error } = await Promise.race([
+      supabase.from('catalogo_productos').select('*').order('id'),
+      timeout,
+    ]);
+    if (error) { console.warn('[UpyMarket] Error cargando productos:', error.message); return []; }
+    return (data || []).map(p => ({ ...p, categoria: p.categoria_general }));
+  } catch (err) {
+    console.warn('[UpyMarket] No se pudo conectar a Supabase:', err.message);
+    return [];
+  }
 }
 
 export async function insertarPerfil(userId, carrera, genero) {
