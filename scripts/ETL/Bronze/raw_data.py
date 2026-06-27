@@ -11,9 +11,33 @@ Equipo: Arquitectura de Base de Datos y Seguridad
 """
 
 import os
-from supabase import create_client, Client
-import pandas as pd
 from datetime import datetime
+from pathlib import Path
+
+import pandas as pd
+from supabase import Client, create_client
+
+
+ROOT_DIR = Path(__file__).resolve().parents[3]
+LOCAL_ENV_FILE = ROOT_DIR / '.env'
+
+
+def load_local_env(env_path: Path = LOCAL_ENV_FILE) -> None:
+    """Carga variables de entorno desde un archivo .env local si existe."""
+    if not env_path.exists():
+        return
+
+    for raw_line in env_path.read_text(encoding='utf-8').splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+
+        key, value = line.split('=', 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+
+        if key and key not in os.environ:
+            os.environ[key] = value
 
 
 # ============================================
@@ -30,11 +54,15 @@ def get_supabase_client() -> Client:
         - SUPABASE_URL: URL del proyecto
         - SUPABASE_KEY: API Key (anon/public)
     """
-    url = os.environ.get("SUPABASE_URL")
-    key = os.environ.get("SUPABASE_KEY")
+    load_local_env()
+
+    url = os.environ.get("SUPABASE_URL") or os.environ.get("UPYSTORE_SUPABASE_URL")
+    key = os.environ.get("SUPABASE_KEY") or os.environ.get("UPYSTORE_SUPABASE_ANON_KEY")
     
     if not url or not key:
-        raise ValueError("Faltan credenciales de Supabase en variables de entorno")
+        raise ValueError(
+            "Faltan credenciales de Supabase. Define SUPABASE_URL y SUPABASE_KEY en .env o en el entorno."
+        )
     
     supabase: Client = create_client(url, key)
     return supabase
