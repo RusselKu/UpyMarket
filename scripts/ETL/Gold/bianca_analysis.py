@@ -49,6 +49,7 @@ from scipy.stats import chi2_contingency
 ROOT_DIR = Path(__file__).resolve().parents[3]
 CHARTS_DIR = ROOT_DIR / "charts"
 REPORT_PATH = ROOT_DIR / "db" / "statistical_report_bianca.md"  # archivo propio, no compartido
+CSV_PATH = ROOT_DIR / "db" / "resultados_p6_bianca.csv"  # export local, no se manda a la DB
 CHART_FILENAME = "compras_por_genero.png"
 
 ALPHA = 0.05  # Nivel de significancia (95% de confianza)
@@ -262,7 +263,47 @@ def generar_grafico_compras_genero(resumen: pd.DataFrame, output_path: Path = No
 
 
 # ============================================
-# 6) REPORTE ESTADÍSTICO PROPIO (ARCHIVO INDIVIDUAL)
+# 6) EXPORT A CSV (SOLO DISCO LOCAL, NO DB)
+# ============================================
+def exportar_csv_local(resultado: dict, csv_path: Path = CSV_PATH) -> Path:
+    """
+    Exporta los resultados de P6 a un archivo CSV en disco local. Esto es
+    solo un archivo de texto en tu computadora/repositorio: no involucra
+    ninguna conexión ni escritura a Supabase ni a ninguna base de datos.
+
+    Guarda dos bloques en el mismo CSV:
+        1. El resumen de compras por género (con porcentaje).
+        2. La tabla de contingencia usada en la prueba de Chi-cuadrado.
+
+    Args:
+        resultado: Diccionario retornado por pregunta_6_compras_genero.
+        csv_path: Ruta local donde guardar el CSV.
+
+    Returns:
+        Path del archivo CSV generado.
+    """
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+    resumen = resultado["resumen"].copy()
+    tabla = resultado["tabla_contingencia"].reset_index()
+
+    with open(csv_path, "w", encoding="utf-8", newline="") as f:
+        f.write("# Resumen: compras por genero\n")
+        resumen.to_csv(f, index=False)
+        f.write("\n# Tabla de contingencia (purchase vs no_purchase)\n")
+        tabla.to_csv(f, index=False)
+        f.write("\n# Prueba estadistica\n")
+        f.write(f"chi2_statistic,{resultado['chi2_statistic']}\n")
+        f.write(f"p_value,{resultado['p_value']}\n")
+        f.write(f"grados_libertad,{resultado['grados_libertad']}\n")
+        f.write(f"alpha,{resultado['alpha']}\n")
+
+    print(f"  ✓ CSV local guardado en: {csv_path}")
+    return csv_path
+
+
+# ============================================
+# 7) REPORTE ESTADÍSTICO PROPIO (ARCHIVO INDIVIDUAL)
 # ============================================
 def generar_reporte_bianca(resultado: dict, report_path: Path = REPORT_PATH) -> Path:
     """
@@ -369,8 +410,9 @@ def run_bianca_analysis() -> dict:
     print("\n[3/4] Calculando P6: Compras por género...")
     resultado = pregunta_6_compras_genero(df_local)
 
-    print("\n[4/4] Generando gráfico y reporte individual...")
+    print("\n[4/4] Generando gráfico, CSV y reporte individual (todo local)...")
     chart_path = generar_grafico_compras_genero(resultado["resumen"])
+    csv_path = exportar_csv_local(resultado)
     report_path = generar_reporte_bianca(resultado)
 
     print("\n" + "=" * 50)
@@ -381,6 +423,7 @@ def run_bianca_analysis() -> dict:
     print(resultado["conclusion"])
 
     resultado["chart_path"] = chart_path
+    resultado["csv_path"] = csv_path
     resultado["report_path"] = report_path
     return resultado
 
@@ -389,4 +432,4 @@ def run_bianca_analysis() -> dict:
 # EJECUCIÓN
 # ============================================
 if __name__ == "__main__":
-    resultado_p6 = run_bianca_analysis()    
+    resultado_p6 = run_bianca_analysis()
