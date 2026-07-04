@@ -1,0 +1,78 @@
+2026-07-03 15:30:18,426 - INFO - Pipeline logging environment initialized.
+2026-07-03 15:30:18,455 - INFO - Starting Bronze Stage: Data Extraction...
+2026-07-03 15:30:18,794 - INFO - Successfully connected to Supabase client.
+2026-07-03 15:30:18,795 - INFO - Extracting raw data from table: usuarios_sesion...
+2026-07-03 15:30:20,251 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/usuarios_sesion?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:30:20,257 - INFO - ✓ Extracted 12 rows from 'usuarios_sesion'.
+2026-07-03 15:30:20,258 - INFO - Extracting raw data from table: catalogo_productos...
+2026-07-03 15:30:20,514 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/catalogo_productos?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:30:20,521 - INFO - ✓ Extracted 46 rows from 'catalogo_productos'.
+2026-07-03 15:30:20,523 - INFO - Extracting raw data from table: interacciones_telemetria...
+2026-07-03 15:30:20,736 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/interacciones_telemetria?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:30:20,762 - INFO - ✓ Extracted 116 rows from 'interacciones_telemetria'.
+2026-07-03 15:30:20,765 - INFO - Bronze Stage completed successfully.
+2026-07-03 15:30:20,769 - INFO - Starting Silver Stage: Data Cleansing & Transformation...
+2026-07-03 15:30:20,796 - INFO - Cleaned 'usuarios_sesion': 12 rows remaining.
+2026-07-03 15:30:20,799 - INFO - Cleaned 'catalogo_productos': 46 rows remaining.
+2026-07-03 15:30:20,805 - INFO - ✓ Outliers removed from 'dwell_time_segundos': 2 rows. (Range: -0.46s - 4.23s)
+2026-07-03 15:30:20,806 - INFO - ✓ Referential integrity checked. Removed 47 telemetry events.
+2026-07-03 15:30:20,807 - INFO - Cleaned 'interacciones_telemetria': 67 rows remaining.
+2026-07-03 15:30:20,813 - INFO - ✓ Enriched dataset created successfully: 67 rows.
+2026-07-03 15:30:20,813 - INFO - Starting Gold Stage: Data Augmentation & Gold Layer Generation...
+2026-07-03 15:30:20,815 - INFO - Identified 6 laptops with dedicated GPUs: ['ASUS TUF Gaming A15 (RTX 4060)', 'Lenovo Legion 5 Gen 9 (RTX 4070)', 'MSI Thin GF63 (RTX 4050)', 'Acer Nitro 5 (RTX 4060 Ti)', 'HP Victus 16 (RTX 3050 Ti)', 'Gigabyte G5 KF (RTX 4060)']
+2026-07-03 15:30:20,816 - INFO - Found 1 real telemetry view events for GPU laptops.
+2026-07-03 15:30:20,817 - INFO - Group 1 (Data Engineering): 1 real records. Augmenting 179 synthetic rows.
+2026-07-03 15:30:20,817 - INFO - Group 2 (Other Majors):     0 real records. Augmenting 180 synthetic rows.
+2026-07-03 15:30:20,845 - INFO - ✓ Gold Stage Complete: Saved analytical dataset with 360 records.
+2026-07-03 15:34:26,309 - INFO - Pipeline logging environment initialized.
+2026-07-03 15:35:15,447 - INFO - Starting Bronze Stage: Data Extraction...
+2026-07-03 15:35:15,834 - INFO - Successfully connected to Supabase client.
+2026-07-03 15:35:15,835 - INFO - Extracting raw data from table: usuarios_sesion...
+2026-07-03 15:35:16,949 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/usuarios_sesion?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:35:16,958 - INFO - ✓ Extracted 12 rows from 'usuarios_sesion'.
+2026-07-03 15:35:16,959 - INFO - Extracting raw data from table: catalogo_productos...
+2026-07-03 15:35:17,084 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/catalogo_productos?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:35:17,092 - INFO - ✓ Extracted 46 rows from 'catalogo_productos'.
+2026-07-03 15:35:17,094 - INFO - Extracting raw data from table: interacciones_telemetria...
+2026-07-03 15:35:17,204 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/interacciones_telemetria?select=%2A "HTTP/2 200 OK"
+2026-07-03 15:35:17,208 - INFO - ✓ Extracted 116 rows from 'interacciones_telemetria'.
+2026-07-03 15:35:17,209 - INFO - Bronze Stage completed successfully.
+2026-07-03 15:35:17,209 - INFO - Starting Silver Stage: Data Cleansing & Transformation...
+2026-07-03 15:35:17,229 - INFO - Cleaned 'usuarios_sesion': 12 rows remaining.
+2026-07-03 15:35:17,231 - INFO - Cleaned 'catalogo_productos': 46 rows remaining.
+2026-07-03 15:35:17,238 - INFO - ✓ Outliers removed from 'dwell_time_segundos': 2 rows. (Range: -0.46s - 4.23s)
+2026-07-03 15:35:17,239 - INFO - ✓ Referential integrity checked. Removed 47 telemetry events.
+2026-07-03 15:35:17,240 - INFO - Cleaned 'interacciones_telemetria': 67 rows remaining.
+2026-07-03 15:35:17,246 - INFO - ✓ Enriched dataset created successfully: 67 rows.
+2026-07-03 15:35:17,247 - INFO - Starting Gold Stage: Data Augmentation & Gold Layer Generation...
+2026-07-03 15:35:17,249 - INFO - Identified 6 laptops with dedicated GPUs: ['ASUS TUF Gaming A15 (RTX 4060)', 'Lenovo Legion 5 Gen 9 (RTX 4070)', 'MSI Thin GF63 (RTX 4050)', 'Acer Nitro 5 (RTX 4060 Ti)', 'HP Victus 16 (RTX 3050 Ti)', 'Gigabyte G5 KF (RTX 4060)']
+2026-07-03 15:35:17,251 - INFO - Found 1 real telemetry view events for GPU laptops.
+2026-07-03 15:35:17,252 - INFO - Group 1 (Data Engineering): 1 real records. Augmenting 179 synthetic rows.
+2026-07-03 15:35:17,253 - INFO - Group 2 (Other Majors):     0 real records. Augmenting 180 synthetic rows.
+2026-07-03 15:35:17,282 - INFO - ✓ Gold Stage Complete: Saved analytical dataset with 360 records.
+2026-07-03 18:03:03,496 - INFO - Pipeline logging environment initialized.
+2026-07-03 18:03:03,588 - INFO - Starting Bronze Stage: Data Extraction...
+2026-07-03 18:03:04,056 - INFO - Successfully connected to Supabase client.
+2026-07-03 18:03:04,057 - INFO - Extracting raw data from table: usuarios_sesion...
+2026-07-03 18:03:04,636 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/usuarios_sesion?select=%2A "HTTP/2 200 OK"
+2026-07-03 18:03:04,649 - INFO - ✓ Extracted 12 rows from 'usuarios_sesion'.
+2026-07-03 18:03:04,650 - INFO - Extracting raw data from table: catalogo_productos...
+2026-07-03 18:03:04,751 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/catalogo_productos?select=%2A "HTTP/2 200 OK"
+2026-07-03 18:03:04,764 - INFO - ✓ Extracted 46 rows from 'catalogo_productos'.
+2026-07-03 18:03:04,764 - INFO - Extracting raw data from table: interacciones_telemetria...
+2026-07-03 18:03:04,864 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/interacciones_telemetria?select=%2A "HTTP/2 200 OK"
+2026-07-03 18:03:04,868 - INFO - ✓ Extracted 116 rows from 'interacciones_telemetria'.
+2026-07-03 18:03:04,869 - INFO - Bronze Stage completed successfully.
+2026-07-03 18:03:04,870 - INFO - Starting Silver Stage: Data Cleansing & Transformation...
+2026-07-03 18:03:04,888 - INFO - Cleaned 'usuarios_sesion': 12 rows remaining.
+2026-07-03 18:03:04,891 - INFO - Cleaned 'catalogo_productos': 46 rows remaining.
+2026-07-03 18:03:04,900 - INFO - ✓ Outliers removed from 'dwell_time_segundos': 2 rows. (Range: -0.46s - 4.23s)
+2026-07-03 18:03:04,901 - INFO - ✓ Referential integrity checked. Removed 47 telemetry events.
+2026-07-03 18:03:04,901 - INFO - Cleaned 'interacciones_telemetria': 67 rows remaining.
+2026-07-03 18:03:04,909 - INFO - ✓ Enriched dataset created successfully: 67 rows.
+2026-07-03 18:03:04,910 - INFO - Starting Gold Stage: Data Augmentation & Gold Layer Generation...
+2026-07-03 18:03:04,913 - INFO - Identified 6 laptops with dedicated GPUs: ['ASUS TUF Gaming A15 (RTX 4060)', 'Lenovo Legion 5 Gen 9 (RTX 4070)', 'MSI Thin GF63 (RTX 4050)', 'Acer Nitro 5 (RTX 4060 Ti)', 'HP Victus 16 (RTX 3050 Ti)', 'Gigabyte G5 KF (RTX 4060)']
+2026-07-03 18:03:04,914 - INFO - Found 1 real telemetry view events for GPU laptops.
+2026-07-03 18:03:04,916 - INFO - Group 1 (Data Engineering): 1 real records. Augmenting 179 synthetic rows.
+2026-07-03 18:03:04,917 - INFO - Group 2 (Other Majors):     0 real records. Augmenting 180 synthetic rows.
+2026-07-03 18:03:04,962 - INFO - ✓ Gold Stage Complete: Saved analytical dataset with 360 records.

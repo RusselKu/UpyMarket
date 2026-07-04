@@ -1,0 +1,361 @@
+usuario_id,producto_id,tipo_evento,dwell_time_segundos,precio_pagado,metodo_pago,es_fin_de_semana,created_at,carrera,genero,nombre,categoria_general,tiene_gpu_dedicada,student_group
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p36,view,,,,False,2026-06-27 01:57:42.264360+00:00,Ingeniería en Datos e IA,Masculino,Gigabyte G5 KF (RTX 4060),Laptop,True,Data Engineering
+sim_de_8996,p28,view,19.89,,,False,2026-06-16 18:03:04.920332,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8339,p29,view,17.22,,,False,2026-06-19 18:03:04.922868,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2060,p30,view,20.52,,,False,2026-06-12 18:03:04.922868,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1699,p26,view,24.2,,,True,2026-06-04 18:03:04.922868,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7102,p26,view,16.82,,,False,2026-06-15 18:03:04.922868,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6854,p36,view,16.82,,,False,2026-06-25 18:03:04.922868,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8455,p36,view,24.43,,,False,2026-06-06 18:03:04.922868,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1784,p26,view,21.02,,,True,2026-06-11 18:03:04.922868,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6596,p27,view,15.83,,,False,2026-06-30 18:03:04.923881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9716,p29,view,20.08,,,False,2026-06-08 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3368,p36,view,15.85,,,False,2026-06-21 18:03:04.923881,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6919,p36,view,15.84,,,False,2026-06-07 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2148,p36,view,18.82,,,False,2026-06-11 18:03:04.923881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5777,p36,view,9.76,,,False,2026-06-22 18:03:04.923881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4124,p29,view,10.56,,,True,2026-06-28 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5869,p30,view,15.44,,,True,2026-06-18 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8079,p29,view,13.55,,,True,2026-06-15 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2693,p28,view,19.12,,,False,2026-06-14 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9932,p27,view,13.99,,,False,2026-06-10 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2931,p30,view,11.87,,,True,2026-06-07 18:03:04.923881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8805,p36,view,23.96,,,False,2026-06-25 18:03:04.923881,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4343,p30,view,16.85,,,False,2026-06-28 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9130,p29,view,18.08,,,False,2026-06-14 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3744,p30,view,11.82,,,True,2026-06-28 18:03:04.923881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3141,p36,view,15.51,,,False,2026-06-28 18:03:04.923881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7617,p30,view,18.27,,,False,2026-07-02 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5452,p27,view,12.97,,,False,2026-06-28 18:03:04.924883,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8390,p27,view,19.38,,,False,2026-06-07 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5611,p27,view,15.28,,,True,2026-06-06 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7833,p28,view,16.57,,,False,2026-07-02 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6732,p29,view,15.27,,,False,2026-07-02 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2066,p29,view,25.58,,,False,2026-06-21 18:03:04.924883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9945,p28,view,17.74,,,False,2026-06-07 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1417,p28,view,13.36,,,False,2026-06-29 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6745,p30,view,21.25,,,False,2026-06-09 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8164,p26,view,12.67,,,False,2026-06-28 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3786,p26,view,18.68,,,False,2026-06-29 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3143,p36,view,9.57,,,False,2026-06-21 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6644,p26,view,12.22,,,True,2026-06-16 18:03:04.924883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9787,p26,view,18.63,,,False,2026-06-06 18:03:04.924883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1395,p30,view,20.9,,,False,2026-06-21 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1717,p29,view,18.52,,,False,2026-06-18 18:03:04.925911,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8266,p29,view,17.31,,,False,2026-06-06 18:03:04.925911,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4636,p26,view,16.54,,,True,2026-06-12 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7541,p27,view,11.59,,,False,2026-06-10 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9010,p27,view,14.78,,,False,2026-06-24 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3539,p26,view,15.87,,,True,2026-06-26 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2191,p27,view,22.24,,,False,2026-06-06 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2540,p30,view,19.24,,,True,2026-06-14 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2365,p29,view,10.4,,,True,2026-06-26 18:03:04.925911,Ingeniería en Datos e IA,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4141,p29,view,19.16,,,True,2026-06-04 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5186,p27,view,16.18,,,False,2026-06-26 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5268,p30,view,14.96,,,False,2026-06-07 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9647,p30,view,20.37,,,False,2026-06-26 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1504,p29,view,22.13,,,False,2026-06-09 18:03:04.925911,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1133,p27,view,21.71,,,True,2026-06-20 18:03:04.925911,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5175,p36,view,14.28,,,False,2026-06-05 18:03:04.925911,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7190,p26,view,16.5,,,True,2026-06-18 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9053,p28,view,19.19,,,False,2026-06-08 18:03:04.926882,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2353,p36,view,21.9,,,False,2026-06-05 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7819,p27,view,15.79,,,False,2026-06-05 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5964,p26,view,17.02,,,False,2026-06-06 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8312,p26,view,13.15,,,False,2026-06-13 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1924,p30,view,12.78,,,False,2026-06-04 18:03:04.926882,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8026,p30,view,21.21,,,False,2026-07-01 18:03:04.926882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9989,p27,view,23.5,,,False,2026-06-28 18:03:04.926882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3193,p26,view,17.5,,,False,2026-06-07 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4925,p28,view,22.01,,,False,2026-06-20 18:03:04.926882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8266,p26,view,19.32,,,True,2026-06-10 18:03:04.926882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3000,p30,view,15.09,,,False,2026-06-27 18:03:04.927880,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8190,p30,view,19.32,,,False,2026-06-23 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8245,p26,view,24.26,,,True,2026-06-14 18:03:04.927880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8939,p36,view,17.65,,,False,2026-06-25 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4419,p27,view,24.37,,,False,2026-06-11 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5363,p26,view,6.8,,,False,2026-06-28 18:03:04.927880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5858,p26,view,21.25,,,False,2026-06-18 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2252,p30,view,18.17,,,False,2026-06-22 18:03:04.927880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7881,p36,view,16.54,,,False,2026-06-15 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8002,p28,view,18.19,,,False,2026-06-13 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8648,p29,view,9.45,,,False,2026-06-23 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3180,p30,view,16.88,,,True,2026-06-09 18:03:04.927880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3832,p29,view,19.3,,,True,2026-06-28 18:03:04.927880,Ingeniería en Datos e IA,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6569,p30,view,24.01,,,True,2026-06-22 18:03:04.927880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2906,p26,view,15.62,,,False,2026-06-17 18:03:04.927880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7031,p29,view,14.4,,,True,2026-06-09 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2887,p28,view,15.69,,,False,2026-06-15 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8570,p30,view,21.64,,,True,2026-06-05 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7677,p30,view,19.18,,,False,2026-06-28 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3393,p36,view,15.58,,,False,2026-06-19 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8240,p27,view,19.96,,,False,2026-06-08 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7493,p28,view,18.21,,,False,2026-06-04 18:03:04.928880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2276,p29,view,21.87,,,True,2026-06-09 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9150,p36,view,14.85,,,False,2026-06-20 18:03:04.928880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6126,p28,view,16.42,,,False,2026-06-19 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2531,p30,view,16.15,,,False,2026-06-27 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4086,p26,view,11.65,,,False,2026-06-05 18:03:04.928880,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2976,p26,view,19.04,,,True,2026-06-07 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5632,p26,view,18.9,,,False,2026-06-08 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9258,p26,view,17.82,,,False,2026-06-18 18:03:04.928880,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8943,p26,view,16.81,,,False,2026-06-23 18:03:04.929881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3739,p27,view,11.86,,,False,2026-06-06 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1876,p36,view,16.03,,,False,2026-07-02 18:03:04.929881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2733,p36,view,16.36,,,True,2026-06-29 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4517,p36,view,14.43,,,False,2026-06-09 18:03:04.929881,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9434,p30,view,17.12,,,False,2026-06-27 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9195,p36,view,19.5,,,False,2026-06-09 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6560,p27,view,25.72,,,False,2026-06-25 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7316,p29,view,18.53,,,True,2026-06-07 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9915,p26,view,18.88,,,False,2026-06-21 18:03:04.929881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7233,p36,view,17.49,,,False,2026-06-28 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7988,p28,view,9.74,,,False,2026-06-27 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1009,p30,view,17.69,,,True,2026-06-21 18:03:04.929881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6287,p27,view,18.05,,,True,2026-06-28 18:03:04.929881,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3824,p28,view,28.15,,,False,2026-06-27 18:03:04.929881,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8984,p30,view,16.99,,,False,2026-06-21 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2908,p28,view,19.07,,,False,2026-06-21 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3560,p36,view,17.65,,,True,2026-06-04 18:03:04.930900,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7413,p29,view,12.89,,,True,2026-06-12 18:03:04.930900,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3898,p28,view,22.6,,,False,2026-06-29 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2065,p26,view,20.96,,,False,2026-06-25 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7943,p28,view,21.12,,,False,2026-07-02 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3190,p26,view,13.98,,,True,2026-07-02 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5033,p36,view,23.69,,,True,2026-06-25 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2970,p36,view,11.91,,,False,2026-06-26 18:03:04.930900,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6567,p29,view,20.26,,,False,2026-06-04 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9669,p28,view,27.0,,,False,2026-06-27 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1950,p26,view,13.64,,,True,2026-06-11 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5612,p28,view,15.42,,,False,2026-06-11 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8326,p29,view,18.22,,,False,2026-06-13 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4228,p30,view,15.69,,,False,2026-06-29 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5225,p28,view,11.29,,,False,2026-06-14 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1793,p28,view,18.09,,,False,2026-06-13 18:03:04.931883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7166,p27,view,13.34,,,False,2026-06-21 18:03:04.931883,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8783,p36,view,19.79,,,True,2026-07-02 18:03:04.931883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1827,p28,view,13.94,,,False,2026-06-29 18:03:04.931883,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4876,p27,view,24.31,,,False,2026-06-07 18:03:04.931883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5146,p30,view,14.51,,,True,2026-06-24 18:03:04.931883,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2792,p36,view,16.45,,,True,2026-06-07 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4030,p26,view,21.22,,,False,2026-06-11 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6031,p30,view,12.63,,,False,2026-06-12 18:03:04.931883,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_4507,p26,view,18.76,,,True,2026-06-24 18:03:04.931883,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1536,p27,view,23.29,,,False,2026-07-01 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9666,p27,view,11.05,,,False,2026-06-22 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2205,p26,view,18.58,,,False,2026-06-27 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7320,p30,view,18.89,,,False,2026-06-11 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6588,p26,view,21.08,,,True,2026-06-13 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5243,p36,view,12.6,,,False,2026-06-04 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5422,p26,view,12.25,,,False,2026-06-10 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1951,p28,view,19.99,,,False,2026-06-04 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9477,p28,view,19.05,,,True,2026-06-19 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7645,p29,view,18.85,,,False,2026-06-27 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7016,p30,view,19.26,,,True,2026-06-30 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2481,p28,view,14.94,,,False,2026-06-05 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1054,p29,view,18.78,,,False,2026-06-26 18:03:04.932882,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1832,p26,view,19.03,,,True,2026-06-09 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9519,p36,view,14.8,,,False,2026-06-28 18:03:04.932882,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8776,p29,view,25.64,,,True,2026-07-01 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6207,p36,view,19.79,,,False,2026-06-19 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5547,p29,view,12.8,,,False,2026-06-12 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1822,p27,view,20.56,,,True,2026-06-26 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5242,p30,view,13.71,,,False,2026-06-04 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9705,p26,view,21.11,,,False,2026-06-13 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2409,p28,view,22.67,,,False,2026-06-21 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_1804,p36,view,14.35,,,False,2026-06-24 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8083,p28,view,21.85,,,False,2026-06-11 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3679,p28,view,19.53,,,False,2026-06-16 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3573,p26,view,21.25,,,False,2026-06-20 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8368,p36,view,25.77,,,False,2026-06-19 18:03:04.933937,Ingeniería en Datos e IA,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9633,p30,view,16.77,,,True,2026-06-10 18:03:04.933937,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7981,p27,view,14.63,,,False,2026-06-23 18:03:04.934940,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8184,p30,view,14.06,,,False,2026-06-07 18:03:04.934940,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_9041,p36,view,14.37,,,True,2026-06-08 18:03:04.934940,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5263,p27,view,17.48,,,False,2026-06-08 18:03:04.934940,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_3969,p30,view,19.23,,,False,2026-06-07 18:03:04.934940,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_5225,p29,view,18.96,,,False,2026-07-02 18:03:04.934940,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_6490,p27,view,21.27,,,True,2026-06-22 18:03:04.934940,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_8679,p29,view,17.85,,,False,2026-06-26 18:03:04.934940,Ingeniería en Datos e IA,Masculino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_2333,p27,view,23.9,,,False,2026-06-09 18:03:04.934940,Ingeniería en Datos e IA,No binario,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_de_7212,p26,view,16.69,,,False,2026-06-18 18:03:04.934940,Ingeniería en Datos e IA,Femenino,Simulated GPU Laptop View,Laptop,True,Data Engineering
+sim_oth_4093,p28,view,21.89,,,False,2026-06-16 18:03:04.934940,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1988,p30,view,10.03,,,False,2026-06-28 18:03:04.935945,Ingeniería en Sistemas Embebidos Computacionales,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2682,p26,view,12.54,,,False,2026-06-06 18:03:04.935945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1933,p27,view,21.32,,,True,2026-06-16 18:03:04.935945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6390,p29,view,11.75,,,False,2026-06-25 18:03:04.935945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4676,p30,view,16.24,,,True,2026-06-06 18:03:04.935945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7342,p28,view,9.57,,,False,2026-06-21 18:03:04.935945,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5473,p28,view,11.97,,,True,2026-06-18 18:03:04.935945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2875,p29,view,18.47,,,False,2026-06-17 18:03:04.935945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6109,p30,view,9.84,,,False,2026-06-09 18:03:04.935945,Ingeniería en Sistemas Embebidos Computacionales,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5167,p30,view,18.62,,,True,2026-06-15 18:03:04.936946,Ingeniería en Robótica Computacional,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9357,p28,view,14.65,,,False,2026-07-02 18:03:04.936946,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1778,p36,view,10.08,,,False,2026-06-24 18:03:04.936946,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4117,p36,view,14.38,,,False,2026-06-13 18:03:04.936946,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7047,p27,view,15.6,,,False,2026-07-01 18:03:04.936946,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2949,p26,view,14.34,,,False,2026-06-07 18:03:04.936946,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8014,p27,view,6.45,,,False,2026-06-15 18:03:04.936946,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9619,p26,view,9.48,,,False,2026-06-04 18:03:04.936946,Ingeniería en Sistemas Embebidos Computacionales,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3056,p36,view,11.21,,,False,2026-06-24 18:03:04.936946,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4911,p27,view,11.83,,,False,2026-06-13 18:03:04.936946,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3430,p28,view,14.33,,,False,2026-06-29 18:03:04.936946,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9601,p28,view,12.74,,,True,2026-06-05 18:03:04.936946,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8179,p29,view,7.29,,,True,2026-06-20 18:03:04.937945,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4638,p36,view,13.47,,,False,2026-06-25 18:03:04.937945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5790,p28,view,14.3,,,True,2026-06-27 18:03:04.937945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5644,p26,view,14.12,,,False,2026-06-05 18:03:04.937945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7236,p36,view,15.99,,,True,2026-07-02 18:03:04.937945,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8005,p30,view,15.1,,,False,2026-06-04 18:03:04.937945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4453,p29,view,13.75,,,False,2026-06-15 18:03:04.937945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7563,p27,view,11.85,,,False,2026-06-29 18:03:04.937945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2394,p27,view,6.12,,,False,2026-06-21 18:03:04.937945,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3958,p26,view,13.65,,,True,2026-06-25 18:03:04.937945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1525,p36,view,12.85,,,False,2026-06-28 18:03:04.937945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5648,p36,view,13.08,,,True,2026-06-04 18:03:04.937945,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3278,p26,view,7.5,,,False,2026-06-26 18:03:04.937945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9219,p27,view,8.21,,,False,2026-06-28 18:03:04.937945,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5555,p29,view,15.89,,,False,2026-06-18 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1629,p36,view,11.96,,,False,2026-06-04 18:03:04.938944,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4432,p26,view,14.55,,,False,2026-06-25 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1575,p36,view,12.2,,,True,2026-06-08 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7116,p29,view,12.21,,,False,2026-06-16 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1619,p28,view,15.48,,,True,2026-06-15 18:03:04.938944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1281,p30,view,10.24,,,False,2026-06-30 18:03:04.938944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6178,p30,view,12.45,,,True,2026-06-14 18:03:04.938944,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9467,p30,view,10.44,,,False,2026-06-06 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8473,p30,view,10.54,,,False,2026-06-09 18:03:04.938944,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8595,p36,view,10.99,,,True,2026-06-20 18:03:04.938944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5470,p27,view,12.9,,,True,2026-06-10 18:03:04.939943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5612,p36,view,10.38,,,False,2026-07-02 18:03:04.939943,Ingeniería en Sistemas Embebidos Computacionales,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7089,p36,view,16.62,,,False,2026-06-16 18:03:04.939943,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1986,p26,view,8.88,,,False,2026-07-02 18:03:04.939943,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4124,p30,view,11.43,,,False,2026-06-05 18:03:04.939943,Ingeniería en Robótica Computacional,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9133,p26,view,10.52,,,False,2026-06-08 18:03:04.939943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4230,p26,view,17.31,,,True,2026-07-01 18:03:04.939943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2667,p36,view,12.81,,,False,2026-07-01 18:03:04.939943,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2388,p28,view,15.81,,,False,2026-06-11 18:03:04.939943,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4726,p26,view,6.75,,,False,2026-06-26 18:03:04.939943,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3875,p30,view,13.06,,,False,2026-06-16 18:03:04.939943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8010,p36,view,15.3,,,False,2026-07-01 18:03:04.939943,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7228,p27,view,12.4,,,False,2026-07-01 18:03:04.940943,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2177,p26,view,15.94,,,False,2026-07-01 18:03:04.940943,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9234,p36,view,10.24,,,False,2026-06-21 18:03:04.940943,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9212,p28,view,17.17,,,True,2026-06-18 18:03:04.940943,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7936,p29,view,20.38,,,False,2026-06-18 18:03:04.940943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5882,p27,view,10.79,,,True,2026-06-29 18:03:04.940943,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4610,p30,view,10.5,,,False,2026-06-30 18:03:04.940943,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7787,p27,view,17.33,,,True,2026-06-22 18:03:04.940943,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8052,p26,view,17.79,,,False,2026-06-23 18:03:04.940943,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6291,p30,view,10.22,,,False,2026-06-06 18:03:04.940943,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8285,p30,view,10.59,,,False,2026-06-24 18:03:04.940943,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1009,p27,view,11.09,,,False,2026-06-23 18:03:04.940943,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2316,p29,view,7.26,,,False,2026-06-14 18:03:04.941944,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1145,p28,view,8.79,,,False,2026-07-02 18:03:04.941944,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1482,p29,view,8.49,,,False,2026-06-10 18:03:04.941944,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3852,p28,view,9.34,,,False,2026-06-22 18:03:04.941944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2100,p30,view,11.98,,,True,2026-06-08 18:03:04.941944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5358,p30,view,12.94,,,False,2026-06-23 18:03:04.941944,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7602,p29,view,17.68,,,False,2026-06-29 18:03:04.941944,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7764,p36,view,8.51,,,False,2026-06-28 18:03:04.941944,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1072,p26,view,15.64,,,True,2026-06-24 18:03:04.941944,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7704,p29,view,11.33,,,True,2026-06-28 18:03:04.941944,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8397,p27,view,11.92,,,False,2026-06-21 18:03:04.942945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9533,p36,view,14.53,,,True,2026-06-21 18:03:04.942945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4874,p27,view,8.06,,,False,2026-06-13 18:03:04.942945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4374,p26,view,13.48,,,True,2026-06-23 18:03:04.942945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4083,p26,view,12.7,,,False,2026-06-25 18:03:04.942945,Ingeniería en Sistemas Embebidos Computacionales,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1236,p29,view,13.87,,,False,2026-06-11 18:03:04.942945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9555,p26,view,13.14,,,False,2026-06-12 18:03:04.942945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5895,p26,view,20.94,,,False,2026-06-21 18:03:04.942945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4725,p29,view,9.8,,,False,2026-06-15 18:03:04.942945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1340,p27,view,10.19,,,False,2026-06-24 18:03:04.942945,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6299,p36,view,9.86,,,False,2026-06-29 18:03:04.942945,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2442,p36,view,10.1,,,False,2026-06-11 18:03:04.942945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5107,p26,view,9.81,,,True,2026-06-15 18:03:04.942945,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8629,p36,view,16.38,,,True,2026-06-26 18:03:04.942945,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8842,p27,view,17.21,,,True,2026-06-30 18:03:04.942945,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7097,p27,view,10.05,,,False,2026-06-08 18:03:04.942945,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5259,p36,view,9.1,,,True,2026-06-17 18:03:04.944179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3530,p26,view,13.8,,,False,2026-06-20 18:03:04.944179,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3964,p27,view,10.11,,,False,2026-06-18 18:03:04.944179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8967,p29,view,14.38,,,False,2026-06-19 18:03:04.944179,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3494,p36,view,12.83,,,True,2026-06-22 18:03:04.944179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7610,p28,view,6.64,,,False,2026-07-01 18:03:04.944179,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7525,p28,view,17.67,,,False,2026-06-09 18:03:04.944179,Ingeniería en Sistemas Embebidos Computacionales,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6448,p29,view,18.57,,,False,2026-06-14 18:03:04.944179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7907,p26,view,9.89,,,False,2026-06-26 18:03:04.944179,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2403,p29,view,10.7,,,True,2026-06-29 18:03:04.944179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8870,p36,view,13.13,,,False,2026-06-30 18:03:04.944179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2549,p30,view,13.3,,,False,2026-06-28 18:03:04.944179,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8898,p30,view,14.47,,,True,2026-06-18 18:03:04.945178,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8993,p30,view,19.34,,,True,2026-06-12 18:03:04.945178,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8380,p30,view,11.46,,,False,2026-06-20 18:03:04.945178,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5795,p28,view,9.23,,,False,2026-06-13 18:03:04.945178,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6827,p27,view,7.13,,,False,2026-06-05 18:03:04.945178,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4493,p27,view,9.47,,,False,2026-06-20 18:03:04.945178,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1016,p26,view,11.98,,,False,2026-07-01 18:03:04.945178,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9433,p27,view,18.56,,,False,2026-06-25 18:03:04.945178,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1775,p28,view,10.24,,,False,2026-06-16 18:03:04.945178,Ingeniería en Sistemas Embebidos Computacionales,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4926,p30,view,12.91,,,True,2026-06-21 18:03:04.945178,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5940,p26,view,12.04,,,False,2026-07-02 18:03:04.945178,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8650,p26,view,16.38,,,False,2026-06-12 18:03:04.945178,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5531,p28,view,21.2,,,False,2026-06-05 18:03:04.946182,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9964,p36,view,10.19,,,False,2026-06-25 18:03:04.946182,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7511,p29,view,10.34,,,False,2026-06-25 18:03:04.946182,Ingeniería en Ciberseguridad,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2827,p36,view,15.86,,,False,2026-06-24 18:03:04.946182,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5285,p27,view,14.55,,,False,2026-06-29 18:03:04.946182,Ingeniería en Sistemas Embebidos Computacionales,Prefiero no decir,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1780,p30,view,18.75,,,False,2026-06-17 18:03:04.946182,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8569,p26,view,14.2,,,False,2026-06-06 18:03:04.946182,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8128,p27,view,10.81,,,False,2026-06-13 18:03:04.947182,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1685,p26,view,14.23,,,False,2026-06-30 18:03:04.947182,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_1038,p26,view,16.09,,,False,2026-06-18 18:03:04.947182,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8165,p30,view,15.05,,,False,2026-06-19 18:03:04.947182,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9789,p36,view,13.93,,,False,2026-06-11 18:03:04.947182,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5558,p29,view,15.94,,,False,2026-06-18 18:03:04.947182,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9652,p36,view,16.31,,,False,2026-06-04 18:03:04.947182,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9894,p36,view,17.08,,,False,2026-06-04 18:03:04.947182,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8295,p30,view,14.44,,,True,2026-06-23 18:03:04.947182,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7272,p29,view,11.5,,,False,2026-07-02 18:03:04.947182,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9033,p28,view,12.63,,,False,2026-06-12 18:03:04.947182,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3159,p30,view,16.44,,,False,2026-06-29 18:03:04.948179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9505,p36,view,9.16,,,False,2026-06-19 18:03:04.948179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8604,p26,view,13.43,,,False,2026-06-17 18:03:04.948179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6189,p28,view,10.68,,,False,2026-06-29 18:03:04.948179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2929,p36,view,12.2,,,False,2026-06-28 18:03:04.948179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3023,p30,view,16.7,,,True,2026-06-19 18:03:04.948179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3563,p30,view,12.79,,,False,2026-06-09 18:03:04.948179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7643,p29,view,12.27,,,True,2026-06-09 18:03:04.948179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4390,p36,view,7.2,,,True,2026-06-09 18:03:04.949180,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6433,p36,view,14.79,,,True,2026-06-29 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6469,p26,view,14.42,,,False,2026-06-15 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3810,p29,view,19.89,,,False,2026-06-22 18:03:04.949180,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2283,p29,view,10.99,,,False,2026-06-06 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3125,p29,view,12.89,,,False,2026-06-24 18:03:04.949180,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6624,p29,view,13.0,,,False,2026-06-15 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7397,p36,view,17.78,,,False,2026-06-16 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7900,p28,view,11.76,,,False,2026-06-19 18:03:04.949180,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8999,p30,view,13.1,,,False,2026-06-12 18:03:04.949180,Ingeniería en Robótica Computacional,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4331,p36,view,14.29,,,False,2026-06-15 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4384,p29,view,12.77,,,False,2026-06-11 18:03:04.949180,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5283,p26,view,10.49,,,False,2026-06-09 18:03:04.949180,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2431,p29,view,12.8,,,True,2026-06-11 18:03:04.949180,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4291,p36,view,15.97,,,True,2026-06-17 18:03:04.949180,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8896,p30,view,8.4,,,False,2026-06-24 18:03:04.949180,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3643,p27,view,12.58,,,False,2026-06-08 18:03:04.949180,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_5000,p28,view,9.58,,,False,2026-06-18 18:03:04.949180,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2171,p30,view,16.4,,,True,2026-06-21 18:03:04.950179,Ingeniería en Robótica Computacional,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3361,p30,view,6.62,,,False,2026-06-30 18:03:04.950179,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2938,p28,view,10.09,,,False,2026-06-21 18:03:04.950179,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7304,p27,view,13.46,,,False,2026-06-23 18:03:04.950179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4062,p26,view,17.74,,,False,2026-06-04 18:03:04.950179,Ingeniería en Ciberseguridad,No binario,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_8097,p28,view,11.86,,,True,2026-06-11 18:03:04.950179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2517,p36,view,10.1,,,False,2026-06-23 18:03:04.950179,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_4137,p27,view,18.87,,,False,2026-06-17 18:03:04.950179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_9535,p36,view,6.89,,,False,2026-06-23 18:03:04.950179,Ingeniería en Sistemas Embebidos Computacionales,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_2854,p26,view,4.18,,,True,2026-06-26 18:03:04.950179,Ingeniería en Ciberseguridad,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6774,p30,view,13.68,,,False,2026-06-13 18:03:04.950179,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_7823,p27,view,10.29,,,False,2026-06-16 18:03:04.950179,Ingeniería en Sistemas Embebidos Computacionales,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6879,p36,view,8.42,,,False,2026-06-21 18:03:04.950179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_3274,p36,view,14.65,,,False,2026-06-10 18:03:04.950179,Ingeniería en Ciberseguridad,Masculino,Simulated GPU Laptop View,Laptop,True,Other Majors
+sim_oth_6546,p28,view,12.98,,,False,2026-06-22 18:03:04.950179,Ingeniería en Robótica Computacional,Femenino,Simulated GPU Laptop View,Laptop,True,Other Majors
