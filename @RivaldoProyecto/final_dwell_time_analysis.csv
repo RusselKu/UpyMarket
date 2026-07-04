@@ -1,0 +1,504 @@
+usuario_id,producto_id,nombre,categoria_general,dwell_time_segundos,created_at
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p2,Microsoft Office 365 Estudiante,Académico,2.04,2026-06-22T23:52:30.609068+00:00
+2f07556d-dcc8-41a9-97eb-0f7ee27d8517,p3,Curso Python para Datos e IA,Académico,5.96,2026-06-26T23:35:15.999506+00:00
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p6,Curso Ethical Hacking & Pentesting,Académico,1.87,2026-06-27T01:46:46.731304+00:00
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,2.2,2026-06-27T01:57:30.218262+00:00
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,2.41,2026-06-27T01:57:35.410171+00:00
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p36,Gigabyte G5 KF (RTX 4060),Laptop,1.0,2026-06-27T01:57:43.266187+00:00
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p46,Custom UPY Sticker Pack,Other,1.3,2026-06-27T01:57:50.738073+00:00
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,1.17,2026-06-27T03:54:18.701924+00:00
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p14,Bocina Portátil JBL Go 4,Entretenimiento,0.69,2026-06-27T03:54:20.801332+00:00
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,1.5,2026-06-27T03:54:24.291149+00:00
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p21,ASUS VivoBook 15 (Intel Core i5 13ª gen),Laptop,2.42,2026-07-04T01:12:59.603461+00:00
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p26,ASUS TUF Gaming A15 (RTX 4060),Laptop,1.69,2026-07-04T01:20:51.351802+00:00
+8d9bd2be-d7c6-4e25-a519-1f17d4a1be03,p14,Bocina Portátil JBL Go 4,Entretenimiento,11.43,2026-07-03T19:45:06.798851
+8a0503fd-e748-458f-a448-fae6118cab68,p32,Servicio de Tutorías Express en Python,Académico,23.09,2026-07-03T19:45:06.798984
+200d8ff5-9ddd-4dc8-be16-68fdf0f190c4,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,13.01,2026-07-03T19:45:06.801964
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,32.05,2026-07-03T19:45:06.802336
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p3,Curso Python para Datos e IA,Académico,24.38,2026-07-03T19:45:06.805479
+5e30d627-978e-40d3-9434-061f1bdb9dd0,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,33.97,2026-07-03T19:45:06.805882
+7471abfa-3b26-4935-8b2a-2e6114c62006,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,19.38,2026-07-03T19:45:06.806073
+00053d71-61b5-4e25-98b1-ff51c970183f,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,36.31,2026-07-03T19:45:06.808077
+aae78ab2-827c-46a5-98fc-9ff73693e408,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,22.04,2026-07-03T19:45:06.808487
+7471abfa-3b26-4935-8b2a-2e6114c62006,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,24.01,2026-07-03T19:45:06.809463
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,21.28,2026-07-03T19:45:06.809735
+7d828498-5c47-4273-bf87-81fabde6249c,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,9.85,2026-07-03T19:45:06.811849
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,15.2,2026-07-03T19:45:06.811954
+d072afba-47d2-4bae-bae0-259991a3d61d,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,20.55,2026-07-03T19:45:06.814653
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p11,Certificación CompTIA Security+ (Prep),Académico,38.63,2026-07-03T19:45:06.815893
+b656218b-4117-44ee-9fe8-874ee323ef5e,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,19.21,2026-07-03T19:45:06.817445
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p11,Certificación CompTIA Security+ (Prep),Académico,13.69,2026-07-03T19:45:06.817729
+8ca66620-0589-4dbc-90a3-6c9cf502e934,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,33.44,2026-07-03T19:45:06.817820
+5ed70275-46c5-447d-ac0e-42b05eaa2c9e,p6,Curso Ethical Hacking & Pentesting,Académico,45.77,2026-07-03T19:45:06.818188
+449bf2ee-8814-4062-8eff-8e22e390b83d,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,15.31,2026-07-03T19:45:06.818279
+1643e104-6ab9-405f-bb2f-d875042372ac,p14,Bocina Portátil JBL Go 4,Entretenimiento,29.12,2026-07-03T19:45:06.818553
+2d2502a1-66f7-4554-b0c2-f20c03827115,p7,Kit Arduino Uno R4 Starter Pro,Académico,47.67,2026-07-03T19:45:06.818639
+19bb9a3c-1ecd-46ac-81d7-5d1d37f46519,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,13.22,2026-07-03T19:45:06.818920
+3ce352d3-4f92-4e38-9814-d5fbcaaf1056,p11,Certificación CompTIA Security+ (Prep),Académico,30.56,2026-07-03T19:45:06.819108
+870a1364-c0a4-4ef7-9336-d70814f44162,p6,Curso Ethical Hacking & Pentesting,Académico,12.53,2026-07-03T19:45:06.819202
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p3,Curso Python para Datos e IA,Académico,30.38,2026-07-03T19:45:06.819296
+a6c92b20-6513-4b00-92a2-abd949379ef3,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,26.11,2026-07-03T19:45:06.819787
+8d72a4d5-3806-4928-8364-3933a088a61d,p34,Combo Snack de Cafetería UPY,Entretenimiento,8.2,2026-07-03T19:45:06.820069
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,15.22,2026-07-03T19:45:06.820156
+4a479f49-513a-44e4-a57d-e08d25a2efb5,p2,Microsoft Office 365 Estudiante,Académico,43.28,2026-07-03T19:45:06.820248
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,27.41,2026-07-03T19:45:06.821444
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p1,Planner Académico Pro UPY,Académico,30.66,2026-07-03T19:45:06.821730
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p18,Silla Ergonómica de Escritorio,Entretenimiento,13.83,2026-07-03T19:45:06.821831
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,34.55,2026-07-03T19:45:06.822026
+556b55df-e496-465b-8a8f-290d83abe825,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,6.27,2026-07-03T19:45:06.822585
+2fb72db6-428e-4c3e-b786-88ed0676338f,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,10.49,2026-07-03T19:45:06.823084
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p11,Certificación CompTIA Security+ (Prep),Académico,17.08,2026-07-03T19:45:06.823365
+dc546edf-de51-45dc-8987-30f22afc8e46,p34,Combo Snack de Cafetería UPY,Entretenimiento,11.16,2026-07-03T19:45:06.823463
+8d72a4d5-3806-4928-8364-3933a088a61d,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,26.8,2026-07-03T19:45:06.823552
+82f5b55a-fe08-4b63-9799-302774d2a81e,p34,Combo Snack de Cafetería UPY,Entretenimiento,18.25,2026-07-03T19:45:06.823638
+47348f44-0a3c-4086-842b-325b011c7f99,p33,Canva Pro Estudiante (6 meses),Entretenimiento,17.56,2026-07-03T19:45:06.823928
+bc308847-7e42-489b-875f-bf48acbe60b4,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,20.68,2026-07-03T19:45:06.824033
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,18.17,2026-07-03T19:45:06.826330
+c6eaaa26-9676-482d-a3c1-6c84e983f93d,p34,Combo Snack de Cafetería UPY,Entretenimiento,26.25,2026-07-03T19:45:06.826526
+2fb72db6-428e-4c3e-b786-88ed0676338f,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,25.63,2026-07-03T19:45:06.826709
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p6,Curso Ethical Hacking & Pentesting,Académico,26.59,2026-07-03T19:45:06.826902
+eec88317-1719-49f9-b96a-acdbdc3714c6,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,35.97,2026-07-03T19:45:06.827002
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,20.57,2026-07-03T19:45:06.827275
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p3,Curso Python para Datos e IA,Académico,30.0,2026-07-03T19:45:06.828717
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p14,Bocina Portátil JBL Go 4,Entretenimiento,6.74,2026-07-03T19:45:06.828818
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p11,Certificación CompTIA Security+ (Prep),Académico,22.81,2026-07-03T19:45:06.828917
+b656218b-4117-44ee-9fe8-874ee323ef5e,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,20.48,2026-07-03T19:45:06.829122
+b017b8a2-93ea-4891-985d-0bfe4aa4ab40,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,40.43,2026-07-03T19:45:06.829214
+0d13e4a9-9b0b-4578-837d-afbf01bcf38a,p34,Combo Snack de Cafetería UPY,Entretenimiento,9.7,2026-07-03T19:45:06.830338
+8d9bd2be-d7c6-4e25-a519-1f17d4a1be03,p14,Bocina Portátil JBL Go 4,Entretenimiento,20.46,2026-07-03T19:45:06.830429
+d072afba-47d2-4bae-bae0-259991a3d61d,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,16.51,2026-07-03T19:45:06.830537
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,9.39,2026-07-03T19:45:06.832737
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,20.81,2026-07-03T19:45:06.832831
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p34,Combo Snack de Cafetería UPY,Entretenimiento,12.36,2026-07-03T19:45:06.832919
+a6c92b20-6513-4b00-92a2-abd949379ef3,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,11.75,2026-07-03T19:45:06.833295
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p1,Planner Académico Pro UPY,Académico,23.76,2026-07-03T19:45:06.835767
+06293d96-5920-4681-a67f-34a7d2d4d3b0,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,27.01,2026-07-03T19:45:06.835859
+cb6ce875-524c-496c-8d50-3897511daed9,p11,Certificación CompTIA Security+ (Prep),Académico,38.39,2026-07-03T19:45:06.835961
+3d1ecaca-0db7-4a82-90d1-400561534c7d,p1,Planner Académico Pro UPY,Académico,17.12,2026-07-03T19:45:06.837323
+6cee9e65-4294-4d7a-9979-023e13041c87,p14,Bocina Portátil JBL Go 4,Entretenimiento,10.17,2026-07-03T19:45:06.838289
+2ad6be97-3520-491b-9b73-9ba0565cc013,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,15.85,2026-07-03T19:45:06.838393
+464b9276-cbbe-4773-8a2e-cdf1d61e5755,p32,Servicio de Tutorías Express en Python,Académico,16.03,2026-07-03T19:45:06.838503
+a820ab21-7e63-4d16-9b8b-f6630cebc3ec,p33,Canva Pro Estudiante (6 meses),Entretenimiento,11.12,2026-07-03T19:45:06.838821
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,25.68,2026-07-03T19:45:06.839292
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,22.97,2026-07-03T19:45:06.840277
+b017b8a2-93ea-4891-985d-0bfe4aa4ab40,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,21.95,2026-07-03T19:45:06.840469
+77b19267-f330-4386-9673-0e374579775d,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,21.18,2026-07-03T19:45:06.840583
+b017b8a2-93ea-4891-985d-0bfe4aa4ab40,p2,Microsoft Office 365 Estudiante,Académico,15.03,2026-07-03T19:45:06.842842
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,15.77,2026-07-03T19:45:06.844902
+84d3fac4-f48d-4db9-bff2-2fd532149177,p11,Certificación CompTIA Security+ (Prep),Académico,26.85,2026-07-03T19:45:06.845184
+82f5b55a-fe08-4b63-9799-302774d2a81e,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,20.3,2026-07-03T19:45:06.845276
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,24.61,2026-07-03T19:45:06.845660
+43620b89-7966-4ee0-82a2-95cfb1bf0c9a,p14,Bocina Portátil JBL Go 4,Entretenimiento,11.27,2026-07-03T19:45:06.845945
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,15.0,2026-07-03T19:45:06.846148
+870a1364-c0a4-4ef7-9336-d70814f44162,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,10.01,2026-07-03T19:45:06.846245
+6581ae05-621c-4c91-98b3-f01607aa85fe,p11,Certificación CompTIA Security+ (Prep),Académico,22.11,2026-07-03T19:45:06.847385
+77b19267-f330-4386-9673-0e374579775d,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,18.22,2026-07-03T19:45:06.847482
+d072afba-47d2-4bae-bae0-259991a3d61d,p32,Servicio de Tutorías Express en Python,Académico,11.74,2026-07-03T19:45:06.847854
+aae78ab2-827c-46a5-98fc-9ff73693e408,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,11.14,2026-07-03T19:45:06.847951
+c6eaaa26-9676-482d-a3c1-6c84e983f93d,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,16.84,2026-07-03T19:45:06.848243
+0cba13c8-f9aa-4981-81ba-aa54ad587982,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,21.79,2026-07-03T19:45:06.848334
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,26.92,2026-07-03T19:45:06.848814
+5b0546da-18f7-4899-9e3f-8999bb18cfa5,p5,Curso Machine Learning con TensorFlow,Académico,29.81,2026-07-03T19:45:06.849274
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p14,Bocina Portátil JBL Go 4,Entretenimiento,12.98,2026-07-03T19:45:06.849924
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,40.81,2026-07-03T19:45:06.850116
+17835ff2-fdaf-4f7e-bb85-1b53bd1c20a9,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,32.89,2026-07-03T19:45:06.850223
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,14.68,2026-07-03T19:45:06.850802
+bab967b9-ca5a-472c-85c2-8209711a3b72,p6,Curso Ethical Hacking & Pentesting,Académico,26.03,2026-07-03T19:45:06.850888
+44352418-df28-4b8b-b79c-ab543ce76908,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,5.97,2026-07-03T19:45:06.850979
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p18,Silla Ergonómica de Escritorio,Entretenimiento,15.65,2026-07-03T19:45:06.852240
+77b19267-f330-4386-9673-0e374579775d,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,16.51,2026-07-03T19:45:06.852822
+782f5a9e-8ed4-44bc-b4e9-1c4f4f2bd4b6,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,30.27,2026-07-03T19:45:06.853192
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,16.83,2026-07-03T19:45:06.853570
+5ed70275-46c5-447d-ac0e-42b05eaa2c9e,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,15.59,2026-07-03T19:45:06.854706
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p5,Curso Machine Learning con TensorFlow,Académico,28.31,2026-07-03T19:45:06.857576
+f37195b0-17cc-4f7b-8708-c66fa34ae0b6,p6,Curso Ethical Hacking & Pentesting,Académico,13.87,2026-07-03T19:45:06.858104
+556b55df-e496-465b-8a8f-290d83abe825,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,24.57,2026-07-03T19:45:06.858198
+14c0b949-7f99-44b5-a7df-b33de0d60161,p33,Canva Pro Estudiante (6 meses),Entretenimiento,9.22,2026-07-03T19:45:06.859204
+00053d71-61b5-4e25-98b1-ff51c970183f,p11,Certificación CompTIA Security+ (Prep),Académico,24.85,2026-07-03T19:45:06.859487
+a79762cb-c823-41dc-b0de-48a7f3f51395,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,39.56,2026-07-03T19:45:06.859590
+bab967b9-ca5a-472c-85c2-8209711a3b72,p34,Combo Snack de Cafetería UPY,Entretenimiento,14.6,2026-07-03T19:45:06.860085
+5ed70275-46c5-447d-ac0e-42b05eaa2c9e,p5,Curso Machine Learning con TensorFlow,Académico,11.84,2026-07-03T19:45:06.862630
+2ad6be97-3520-491b-9b73-9ba0565cc013,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,33.86,2026-07-03T19:45:06.862867
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p14,Bocina Portátil JBL Go 4,Entretenimiento,9.76,2026-07-03T19:45:06.863449
+5ed70275-46c5-447d-ac0e-42b05eaa2c9e,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,27.07,2026-07-03T19:45:06.863559
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,36.82,2026-07-03T19:45:06.863896
+b6405e65-21ca-4482-b5ca-b5442557201c,p18,Silla Ergonómica de Escritorio,Entretenimiento,9.65,2026-07-03T19:45:06.864150
+2d2502a1-66f7-4554-b0c2-f20c03827115,p14,Bocina Portátil JBL Go 4,Entretenimiento,13.12,2026-07-03T19:45:06.864265
+556b55df-e496-465b-8a8f-290d83abe825,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,23.2,2026-07-03T19:45:06.864373
+c08ef652-e31d-4cf7-a236-fa79f1287114,p7,Kit Arduino Uno R4 Starter Pro,Académico,19.39,2026-07-03T19:45:06.864478
+2020648d-21ea-4ef9-a55e-33e0e3d14a2b,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,19.24,2026-07-03T19:45:06.864708
+55a0f2d5-a723-49ae-8f4c-5b01a4875b5d,p7,Kit Arduino Uno R4 Starter Pro,Académico,35.11,2026-07-03T19:45:06.864931
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,27.67,2026-07-03T19:45:06.865153
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p18,Silla Ergonómica de Escritorio,Entretenimiento,18.47,2026-07-03T19:45:06.865624
+a820ab21-7e63-4d16-9b8b-f6630cebc3ec,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,16.44,2026-07-03T19:45:06.865852
+782f5a9e-8ed4-44bc-b4e9-1c4f4f2bd4b6,p3,Curso Python para Datos e IA,Académico,31.78,2026-07-03T19:45:06.866071
+dc546edf-de51-45dc-8987-30f22afc8e46,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,25.58,2026-07-03T19:45:06.866294
+aae78ab2-827c-46a5-98fc-9ff73693e408,p1,Planner Académico Pro UPY,Académico,23.04,2026-07-03T19:45:06.866519
+f2f01ffd-d616-4fa7-bb7f-63d3767504f9,p18,Silla Ergonómica de Escritorio,Entretenimiento,21.45,2026-07-03T19:45:06.866745
+cde9b07e-451c-40a5-bbc4-b35b0242002c,p3,Curso Python para Datos e IA,Académico,13.1,2026-07-03T19:45:06.866856
+d072afba-47d2-4bae-bae0-259991a3d61d,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,14.79,2026-07-03T19:45:06.866975
+cb6ce875-524c-496c-8d50-3897511daed9,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,16.87,2026-07-03T19:45:06.867106
+394c5a0a-068c-486c-8431-824ab1a31546,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,12.4,2026-07-03T19:45:06.868482
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p18,Silla Ergonómica de Escritorio,Entretenimiento,18.3,2026-07-03T19:45:06.869103
+bc308847-7e42-489b-875f-bf48acbe60b4,p32,Servicio de Tutorías Express en Python,Académico,20.55,2026-07-03T19:45:06.869213
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p5,Curso Machine Learning con TensorFlow,Académico,28.3,2026-07-03T19:45:06.869345
+44352418-df28-4b8b-b79c-ab543ce76908,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,22.78,2026-07-03T19:45:06.869703
+89ec3d91-a6c9-4fa5-95f1-b3f7c9b418a1,p6,Curso Ethical Hacking & Pentesting,Académico,23.98,2026-07-03T19:45:06.869813
+cde9b07e-451c-40a5-bbc4-b35b0242002c,p18,Silla Ergonómica de Escritorio,Entretenimiento,7.67,2026-07-03T19:45:06.869933
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,11.04,2026-07-03T19:45:06.872620
+84d3fac4-f48d-4db9-bff2-2fd532149177,p14,Bocina Portátil JBL Go 4,Entretenimiento,17.07,2026-07-03T19:45:06.872816
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p3,Curso Python para Datos e IA,Académico,35.58,2026-07-03T19:45:06.872912
+7875c496-62c0-455c-aa72-6e53536a3a30,p14,Bocina Portátil JBL Go 4,Entretenimiento,14.73,2026-07-03T19:45:06.873016
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,19.71,2026-07-03T19:45:06.873406
+82f5b55a-fe08-4b63-9799-302774d2a81e,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,10.1,2026-07-03T19:45:06.873902
+8e0f88b8-6f5b-49c4-80b2-f0cc9ea26184,p6,Curso Ethical Hacking & Pentesting,Académico,39.56,2026-07-03T19:45:06.874107
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p6,Curso Ethical Hacking & Pentesting,Académico,15.52,2026-07-03T19:45:06.875301
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,19.09,2026-07-03T19:45:06.875572
+8a0503fd-e748-458f-a448-fae6118cab68,p11,Certificación CompTIA Security+ (Prep),Académico,31.34,2026-07-03T19:45:06.875674
+b6405e65-21ca-4482-b5ca-b5442557201c,p14,Bocina Portátil JBL Go 4,Entretenimiento,32.04,2026-07-03T19:45:06.875882
+14c0b949-7f99-44b5-a7df-b33de0d60161,p2,Microsoft Office 365 Estudiante,Académico,33.66,2026-07-03T19:45:06.876081
+b017b8a2-93ea-4891-985d-0bfe4aa4ab40,p6,Curso Ethical Hacking & Pentesting,Académico,28.34,2026-07-03T19:45:06.876179
+aae78ab2-827c-46a5-98fc-9ff73693e408,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,13.87,2026-07-03T19:45:06.876376
+6cee9e65-4294-4d7a-9979-023e13041c87,p3,Curso Python para Datos e IA,Académico,22.34,2026-07-03T19:45:06.876953
+c6eaaa26-9676-482d-a3c1-6c84e983f93d,p14,Bocina Portátil JBL Go 4,Entretenimiento,11.73,2026-07-03T19:45:06.877220
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p5,Curso Machine Learning con TensorFlow,Académico,34.81,2026-07-03T19:45:06.877330
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p33,Canva Pro Estudiante (6 meses),Entretenimiento,16.01,2026-07-03T19:45:06.877428
+d072afba-47d2-4bae-bae0-259991a3d61d,p32,Servicio de Tutorías Express en Python,Académico,26.06,2026-07-03T19:45:06.877633
+47348f44-0a3c-4086-842b-325b011c7f99,p2,Microsoft Office 365 Estudiante,Académico,31.91,2026-07-03T19:45:06.877723
+449bf2ee-8814-4062-8eff-8e22e390b83d,p34,Combo Snack de Cafetería UPY,Entretenimiento,11.28,2026-07-03T19:45:06.878213
+2020648d-21ea-4ef9-a55e-33e0e3d14a2b,p32,Servicio de Tutorías Express en Python,Académico,27.55,2026-07-03T19:45:06.878308
+464b9276-cbbe-4773-8a2e-cdf1d61e5755,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,19.33,2026-07-03T19:45:06.878497
+44352418-df28-4b8b-b79c-ab543ce76908,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,14.23,2026-07-03T19:45:06.878681
+c6eaaa26-9676-482d-a3c1-6c84e983f93d,p32,Servicio de Tutorías Express en Python,Académico,27.85,2026-07-03T19:45:06.880488
+2f07556d-dcc8-41a9-97eb-0f7ee27d8517,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,16.21,2026-07-03T19:45:06.880584
+2fb72db6-428e-4c3e-b786-88ed0676338f,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,24.92,2026-07-03T19:45:06.880678
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p18,Silla Ergonómica de Escritorio,Entretenimiento,12.16,2026-07-03T19:45:06.880776
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p1,Planner Académico Pro UPY,Académico,18.96,2026-07-03T19:45:06.880870
+1c031be5-d2c9-4f17-94a8-4e5e118c1d0a,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,27.43,2026-07-03T19:45:06.881060
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,27.59,2026-07-03T19:45:06.882310
+2d2502a1-66f7-4554-b0c2-f20c03827115,p11,Certificación CompTIA Security+ (Prep),Académico,36.95,2026-07-03T19:45:06.882410
+7d828498-5c47-4273-bf87-81fabde6249c,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,14.82,2026-07-03T19:45:06.882505
+82e51ec3-ca4f-4264-aaa4-96bf6c43e223,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,28.77,2026-07-03T19:45:06.882605
+6581ae05-621c-4c91-98b3-f01607aa85fe,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,14.92,2026-07-03T19:45:06.882692
+bab967b9-ca5a-472c-85c2-8209711a3b72,p11,Certificación CompTIA Security+ (Prep),Académico,41.35,2026-07-03T19:45:06.882889
+2ad6be97-3520-491b-9b73-9ba0565cc013,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,26.34,2026-07-03T19:45:06.883992
+8ca66620-0589-4dbc-90a3-6c9cf502e934,p11,Certificación CompTIA Security+ (Prep),Académico,23.49,2026-07-03T19:45:06.884407
+0cba13c8-f9aa-4981-81ba-aa54ad587982,p6,Curso Ethical Hacking & Pentesting,Académico,30.32,2026-07-03T19:45:06.884618
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p14,Bocina Portátil JBL Go 4,Entretenimiento,17.01,2026-07-03T19:45:06.884714
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,24.71,2026-07-03T19:45:06.884813
+8db63e65-22e8-4daf-8912-b00e781b5a4d,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,15.75,2026-07-03T19:45:06.884920
+37676807-2bb4-4ad9-8957-4667461a7c4f,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,12.01,2026-07-03T19:45:06.885105
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p1,Planner Académico Pro UPY,Académico,27.18,2026-07-03T19:45:06.886387
+84d3fac4-f48d-4db9-bff2-2fd532149177,p2,Microsoft Office 365 Estudiante,Académico,20.12,2026-07-03T19:45:06.886484
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p11,Certificación CompTIA Security+ (Prep),Académico,20.92,2026-07-03T19:45:06.886584
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p2,Microsoft Office 365 Estudiante,Académico,22.7,2026-07-03T19:45:06.886681
+464b9276-cbbe-4773-8a2e-cdf1d61e5755,p34,Combo Snack de Cafetería UPY,Entretenimiento,8.61,2026-07-03T19:45:06.887784
+00053d71-61b5-4e25-98b1-ff51c970183f,p33,Canva Pro Estudiante (6 meses),Entretenimiento,13.29,2026-07-03T19:45:06.888299
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p18,Silla Ergonómica de Escritorio,Entretenimiento,13.37,2026-07-03T19:45:06.888497
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,10.5,2026-07-03T19:45:06.888596
+7d828498-5c47-4273-bf87-81fabde6249c,p32,Servicio de Tutorías Express en Python,Académico,13.74,2026-07-03T19:45:06.888904
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p1,Planner Académico Pro UPY,Académico,37.27,2026-07-03T19:45:06.889010
+394c5a0a-068c-486c-8431-824ab1a31546,p5,Curso Machine Learning con TensorFlow,Académico,23.73,2026-07-03T19:45:06.889790
+d072afba-47d2-4bae-bae0-259991a3d61d,p34,Combo Snack de Cafetería UPY,Entretenimiento,15.55,2026-07-03T19:45:06.889883
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,19.61,2026-07-03T19:45:06.889988
+464b9276-cbbe-4773-8a2e-cdf1d61e5755,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,11.73,2026-07-03T19:45:06.892029
+1c031be5-d2c9-4f17-94a8-4e5e118c1d0a,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,12.48,2026-07-03T19:45:06.892246
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p33,Canva Pro Estudiante (6 meses),Entretenimiento,11.3,2026-07-03T19:45:06.893350
+870a1364-c0a4-4ef7-9336-d70814f44162,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,14.59,2026-07-03T19:45:06.893605
+8a0503fd-e748-458f-a448-fae6118cab68,p3,Curso Python para Datos e IA,Académico,39.11,2026-07-03T19:45:06.893813
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p11,Certificación CompTIA Security+ (Prep),Académico,36.77,2026-07-03T19:45:06.893914
+b35b026a-31fb-4f98-a425-6d806d29de83,p3,Curso Python para Datos e IA,Académico,30.7,2026-07-03T19:45:06.895251
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,22.95,2026-07-03T19:45:06.895455
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p32,Servicio de Tutorías Express en Python,Académico,19.28,2026-07-03T19:45:06.895647
+06293d96-5920-4681-a67f-34a7d2d4d3b0,p7,Kit Arduino Uno R4 Starter Pro,Académico,30.72,2026-07-03T19:45:06.895741
+6581ae05-621c-4c91-98b3-f01607aa85fe,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,16.7,2026-07-03T19:45:06.895838
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p3,Curso Python para Datos e IA,Académico,15.93,2026-07-03T19:45:06.895934
+a6c92b20-6513-4b00-92a2-abd949379ef3,p14,Bocina Portátil JBL Go 4,Entretenimiento,12.57,2026-07-03T19:45:06.896941
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p11,Certificación CompTIA Security+ (Prep),Académico,27.51,2026-07-03T19:45:06.897148
+6f728f65-c16e-4ece-b3cd-60e88a268300,p14,Bocina Portátil JBL Go 4,Entretenimiento,17.28,2026-07-03T19:45:06.897435
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,29.93,2026-07-03T19:45:06.898366
+132489e7-b5f6-4f44-af1f-0c504a7f9c35,p32,Servicio de Tutorías Express en Python,Académico,44.46,2026-07-03T19:45:06.898551
+6cee9e65-4294-4d7a-9979-023e13041c87,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,12.99,2026-07-03T19:45:06.898729
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,21.86,2026-07-03T19:45:06.898816
+b6405e65-21ca-4482-b5ca-b5442557201c,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,23.63,2026-07-03T19:45:06.899012
+8d920eed-4313-48ff-baa6-1221d333a432,p6,Curso Ethical Hacking & Pentesting,Académico,25.02,2026-07-03T19:45:06.901413
+19bb9a3c-1ecd-46ac-81d7-5d1d37f46519,p32,Servicio de Tutorías Express en Python,Académico,22.46,2026-07-03T19:45:06.901618
+14c0b949-7f99-44b5-a7df-b33de0d60161,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,9.47,2026-07-03T19:45:06.901915
+17835ff2-fdaf-4f7e-bb85-1b53bd1c20a9,p6,Curso Ethical Hacking & Pentesting,Académico,19.85,2026-07-03T19:45:06.902130
+2f07556d-dcc8-41a9-97eb-0f7ee27d8517,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,29.45,2026-07-03T19:45:06.902321
+37676807-2bb4-4ad9-8957-4667461a7c4f,p5,Curso Machine Learning con TensorFlow,Académico,22.34,2026-07-03T19:45:06.903637
+bab967b9-ca5a-472c-85c2-8209711a3b72,p5,Curso Machine Learning con TensorFlow,Académico,21.59,2026-07-03T19:45:06.903736
+2ad6be97-3520-491b-9b73-9ba0565cc013,p2,Microsoft Office 365 Estudiante,Académico,16.03,2026-07-03T19:45:06.903843
+a681ffc7-c251-43a9-af6b-921a7fa10ea9,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,23.04,2026-07-03T19:45:06.903943
+ee525c79-f233-4279-997b-524c0feb6b9d,p3,Curso Python para Datos e IA,Académico,38.08,2026-07-03T19:45:06.904365
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,11.8,2026-07-03T19:45:06.906501
+8d72a4d5-3806-4928-8364-3933a088a61d,p34,Combo Snack de Cafetería UPY,Entretenimiento,14.93,2026-07-03T19:45:06.906598
+2020648d-21ea-4ef9-a55e-33e0e3d14a2b,p2,Microsoft Office 365 Estudiante,Académico,21.42,2026-07-03T19:45:06.906788
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,26.19,2026-07-03T19:45:06.906887
+8db63e65-22e8-4daf-8912-b00e781b5a4d,p14,Bocina Portátil JBL Go 4,Entretenimiento,17.21,2026-07-03T19:45:06.906986
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p11,Certificación CompTIA Security+ (Prep),Académico,21.91,2026-07-03T19:45:06.907083
+47348f44-0a3c-4086-842b-325b011c7f99,p1,Planner Académico Pro UPY,Académico,24.46,2026-07-03T19:45:06.907179
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,12.32,2026-07-03T19:45:06.909331
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p5,Curso Machine Learning con TensorFlow,Académico,25.24,2026-07-03T19:45:06.909537
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p32,Servicio de Tutorías Express en Python,Académico,28.78,2026-07-03T19:45:06.909930
+7875c496-62c0-455c-aa72-6e53536a3a30,p7,Kit Arduino Uno R4 Starter Pro,Académico,17.04,2026-07-03T19:45:06.911029
+870a1364-c0a4-4ef7-9336-d70814f44162,p18,Silla Ergonómica de Escritorio,Entretenimiento,11.88,2026-07-03T19:45:06.911138
+d072afba-47d2-4bae-bae0-259991a3d61d,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,16.48,2026-07-03T19:45:06.911238
+f2f01ffd-d616-4fa7-bb7f-63d3767504f9,p6,Curso Ethical Hacking & Pentesting,Académico,29.46,2026-07-03T19:45:06.911650
+71501783-5b1f-4ed0-9dfa-842f657af759,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,7.4,2026-07-03T19:45:06.911840
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p5,Curso Machine Learning con TensorFlow,Académico,34.55,2026-07-03T19:45:06.911938
+bab967b9-ca5a-472c-85c2-8209711a3b72,p34,Combo Snack de Cafetería UPY,Entretenimiento,22.74,2026-07-03T19:45:06.912046
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p32,Servicio de Tutorías Express en Python,Académico,33.44,2026-07-03T19:45:06.912243
+77b19267-f330-4386-9673-0e374579775d,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,20.08,2026-07-03T19:45:06.913252
+5b0546da-18f7-4899-9e3f-8999bb18cfa5,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,44.13,2026-07-03T19:45:06.913359
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p3,Curso Python para Datos e IA,Académico,28.9,2026-07-03T19:45:06.913741
+f2f01ffd-d616-4fa7-bb7f-63d3767504f9,p6,Curso Ethical Hacking & Pentesting,Académico,28.17,2026-07-03T19:45:06.914969
+3ce352d3-4f92-4e38-9814-d5fbcaaf1056,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,10.37,2026-07-03T19:45:06.915076
+a79762cb-c823-41dc-b0de-48a7f3f51395,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,36.03,2026-07-03T19:45:06.915170
+7875c496-62c0-455c-aa72-6e53536a3a30,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,14.19,2026-07-03T19:45:06.915864
+7875c496-62c0-455c-aa72-6e53536a3a30,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,21.18,2026-07-03T19:45:06.916261
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,26.78,2026-07-03T19:45:06.916356
+89ec3d91-a6c9-4fa5-95f1-b3f7c9b418a1,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,13.12,2026-07-03T19:45:06.916455
+82f5b55a-fe08-4b63-9799-302774d2a81e,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,28.87,2026-07-03T19:45:06.916659
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p32,Servicio de Tutorías Express en Python,Académico,23.85,2026-07-03T19:45:06.916752
+556b55df-e496-465b-8a8f-290d83abe825,p11,Certificación CompTIA Security+ (Prep),Académico,14.9,2026-07-03T19:45:06.916851
+77b19267-f330-4386-9673-0e374579775d,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,9.57,2026-07-03T19:45:06.917333
+2351b923-b64c-43ee-a544-06a17fc780d9,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,24.6,2026-07-03T19:45:06.917607
+4a479f49-513a-44e4-a57d-e08d25a2efb5,p34,Combo Snack de Cafetería UPY,Entretenimiento,16.43,2026-07-03T19:45:06.917801
+2d2502a1-66f7-4554-b0c2-f20c03827115,p32,Servicio de Tutorías Express en Python,Académico,25.96,2026-07-03T19:45:06.919243
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,12.75,2026-07-03T19:45:06.919353
+55a0f2d5-a723-49ae-8f4c-5b01a4875b5d,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,15.58,2026-07-03T19:45:06.919457
+c08ef652-e31d-4cf7-a236-fa79f1287114,p11,Certificación CompTIA Security+ (Prep),Académico,23.38,2026-07-03T19:45:06.919669
+77b19267-f330-4386-9673-0e374579775d,p7,Kit Arduino Uno R4 Starter Pro,Académico,21.83,2026-07-03T19:45:06.920276
+ef91797a-788f-40f3-b56c-4ce278334b24,p32,Servicio de Tutorías Express en Python,Académico,21.57,2026-07-03T19:45:06.920464
+2d2502a1-66f7-4554-b0c2-f20c03827115,p34,Combo Snack de Cafetería UPY,Entretenimiento,17.91,2026-07-03T19:45:06.920655
+7471abfa-3b26-4935-8b2a-2e6114c62006,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,27.89,2026-07-03T19:45:06.921146
+6581ae05-621c-4c91-98b3-f01607aa85fe,p5,Curso Machine Learning con TensorFlow,Académico,24.42,2026-07-03T19:45:06.921236
+19bb9a3c-1ecd-46ac-81d7-5d1d37f46519,p7,Kit Arduino Uno R4 Starter Pro,Académico,25.0,2026-07-03T19:45:06.921423
+6cee9e65-4294-4d7a-9979-023e13041c87,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,18.16,2026-07-03T19:45:06.921529
+e4d4f2ee-8a01-41e8-9b39-733719363c54,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,19.25,2026-07-03T19:45:06.921715
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,12.26,2026-07-03T19:45:06.921894
+5b0546da-18f7-4899-9e3f-8999bb18cfa5,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,17.84,2026-07-03T19:45:06.922282
+68895e64-dd5b-4946-b628-1332d2d43f6a,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,25.37,2026-07-03T19:45:06.922467
+870a1364-c0a4-4ef7-9336-d70814f44162,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,40.81,2026-07-03T19:45:06.922746
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p34,Combo Snack de Cafetería UPY,Entretenimiento,9.97,2026-07-03T19:45:06.922844
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p2,Microsoft Office 365 Estudiante,Académico,23.74,2026-07-03T19:45:06.922936
+3ce352d3-4f92-4e38-9814-d5fbcaaf1056,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,24.67,2026-07-03T19:45:06.923118
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,15.78,2026-07-03T19:45:06.923315
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,23.92,2026-07-03T19:45:06.923807
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p11,Certificación CompTIA Security+ (Prep),Académico,25.21,2026-07-03T19:45:06.924208
+29920c79-f702-4768-a4d3-c932c774e58f,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,15.88,2026-07-03T19:45:06.924325
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p2,Microsoft Office 365 Estudiante,Académico,17.22,2026-07-03T19:45:06.924423
+71501783-5b1f-4ed0-9dfa-842f657af759,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,21.07,2026-07-03T19:45:06.924520
+7471abfa-3b26-4935-8b2a-2e6114c62006,p7,Kit Arduino Uno R4 Starter Pro,Académico,47.77,2026-07-03T19:45:06.924616
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,10.69,2026-07-03T19:45:06.925182
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p34,Combo Snack de Cafetería UPY,Entretenimiento,22.83,2026-07-03T19:45:06.925290
+8d72a4d5-3806-4928-8364-3933a088a61d,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,14.29,2026-07-03T19:45:06.925889
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,13.75,2026-07-03T19:45:06.927006
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,20.06,2026-07-03T19:45:06.927200
+8db63e65-22e8-4daf-8912-b00e781b5a4d,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,13.12,2026-07-03T19:45:06.927994
+55a0f2d5-a723-49ae-8f4c-5b01a4875b5d,p7,Kit Arduino Uno R4 Starter Pro,Académico,25.85,2026-07-03T19:45:06.929240
+29920c79-f702-4768-a4d3-c932c774e58f,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,17.3,2026-07-03T19:45:06.929334
+82e51ec3-ca4f-4264-aaa4-96bf6c43e223,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,9.05,2026-07-03T19:45:06.929433
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p3,Curso Python para Datos e IA,Académico,25.88,2026-07-03T19:45:06.929812
+b017b8a2-93ea-4891-985d-0bfe4aa4ab40,p34,Combo Snack de Cafetería UPY,Entretenimiento,10.25,2026-07-03T19:45:06.930102
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,41.9,2026-07-03T19:45:06.930399
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,18.72,2026-07-03T19:45:06.930496
+bc308847-7e42-489b-875f-bf48acbe60b4,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,16.29,2026-07-03T19:45:06.930784
+89ec3d91-a6c9-4fa5-95f1-b3f7c9b418a1,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,20.64,2026-07-03T19:45:06.930988
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p14,Bocina Portátil JBL Go 4,Entretenimiento,9.39,2026-07-03T19:45:06.931360
+2d2502a1-66f7-4554-b0c2-f20c03827115,p11,Certificación CompTIA Security+ (Prep),Académico,32.71,2026-07-03T19:45:06.931456
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,19.41,2026-07-03T19:45:06.931549
+7471abfa-3b26-4935-8b2a-2e6114c62006,p5,Curso Machine Learning con TensorFlow,Académico,23.53,2026-07-03T19:45:06.931639
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,33.27,2026-07-03T19:45:06.931734
+f37195b0-17cc-4f7b-8708-c66fa34ae0b6,p2,Microsoft Office 365 Estudiante,Académico,18.89,2026-07-03T19:45:06.933653
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p14,Bocina Portátil JBL Go 4,Entretenimiento,16.52,2026-07-03T19:45:06.933845
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p7,Kit Arduino Uno R4 Starter Pro,Académico,46.44,2026-07-03T19:45:06.934143
+a0126999-8c2e-441e-9810-d17372327bd2,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,21.99,2026-07-03T19:45:06.934436
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p33,Canva Pro Estudiante (6 meses),Entretenimiento,21.14,2026-07-03T19:45:06.934529
+2f07556d-dcc8-41a9-97eb-0f7ee27d8517,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,12.45,2026-07-03T19:45:06.935595
+c541f18a-2ceb-4369-ad51-01112d8c9dde,p34,Combo Snack de Cafetería UPY,Entretenimiento,18.47,2026-07-03T19:45:06.935697
+8a0503fd-e748-458f-a448-fae6118cab68,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,37.3,2026-07-03T19:45:06.935799
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,11.36,2026-07-03T19:45:06.936076
+2020648d-21ea-4ef9-a55e-33e0e3d14a2b,p6,Curso Ethical Hacking & Pentesting,Académico,37.26,2026-07-03T19:45:06.936174
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,17.46,2026-07-03T19:45:06.936368
+3d1ecaca-0db7-4a82-90d1-400561534c7d,p6,Curso Ethical Hacking & Pentesting,Académico,27.17,2026-07-03T19:45:06.936463
+8005238f-6f00-43fc-9608-98132e8b5626,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,13.62,2026-07-03T19:45:06.936744
+a6c92b20-6513-4b00-92a2-abd949379ef3,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,13.18,2026-07-03T19:45:06.937733
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,31.6,2026-07-03T19:45:06.938028
+68465217-5ac7-4163-8ce6-91f7da074892,p11,Certificación CompTIA Security+ (Prep),Académico,18.1,2026-07-03T19:45:06.938228
+6cee9e65-4294-4d7a-9979-023e13041c87,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,21.19,2026-07-03T19:45:06.938593
+0d13e4a9-9b0b-4578-837d-afbf01bcf38a,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,9.75,2026-07-03T19:45:06.939069
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p34,Combo Snack de Cafetería UPY,Entretenimiento,12.1,2026-07-03T19:45:06.939332
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,7.38,2026-07-03T19:45:06.939515
+bc308847-7e42-489b-875f-bf48acbe60b4,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,15.83,2026-07-03T19:45:06.941078
+47348f44-0a3c-4086-842b-325b011c7f99,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,27.86,2026-07-03T19:45:06.941260
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p11,Certificación CompTIA Security+ (Prep),Académico,20.62,2026-07-03T19:45:06.941354
+7d754a3b-c414-4228-8471-2e8b6217f3fc,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,10.36,2026-07-03T19:45:06.941447
+e4d4f2ee-8a01-41e8-9b39-733719363c54,p5,Curso Machine Learning con TensorFlow,Académico,18.11,2026-07-03T19:45:06.941549
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p6,Curso Ethical Hacking & Pentesting,Académico,47.77,2026-07-03T19:45:06.941656
+7d8dc277-78bc-4f2e-b4d9-61f8e690819b,p14,Bocina Portátil JBL Go 4,Entretenimiento,20.51,2026-07-03T19:45:06.941832
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p34,Combo Snack de Cafetería UPY,Entretenimiento,23.38,2026-07-03T19:45:06.941918
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,22.97,2026-07-03T19:45:06.942010
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p1,Planner Académico Pro UPY,Académico,31.15,2026-07-03T19:45:06.942104
+dc546edf-de51-45dc-8987-30f22afc8e46,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,27.82,2026-07-03T19:45:06.942200
+f37195b0-17cc-4f7b-8708-c66fa34ae0b6,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,27.07,2026-07-03T19:45:06.942295
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,25.21,2026-07-03T19:45:06.942818
+13d32b48-6500-47e7-8efd-7f95c3b9d41c,p5,Curso Machine Learning con TensorFlow,Académico,27.74,2026-07-03T19:45:06.943000
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,13.38,2026-07-03T19:45:06.943087
+3ce352d3-4f92-4e38-9814-d5fbcaaf1056,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,18.04,2026-07-03T19:45:06.943363
+ef91797a-788f-40f3-b56c-4ce278334b24,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,22.96,2026-07-03T19:45:06.943543
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,37.82,2026-07-03T19:45:06.943638
+55a0f2d5-a723-49ae-8f4c-5b01a4875b5d,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,8.62,2026-07-03T19:45:06.943729
+eec88317-1719-49f9-b96a-acdbdc3714c6,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,27.1,2026-07-03T19:45:06.943905
+bab967b9-ca5a-472c-85c2-8209711a3b72,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,27.63,2026-07-03T19:45:06.944371
+14c0b949-7f99-44b5-a7df-b33de0d60161,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,16.44,2026-07-03T19:45:06.944551
+2fb72db6-428e-4c3e-b786-88ed0676338f,p14,Bocina Portátil JBL Go 4,Entretenimiento,14.54,2026-07-03T19:45:06.944983
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p11,Certificación CompTIA Security+ (Prep),Académico,26.93,2026-07-03T19:45:06.945073
+1643e104-6ab9-405f-bb2f-d875042372ac,p18,Silla Ergonómica de Escritorio,Entretenimiento,17.16,2026-07-03T19:45:06.945349
+ef91797a-788f-40f3-b56c-4ce278334b24,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,24.09,2026-07-03T19:45:06.945438
+2351b923-b64c-43ee-a544-06a17fc780d9,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,23.32,2026-07-03T19:45:06.947061
+b656218b-4117-44ee-9fe8-874ee323ef5e,p34,Combo Snack de Cafetería UPY,Entretenimiento,16.35,2026-07-03T19:45:06.947147
+1c031be5-d2c9-4f17-94a8-4e5e118c1d0a,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,9.49,2026-07-03T19:45:06.947243
+8a0503fd-e748-458f-a448-fae6118cab68,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,12.24,2026-07-03T19:45:06.948436
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,27.86,2026-07-03T19:45:06.948549
+7d828498-5c47-4273-bf87-81fabde6249c,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,18.11,2026-07-03T19:45:06.948636
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,17.43,2026-07-03T19:45:06.950148
+132489e7-b5f6-4f44-af1f-0c504a7f9c35,p14,Bocina Portátil JBL Go 4,Entretenimiento,11.78,2026-07-03T19:45:06.950442
+b656218b-4117-44ee-9fe8-874ee323ef5e,p33,Canva Pro Estudiante (6 meses),Entretenimiento,13.52,2026-07-03T19:45:06.951068
+8a0503fd-e748-458f-a448-fae6118cab68,p3,Curso Python para Datos e IA,Académico,37.97,2026-07-03T19:45:06.951166
+b6405e65-21ca-4482-b5ca-b5442557201c,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,28.83,2026-07-03T19:45:06.952337
+464b9276-cbbe-4773-8a2e-cdf1d61e5755,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,38.46,2026-07-03T19:45:06.952436
+47348f44-0a3c-4086-842b-325b011c7f99,p3,Curso Python para Datos e IA,Académico,24.39,2026-07-03T19:45:06.952797
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p7,Kit Arduino Uno R4 Starter Pro,Académico,15.47,2026-07-03T19:45:06.954880
+c08ef652-e31d-4cf7-a236-fa79f1287114,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,11.28,2026-07-03T19:45:06.955772
+2f07556d-dcc8-41a9-97eb-0f7ee27d8517,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,29.86,2026-07-03T19:45:06.955865
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,15.42,2026-07-03T19:45:06.956052
+2351b923-b64c-43ee-a544-06a17fc780d9,p3,Curso Python para Datos e IA,Académico,15.14,2026-07-03T19:45:06.956142
+6093f52f-21d6-4f6a-a244-2869f3967a89,p3,Curso Python para Datos e IA,Académico,13.22,2026-07-03T19:45:06.956334
+b35b026a-31fb-4f98-a425-6d806d29de83,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,12.7,2026-07-03T19:45:06.956602
+2020648d-21ea-4ef9-a55e-33e0e3d14a2b,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,33.19,2026-07-03T19:45:06.957714
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p18,Silla Ergonómica de Escritorio,Entretenimiento,20.37,2026-07-03T19:45:06.958984
+bab967b9-ca5a-472c-85c2-8209711a3b72,p7,Kit Arduino Uno R4 Starter Pro,Académico,38.44,2026-07-03T19:45:06.960436
+8e0f88b8-6f5b-49c4-80b2-f0cc9ea26184,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,15.86,2026-07-03T19:45:06.960626
+00053d71-61b5-4e25-98b1-ff51c970183f,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,25.07,2026-07-03T19:45:06.961436
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,11.41,2026-07-03T19:45:06.961614
+a820ab21-7e63-4d16-9b8b-f6630cebc3ec,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,23.73,2026-07-03T19:45:06.961711
+f2f01ffd-d616-4fa7-bb7f-63d3767504f9,p33,Canva Pro Estudiante (6 meses),Entretenimiento,8.78,2026-07-03T19:45:06.963552
+cfdef0b3-c86a-4565-acfd-472394d7df81,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,24.39,2026-07-03T19:45:06.963824
+132489e7-b5f6-4f44-af1f-0c504a7f9c35,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,40.69,2026-07-03T19:45:06.965219
+7d754a3b-c414-4228-8471-2e8b6217f3fc,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,26.78,2026-07-03T19:45:06.965665
+1643e104-6ab9-405f-bb2f-d875042372ac,p6,Curso Ethical Hacking & Pentesting,Académico,29.54,2026-07-03T19:45:06.965747
+3ce352d3-4f92-4e38-9814-d5fbcaaf1056,p2,Microsoft Office 365 Estudiante,Académico,21.95,2026-07-03T19:45:06.965840
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,14.76,2026-07-03T19:45:06.966099
+870a1364-c0a4-4ef7-9336-d70814f44162,p11,Certificación CompTIA Security+ (Prep),Académico,20.98,2026-07-03T19:45:06.966186
+c942c108-82c5-44c6-aa9f-055a93e9a7d3,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,31.17,2026-07-03T19:45:06.967627
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p2,Microsoft Office 365 Estudiante,Académico,37.03,2026-07-03T19:45:06.967715
+1643e104-6ab9-405f-bb2f-d875042372ac,p1,Planner Académico Pro UPY,Académico,43.1,2026-07-03T19:45:06.967807
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,11.43,2026-07-03T19:45:06.968073
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p14,Bocina Portátil JBL Go 4,Entretenimiento,31.58,2026-07-03T19:45:06.968337
+68895e64-dd5b-4946-b628-1332d2d43f6a,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,13.69,2026-07-03T19:45:06.968505
+6f728f65-c16e-4ece-b3cd-60e88a268300,p33,Canva Pro Estudiante (6 meses),Entretenimiento,7.19,2026-07-03T19:45:06.970638
+e3a1e3fd-968f-4b08-8706-bee4cae8154b,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,9.56,2026-07-03T19:45:06.971809
+68895e64-dd5b-4946-b628-1332d2d43f6a,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,14.94,2026-07-03T19:45:06.971900
+394c5a0a-068c-486c-8431-824ab1a31546,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,30.93,2026-07-03T19:45:06.971989
+44352418-df28-4b8b-b79c-ab543ce76908,p6,Curso Ethical Hacking & Pentesting,Académico,47.56,2026-07-03T19:45:06.972419
+132489e7-b5f6-4f44-af1f-0c504a7f9c35,p2,Microsoft Office 365 Estudiante,Académico,24.29,2026-07-03T19:45:06.973619
+8db63e65-22e8-4daf-8912-b00e781b5a4d,p1,Planner Académico Pro UPY,Académico,15.63,2026-07-03T19:45:06.974709
+5ed70275-46c5-447d-ac0e-42b05eaa2c9e,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,15.52,2026-07-03T19:45:06.975335
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,17.68,2026-07-03T19:45:06.975436
+6efdca63-2a2e-4fa9-a5c2-63b87e223bb6,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,37.69,2026-07-03T19:45:06.976605
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p3,Curso Python para Datos e IA,Académico,27.04,2026-07-03T19:45:06.976861
+bab967b9-ca5a-472c-85c2-8209711a3b72,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,8.72,2026-07-03T19:45:06.977034
+cb6ce875-524c-496c-8d50-3897511daed9,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,31.65,2026-07-03T19:45:06.977217
+6093f52f-21d6-4f6a-a244-2869f3967a89,p14,Bocina Portátil JBL Go 4,Entretenimiento,9.99,2026-07-03T19:45:06.978201
+dc546edf-de51-45dc-8987-30f22afc8e46,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,15.45,2026-07-03T19:45:06.978294
+ae2b41e2-cdb1-4db6-b7a3-0c24d43ce34e,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,17.96,2026-07-03T19:45:06.978559
+0cba13c8-f9aa-4981-81ba-aa54ad587982,p3,Curso Python para Datos e IA,Académico,27.06,2026-07-03T19:45:06.978644
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,27.85,2026-07-03T19:45:06.978737
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p11,Certificación CompTIA Security+ (Prep),Académico,29.42,2026-07-03T19:45:06.978999
+848f38dc-cce1-4871-ae60-ab1536b0ac1f,p34,Combo Snack de Cafetería UPY,Entretenimiento,21.21,2026-07-03T19:45:06.979171
+14c0b949-7f99-44b5-a7df-b33de0d60161,p6,Curso Ethical Hacking & Pentesting,Académico,17.85,2026-07-03T19:45:06.979523
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p18,Silla Ergonómica de Escritorio,Entretenimiento,13.4,2026-07-03T19:45:06.980579
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,23.13,2026-07-03T19:45:06.980666
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,14.92,2026-07-03T19:45:06.981790
+06293d96-5920-4681-a67f-34a7d2d4d3b0,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,19.14,2026-07-03T19:45:06.982032
+cfca7879-0a1e-4075-9eba-7e6e0dd07d5d,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,24.25,2026-07-03T19:45:06.982278
+8e0f88b8-6f5b-49c4-80b2-f0cc9ea26184,p7,Kit Arduino Uno R4 Starter Pro,Académico,13.45,2026-07-03T19:45:06.983502
+77b19267-f330-4386-9673-0e374579775d,p3,Curso Python para Datos e IA,Académico,31.68,2026-07-03T19:45:06.983590
+8a0503fd-e748-458f-a448-fae6118cab68,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,20.59,2026-07-03T19:45:06.984107
+aae78ab2-827c-46a5-98fc-9ff73693e408,p11,Certificación CompTIA Security+ (Prep),Académico,28.0,2026-07-03T19:45:06.985227
+89ec3d91-a6c9-4fa5-95f1-b3f7c9b418a1,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,16.91,2026-07-03T19:45:06.985324
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,16.09,2026-07-03T19:45:06.985489
+556b55df-e496-465b-8a8f-290d83abe825,p32,Servicio de Tutorías Express en Python,Académico,38.21,2026-07-03T19:45:06.986438
+08caf921-ee2a-4b8c-a1b7-3faac7284049,p5,Curso Machine Learning con TensorFlow,Académico,37.15,2026-07-03T19:45:06.987837
+2fb72db6-428e-4c3e-b786-88ed0676338f,p1,Planner Académico Pro UPY,Académico,41.55,2026-07-03T19:45:06.988726
+6cee9e65-4294-4d7a-9979-023e13041c87,p1,Planner Académico Pro UPY,Académico,34.5,2026-07-03T19:45:06.988904
+89ec3d91-a6c9-4fa5-95f1-b3f7c9b418a1,p16,Spotify Premium Estudiante (3 meses),Entretenimiento,7.72,2026-07-03T19:45:06.990173
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p11,Certificación CompTIA Security+ (Prep),Académico,13.64,2026-07-03T19:45:06.990335
+2351b923-b64c-43ee-a544-06a17fc780d9,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,20.29,2026-07-03T19:45:06.991310
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p14,Bocina Portátil JBL Go 4,Entretenimiento,16.87,2026-07-03T19:45:06.991409
+1e936c09-547d-4cd0-84d1-f96c34456bf0,p5,Curso Machine Learning con TensorFlow,Académico,15.59,2026-07-03T19:45:06.991493
+b656218b-4117-44ee-9fe8-874ee323ef5e,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,12.48,2026-07-03T19:45:06.991738
+6093f52f-21d6-4f6a-a244-2869f3967a89,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,30.57,2026-07-03T19:45:06.992584
+6cf4e6fa-3268-4e3b-8243-1cccc3b72feb,p2,Microsoft Office 365 Estudiante,Académico,19.39,2026-07-03T19:45:06.993279
+84d3fac4-f48d-4db9-bff2-2fd532149177,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,45.48,2026-07-03T19:45:06.994523
+8ca66620-0589-4dbc-90a3-6c9cf502e934,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,47.27,2026-07-03T19:45:06.994693
+6093f52f-21d6-4f6a-a244-2869f3967a89,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,10.52,2026-07-03T19:45:06.994783
+4a479f49-513a-44e4-a57d-e08d25a2efb5,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,13.3,2026-07-03T19:45:06.995034
+8e0f88b8-6f5b-49c4-80b2-f0cc9ea26184,p2,Microsoft Office 365 Estudiante,Académico,17.82,2026-07-03T19:45:06.996088
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,18.39,2026-07-03T19:45:06.996446
+37676807-2bb4-4ad9-8957-4667461a7c4f,p12,Kit Electrónica: Sensores IoT Avanzados,Académico,19.64,2026-07-03T19:45:06.996692
+19bb9a3c-1ecd-46ac-81d7-5d1d37f46519,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,16.16,2026-07-03T19:45:06.996782
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p34,Combo Snack de Cafetería UPY,Entretenimiento,9.1,2026-07-03T19:45:06.997030
+a0052413-e2f7-438c-b7cb-1b1d65a09f6b,p2,Microsoft Office 365 Estudiante,Académico,28.43,2026-07-03T19:45:06.997356
+6581ae05-621c-4c91-98b3-f01607aa85fe,p14,Bocina Portátil JBL Go 4,Entretenimiento,9.56,2026-07-03T19:45:06.997748
+a49afd41-5d32-44e4-9e39-d3127f94e7d8,p9,Curso Robótica con ROS 2 (Robot Operating System),Académico,24.19,2026-07-03T19:45:06.997828
+3d1ecaca-0db7-4a82-90d1-400561534c7d,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,11.27,2026-07-03T19:45:06.998066
+eec88317-1719-49f9-b96a-acdbdc3714c6,p5,Curso Machine Learning con TensorFlow,Académico,17.83,2026-07-03T19:45:06.998227
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p14,Bocina Portátil JBL Go 4,Entretenimiento,14.32,2026-07-03T19:45:06.998498
+a820ab21-7e63-4d16-9b8b-f6630cebc3ec,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,20.33,2026-07-03T19:45:06.998910
+8e0f88b8-6f5b-49c4-80b2-f0cc9ea26184,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,45.04,2026-07-03T19:45:07.000076
+19bb9a3c-1ecd-46ac-81d7-5d1d37f46519,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,17.86,2026-07-03T19:45:07.000157
+a8ee427b-9e96-4009-8f82-f6e7953441a4,p32,Servicio de Tutorías Express en Python,Académico,12.91,2026-07-03T19:45:07.000236
+fa2db7a3-7fe8-45af-b50c-aa1b079353dd,p31,Pack de Apuntes UPY: Cálculo y Física,Académico,17.05,2026-07-03T19:45:07.000320
+1c031be5-d2c9-4f17-94a8-4e5e118c1d0a,p2,Microsoft Office 365 Estudiante,Académico,19.41,2026-07-03T19:45:07.000492
+782f5a9e-8ed4-44bc-b4e9-1c4f4f2bd4b6,p8,Raspberry Pi 5 (8 GB) Kit Completo,Académico,18.41,2026-07-03T19:45:07.000660
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p14,Bocina Portátil JBL Go 4,Entretenimiento,21.76,2026-07-03T19:45:07.000836
+0cba13c8-f9aa-4981-81ba-aa54ad587982,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,23.18,2026-07-03T19:45:07.001013
+2fb72db6-428e-4c3e-b786-88ed0676338f,p1,Planner Académico Pro UPY,Académico,34.0,2026-07-03T19:45:07.001104
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p3,Curso Python para Datos e IA,Académico,23.71,2026-07-03T19:45:07.001195
+c56e1c68-ac32-4ebb-9f5d-d4ec070b6436,p34,Combo Snack de Cafetería UPY,Entretenimiento,13.37,2026-07-03T19:45:07.001618
+7875c496-62c0-455c-aa72-6e53536a3a30,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,23.16,2026-07-03T19:45:07.001947
+17835ff2-fdaf-4f7e-bb85-1b53bd1c20a9,p18,Silla Ergonómica de Escritorio,Entretenimiento,9.27,2026-07-03T19:45:07.002031
+7bab0dbb-25b4-41cf-a05d-a7e929da1ce8,p32,Servicio de Tutorías Express en Python,Académico,27.33,2026-07-03T19:45:07.002112
+b2e5af1e-dfc4-4df9-8570-4e0c971335cd,p2,Microsoft Office 365 Estudiante,Académico,34.15,2026-07-03T19:45:07.003375
+2351b923-b64c-43ee-a544-06a17fc780d9,p33,Canva Pro Estudiante (6 meses),Entretenimiento,15.96,2026-07-03T19:45:07.003539
+68465217-5ac7-4163-8ce6-91f7da074892,p32,Servicio de Tutorías Express en Python,Académico,20.85,2026-07-03T19:45:07.003620
+27f718fc-fdfb-4d37-ab9a-bbb75d4cc903,p33,Canva Pro Estudiante (6 meses),Entretenimiento,18.6,2026-07-03T19:45:07.004622
+d1ca6161-3a2e-453b-8b34-70743d9fb452,p34,Combo Snack de Cafetería UPY,Entretenimiento,14.23,2026-07-03T19:45:07.006752
+a820ab21-7e63-4d16-9b8b-f6630cebc3ec,p5,Curso Machine Learning con TensorFlow,Académico,44.22,2026-07-03T19:45:07.007742
+a79762cb-c823-41dc-b0de-48a7f3f51395,p34,Combo Snack de Cafetería UPY,Entretenimiento,18.0,2026-07-03T19:45:07.007941
+7d3157ea-4a74-4423-90c9-a20af0cc138a,p7,Kit Arduino Uno R4 Starter Pro,Académico,15.89,2026-07-03T19:45:07.008118
+0d13e4a9-9b0b-4578-837d-afbf01bcf38a,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,13.91,2026-07-03T19:45:07.008392
+2d2502a1-66f7-4554-b0c2-f20c03827115,p7,Kit Arduino Uno R4 Starter Pro,Académico,16.65,2026-07-03T19:45:07.008494
+7471abfa-3b26-4935-8b2a-2e6114c62006,p4,Cálculo Diferencial e Integral (Pack Digital),Académico,42.53,2026-07-03T19:45:07.008664
+e42d8ced-fbd1-4e4b-82f0-842ce9a563d9,p2,Microsoft Office 365 Estudiante,Académico,22.44,2026-07-03T19:45:07.008840
+a49afd41-5d32-44e4-9e39-d3127f94e7d8,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,7.86,2026-07-03T19:45:07.008924
+1643e104-6ab9-405f-bb2f-d875042372ac,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,10.49,2026-07-03T19:45:07.012278
+44352418-df28-4b8b-b79c-ab543ce76908,p20,Teclado Mecánico Compacto TKL RGB,Entretenimiento,10.94,2026-07-03T19:45:07.012377
+47348f44-0a3c-4086-842b-325b011c7f99,p33,Canva Pro Estudiante (6 meses),Entretenimiento,12.16,2026-07-03T19:45:07.013369
+8b3cbf01-31af-4e81-a22b-5b0aa6f1177e,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,16.27,2026-07-03T19:45:07.016075
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,9.15,2026-07-03T19:45:07.016520
+17835ff2-fdaf-4f7e-bb85-1b53bd1c20a9,p13,Audífonos Inalámbricos JBL Tune 520BT,Entretenimiento,15.56,2026-07-03T19:45:07.017515
+2ad6be97-3520-491b-9b73-9ba0565cc013,p15,Control Xbox Wireless (Carbon Black),Entretenimiento,5.92,2026-07-03T19:45:07.017694
+8d72a4d5-3806-4928-8364-3933a088a61d,p32,Servicio de Tutorías Express en Python,Académico,22.48,2026-07-03T19:45:07.017943
+c3ee368e-3d59-44e8-ba44-5f517efc74ba,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,10.11,2026-07-03T19:45:07.018198
+29920c79-f702-4768-a4d3-c932c774e58f,p34,Combo Snack de Cafetería UPY,Entretenimiento,13.06,2026-07-03T19:45:07.018462
+c8a16575-9df3-4916-b708-0fe72f35e9c9,p11,Certificación CompTIA Security+ (Prep),Académico,29.35,2026-07-03T19:45:07.018968
+00053d71-61b5-4e25-98b1-ff51c970183f,p1,Planner Académico Pro UPY,Académico,17.66,2026-07-03T19:45:07.019305
+fa261908-a6ee-4d23-a997-7a08e4e8723e,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,9.02,2026-07-03T19:45:07.019478
+4a479f49-513a-44e4-a57d-e08d25a2efb5,p10,Álgebra Lineal para IA (eBook + Ejercicios),Académico,45.08,2026-07-03T19:45:07.019561
+aae78ab2-827c-46a5-98fc-9ff73693e408,p17,Mochila Antirrobo con Puerto USB,Entretenimiento,12.7,2026-07-03T19:45:07.019661
+6581ae05-621c-4c91-98b3-f01607aa85fe,p19,Mouse Inalámbrico Logitech MX Anywhere 3S,Entretenimiento,18.18,2026-07-03T19:45:07.019989
+8d9bd2be-d7c6-4e25-a519-1f17d4a1be03,p2,Microsoft Office 365 Estudiante,Académico,27.88,2026-07-03T19:45:07.020232

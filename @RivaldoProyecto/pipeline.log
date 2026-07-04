@@ -1,0 +1,21 @@
+2026-07-03 19:45:05,725 - INFO - Libraries imported and logging configured successfully.
+2026-07-03 19:45:05,772 - INFO - Starting BRONZE extraction stage...
+2026-07-03 19:45:05,773 - INFO - Connecting to Supabase URL: https://ufhbnshlskxkykgvnqxq.supabase.co
+2026-07-03 19:45:06,555 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/usuarios_sesion?select=%2A "HTTP/2 200 OK"
+2026-07-03 19:45:06,657 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/catalogo_productos?select=%2A "HTTP/2 200 OK"
+2026-07-03 19:45:06,762 - INFO - HTTP Request: GET https://ufhbnshlskxkykgvnqxq.supabase.co/rest/v1/interacciones_telemetria?select=%2A "HTTP/2 200 OK"
+2026-07-03 19:45:06,769 - INFO - BRONZE extraction finished. Users: 12, Products: 46, Telemetry: 148
+2026-07-03 19:45:06,789 - INFO - Starting Data Augmentation to reach target 1500 events...
+2026-07-03 19:45:07,022 - INFO - Data Augmentation completed. Augmented telemetry records: 1500
+2026-07-03 19:45:07,039 - INFO - Starting SILVER cleaning and transformation stage...
+2026-07-03 19:45:07,041 - INFO - Deduplication: removed 0 records.
+2026-07-03 19:45:07,044 - INFO - Referential integrity verified. Telemetry size: 1452
+2026-07-03 19:45:07,048 - INFO - IQR bounds: [-6.30, 48.34]. Outliers to remove: 20
+2026-07-03 19:45:07,053 - INFO - SILVER stage complete. Final Cleaned & Enriched Telemetry shape: (1432, 12)
+2026-07-03 19:45:07,068 - INFO - Starting GOLD statistical analysis stage...
+2026-07-03 19:45:07,071 - INFO - Filtered telemetry to 503 'add_to_cart' events.
+2026-07-03 19:45:07,079 - INFO - GOLD analysis stage completed.
+2026-07-03 19:45:07,095 - INFO - Generating and saving plots...
+2026-07-03 19:45:08,148 - INFO - Plots successfully generated and saved to 'dwell_time_comparison.png'.
+2026-07-03 19:45:08,155 - INFO - Filtering and saving final dataset...
+2026-07-03 19:45:08,162 - INFO - Dataset successfully exported. Shape: (503, 6)
