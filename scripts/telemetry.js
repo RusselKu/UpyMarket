@@ -1,44 +1,64 @@
-import { getUserProfile } from './onboarding.js';
-import { insertTelemetry } from './supabaseClient.js';
+import { supabase, insertarTelemetria } from './supabaseClient.js?v=3.2';
 
-// Stores the timestamp used to calculate dwell time for the current page.
-let pageEnterTimestamp = Date.now();
+let productViewStart     = null;
+let currentViewProductId = null;
 
-export function trackClickEvent(target) {
-  const telemetryPayload = {
-    event_type: 'click',
-    target: target?.dataset?.productId || target?.id || 'unknown',
-    category: target?.dataset?.category || null,
-    user_profile: getUserProfile(),
-    created_at: new Date().toISOString()
-  };
-
-  return insertTelemetry(telemetryPayload);
+function esFinDeSemana() {
+  const d = new Date().getDay();
+  return d === 0 || d === 6;
 }
 
-export function trackDwellTime(pageName = 'catalog') {
-  const dwellSeconds = Math.round((Date.now() - pageEnterTimestamp) / 1000);
-  const telemetryPayload = {
-    event_type: 'dwell',
-    page: pageName,
-    dwell_seconds: dwellSeconds,
-    user_profile: getUserProfile(),
-    created_at: new Date().toISOString()
-  };
-
-  return insertTelemetry(telemetryPayload);
+async function getUserId() {
+  if (!supabase) return null;
+  const { data: { session } } = await supabase.auth.getSession();
+  return session?.user?.id ?? null;
 }
 
-document.querySelectorAll('.product-action').forEach((button) => {
-  button.addEventListener('click', () => {
-    trackClickEvent(button);
+export async function trackView(productoId) {
+  productViewStart     = Date.now();
+  currentViewProductId = productoId;
+  const usuario_id     = await getUserId();
+  insertarTelemetria({
+    usuario_id,
+    producto_id:          productoId,
+    tipo_evento:          'view',
+    dwell_time_segundos:  null,
+    precio_pagado:        null,
+    metodo_pago:          null,
+    es_fin_de_semana:     esFinDeSemana()
   });
-});
+}
 
-window.addEventListener('pageshow', () => {
-  pageEnterTimestamp = Date.now();
-});
+export async function trackAddToCart(productoId, precio) {
+  const dwell = productViewStart && currentViewProductId === productoId
+    ? parseFloat(((Date.now() - productViewStart) / 1000).toFixed(2))
+    : null;
+  productViewStart     = null;
+  currentViewProductId = null;
+  const usuario_id     = await getUserId();
+  insertarTelemetria({
+    usuario_id,
+    producto_id:         productoId,
+    tipo_evento:         'add_to_cart',
+    dwell_time_segundos: dwell,
+    precio_pagado:       precio,
+    metodo_pago:         null,
+    es_fin_de_semana:    esFinDeSemana()
+  });
+}
 
-window.addEventListener('beforeunload', () => {
-  trackDwellTime();
-});
+export async function trackPurchase(items, metodoPago) {
+  const usuario_id = await getUserId();
+  items.forEach(item => {
+    const precioFinal = parseFloat((item.price * (1 - (item.porcentaje_descuento ?? 0))).toFixed(2));
+    insertarTelemetria({
+      usuario_id,
+      producto_id:         item.id,
+      tipo_evento:         'purchase',
+      dwell_time_segundos: null,
+      precio_pagado:       precioFinal,
+      metodo_pago:         metodoPago,
+      es_fin_de_semana:    esFinDeSemana()
+    });
+  });
+}

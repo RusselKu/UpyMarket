@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Academic product thumbnail</title>
+  <desc id="desc">Illustration of notebooks and study materials</desc>
+  <rect width="320" height="240" rx="28" fill="#F4ECF8"/>
+  <circle cx="248" cy="58" r="28" fill="#D6A21E" opacity=".18"/>
+  <rect x="48" y="58" width="104" height="126" rx="14" fill="#5B167D"/>
+  <rect x="62" y="76" width="76" height="8" rx="4" fill="#EADCF1"/>
+  <rect x="62" y="94" width="64" height="8" rx="4" fill="#EADCF1"/>
+  <rect x="62" y="112" width="70" height="8" rx="4" fill="#EADCF1"/>
+  <rect x="136" y="72" width="114" height="94" rx="16" fill="#FFFFFF" stroke="#D8CBE0" stroke-width="4"/>
+  <rect x="156" y="94" width="74" height="8" rx="4" fill="#C9B4D7"/>
+  <rect x="156" y="114" width="56" height="8" rx="4" fill="#C9B4D7"/>
+  <rect x="156" y="134" width="62" height="8" rx="4" fill="#C9B4D7"/>
+  <path d="M78 198h172" stroke="#321047" stroke-width="8" stroke-linecap="round" opacity=".18"/>
+</svg>

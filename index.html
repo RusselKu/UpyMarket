@@ -1,71 +1,411 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UpyStore Marketplace</title>
+    <title>UpyMarket - Marketplace Estudiantil UPY</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-grid" aria-hidden="true"></div>
+
     <header class="site-header">
-      <h1>UpyStore Marketplace</h1>
-      <p>Student-focused product catalog and interaction telemetry sandbox.</p>
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true">
+            <img class="brand-logo-full" src="assets/upy-logo-full.png" alt="" />
+            <img class="brand-logo-mark" src="assets/upy-emblem.png" alt="" />
+          </div>
+          <div class="brand-copy">
+            <h1>UpyMarket</h1>
+            <p>UPY Student Marketplace</p>
+            <small>Buy, sell and discover within the UPY community.</small>
+          </div>
+        </div>
+
+        <div class="search-wrapper">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input
+            id="product-search"
+            type="search"
+            aria-label="Search products"
+            placeholder="Search products, categories or careers..."
+          />
+        </div>
+
+        <div class="nav-actions">
+          <button
+            id="notification-toggle"
+            class="icon-button"
+            type="button"
+            aria-label="Open notifications"
+          >
+            <span class="icon-bell" aria-hidden="true">
+              <span class="icon-bell-clapper"></span>
+            </span>
+            <span class="notification-dot"></span>
+          </button>
+
+          <button
+            id="cart-toggle"
+            class="icon-button cart-button"
+            type="button"
+            aria-label="Open cart"
+          >
+            <span class="icon-cart" aria-hidden="true">
+              <span class="icon-cart-handle"></span>
+            </span>
+            <span id="cart-count" class="cart-count">0</span>
+          </button>
+
+          <div class="user-avatar" title="Student profile" aria-label="Profile">ES</div>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">UPY community marketplace</span>
+          <h2>Find what you need within UPY</h2>
+          <p>Discover products, services and opportunities offered by students.</p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="primary-link">Explore catalog</a>
+            <a href="#community" class="secondary-link">View community</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel glass-card" aria-label="Resumen del marketplace">
+          <div class="hero-panel-card">
+            <strong>Student-first</strong>
+            <p>Designed for practical exchanges, class needs and opportunities inside campus life.</p>
+          </div>
+          <div class="hero-panel-card">
+            <strong>Community driven</strong>
+            <p>From academic resources to technology, books, food and student-created services.</p>
+          </div>
+          <div class="hero-panel-metrics">
+            <div class="hero-metric">
+              <span>UPY</span>
+              <small>Institutional and student-centered</small>
+            </div>
+            <div class="hero-metric">
+              <span>50%</span>
+              <small>Top discount now visible</small>
+            </div>
+          </div>
+        </aside>
+      </section>
     </header>
 
     <main>
-      <section class="catalog" aria-label="Product catalog">
-        <h2>Catalog</h2>
-        <div id="catalog-grid" class="catalog-grid">
-          <article class="product-card" data-product-id="p1" data-category="Academic">
-            <h3>Study Planner Pro</h3>
-            <p>Category: Academic</p>
-            <button type="button" class="product-action">View Product</button>
+      <section class="quick-categories" aria-label="Main categories">
+        <div class="section-heading compact-heading">
+          <div>
+            <span class="eyebrow">Browse by category</span>
+            <h2>Main categories</h2>
+          </div>
+        </div>
+
+        <div class="quick-category-grid">
+          <article class="quick-category-card">
+            <strong>Academic</strong>
+            <p>Notes, digital resources and tools for better study routines.</p>
           </article>
-          <article class="product-card" data-product-id="p2" data-category="Leisure">
-            <h3>Campus Headphones</h3>
-            <p>Category: Leisure</p>
-            <button type="button" class="product-action">View Product</button>
+          <article class="quick-category-card">
+            <strong>Technology</strong>
+            <p>Devices, kits and accessories useful for projects and labs.</p>
           </article>
-          <article class="product-card" data-product-id="p3" data-category="Laptop with GPU">
-            <h3>NovaBook G15</h3>
-            <p>Category: Laptop with GPU</p>
-            <button type="button" class="product-action">View Product</button>
+          <article class="quick-category-card">
+            <strong>Books</strong>
+            <p>Reference material, used textbooks and practical guides.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Food</strong>
+            <p>Campus-friendly options for affordable meals and quick snacks.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Services</strong>
+            <p>Tutoring, creative support and peer-to-peer student work.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Sports</strong>
+            <p>Shared activities, training gear and community wellness offers.</p>
+          </article>
+          <article class="quick-category-card">
+            <strong>Other</strong>
+            <p>Opportunities and campus discoveries beyond the usual groups.</p>
           </article>
         </div>
       </section>
 
-      <section class="analytics" aria-label="Analytics preview">
-        <h2>Telemetry Snapshot</h2>
-        <canvas id="telemetryChart" width="400" height="200"></canvas>
+      <section id="catalog" class="catalog" aria-label="Product catalog">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Featured listings</span>
+            <h2>Products and services from students</h2>
+          </div>
+
+          <div class="category-filters" aria-label="Category filters">
+            <button type="button" class="filter-chip active" data-filter="all">All</button>
+            <button type="button" class="filter-chip" data-filter="Académico">Academic</button>
+            <button type="button" class="filter-chip" data-filter="Books">Books</button>
+            <button type="button" class="filter-chip" data-filter="Food">Food</button>
+            <button type="button" class="filter-chip" data-filter="Services">Services</button>
+            <button type="button" class="filter-chip" data-filter="Entretenimiento">Entertainment</button>
+            <button type="button" class="filter-chip" data-filter="Sports">Sports</button>
+            <button type="button" class="filter-chip" data-filter="Other">Other</button>
+            <button type="button" class="filter-chip" data-filter="Laptop">Technology</button>
+          </div>
+        </div>
+
+        <div id="catalog-grid" class="catalog-grid">
+          <!-- Renderizado dinamico por ui.js -->
+        </div>
       </section>
+
+      <section id="community" class="community-columns" aria-label="Community activity">
+        <article class="community-card glass-card">
+          <div class="section-heading compact-heading">
+            <div>
+              <span class="eyebrow">Recent posts</span>
+              <h2>Latest from the UPY community</h2>
+            </div>
+          </div>
+
+          <div class="post-list">
+            <div class="post-item">
+              <strong>Study resources updated</strong>
+              <p>Students are sharing more digital packs, references and class support materials.</p>
+            </div>
+            <div class="post-item">
+              <strong>Campus services growing</strong>
+              <p>Creative help, tutoring and student support offers are easier to discover.</p>
+            </div>
+            <div class="post-item">
+              <strong>Faster catalog browsing</strong>
+              <p>The homepage now brings categories and featured listings much closer to first view.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="community-card glass-card">
+          <div class="section-heading compact-heading">
+            <div>
+              <span class="eyebrow">Student offers</span>
+              <h2>Services and opportunities</h2>
+            </div>
+          </div>
+
+          <div class="service-list">
+            <div class="service-item">
+              <strong>Tutoring and peer support</strong>
+              <p>Quick help for programming, math, project setup and class preparation.</p>
+            </div>
+            <div class="service-item">
+              <strong>Creative work</strong>
+              <p>Photography, visual design and practical digital services made by students.</p>
+            </div>
+            <div class="service-item">
+              <strong>Useful campus offers</strong>
+              <p>Technology, books and everyday items presented with a cleaner and clearer interface.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="about-marketplace glass-card" aria-label="About the marketplace">
+        <div class="about-copy">
+          <span class="eyebrow">About the marketplace</span>
+          <h2>A marketplace designed for the UPY community</h2>
+          <p>
+            This experience keeps the existing marketplace logic intact while presenting it
+            with a more institutional, modern and student-appropriate visual identity for UPY.
+          </p>
+        </div>
+      </section>
+
     </main>
 
-    <div id="onboarding-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
-      <div class="modal-content">
-        <h2 id="onboarding-title">Welcome to UpyStore</h2>
-        <p>Tell us a little about yourself before continuing.</p>
-        <form id="onboarding-form">
-          <label for="career">Career</label>
-          <input id="career" name="career" type="text" placeholder="e.g., Systems Engineering" required />
+    <!-- ── Modal: Auth ──────────────────────────────────────────────────────── -->
+    <div
+      id="auth-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="auth-title"
+    >
+      <div class="modal-content glass-card">
+        <div class="onboarding-logo">
+          <img src="assets/upy-emblem.png" alt="Logo UPY" />
+        </div>
+        <h2 id="auth-title">UpyMarket</h2>
+        <p>Accede con tu correo institucional UPY.</p>
 
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender" required>
-            <option value="" selected disabled>Select an option</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="non-binary">Non-binary</option>
-            <option value="prefer-not-to-say">Prefer not to say</option>
+        <div class="auth-tabs" role="tablist">
+          <button id="tab-login"    class="auth-tab active" type="button" role="tab">Iniciar Sesión</button>
+          <button id="tab-register" class="auth-tab"        type="button" role="tab">Crear Cuenta</button>
+        </div>
+
+        <!-- Login -->
+        <form id="form-login" class="auth-form">
+          <label>Correo institucional</label>
+          <input type="email" name="email" placeholder="nombre@upy.edu.mx" autocomplete="email" required />
+          <label>Contraseña</label>
+          <input type="password" name="password" autocomplete="current-password" required />
+          <p class="auth-message" aria-live="polite"></p>
+          <button type="submit" data-label="Iniciar Sesión">Iniciar Sesión</button>
+        </form>
+
+        <!-- Register -->
+        <form id="form-register" class="auth-form" hidden>
+          <label>Correo institucional</label>
+          <input type="email" name="email" placeholder="nombre@upy.edu.mx" autocomplete="email" required />
+          <label>Contraseña <small>(mínimo 8 caracteres)</small></label>
+          <input type="password" name="password" minlength="8" autocomplete="new-password" required />
+          <label>Carrera</label>
+          <select name="carrera" required>
+            <option value="" disabled selected>Selecciona tu carrera</option>
+            <option value="Ingeniería en Ciberseguridad">Ingeniería en Ciberseguridad</option>
+            <option value="Ingeniería en Datos e IA">Ingeniería en Datos e IA</option>
+            <option value="Ingeniería en Robótica Computacional">Ingeniería en Robótica Computacional</option>
+            <option value="Ingeniería en Sistemas Embebidos Computacionales">Ing. Sistemas Embebidos Computacionales</option>
           </select>
-
-          <button type="submit">Save and Continue</button>
+          <label>Género</label>
+          <select name="genero" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="No binario">No binario</option>
+            <option value="Prefiero no decir">Prefiero no decir</option>
+          </select>
+          <p class="auth-message" aria-live="polite"></p>
+          <button type="submit" data-label="Crear Cuenta">Crear Cuenta</button>
         </form>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="scripts/onboarding.js"></script>
-    <script type="module" src="scripts/telemetry.js"></script>
-    <script type="module" src="charts/analytics.js"></script>
+    <div
+      id="product-detail-modal"
+      class="modal product-detail-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-detail-title"
+    >
+      <div class="modal-content glass-card product-detail-content">
+        <button
+          id="product-detail-close"
+          class="cart-close product-detail-close"
+          type="button"
+          aria-label="Close details"
+        >
+          &times;
+        </button>
+
+        <div class="product-detail-layout">
+          <div id="product-detail-icon" class="product-detail-icon">📦</div>
+
+          <div class="product-detail-info">
+            <span id="product-detail-category" class="category-badge academic">Category</span>
+            <h2 id="product-detail-title">Product name</h2>
+            <p id="product-detail-description">Product description.</p>
+            <ul id="product-detail-features" class="product-detail-features"></ul>
+
+            <div class="product-detail-footer">
+              <div>
+                <span id="product-detail-price-original" class="price-original" hidden></span>
+                <strong id="product-detail-price">$0.00</strong>
+              </div>
+
+              <button
+                id="product-detail-add"
+                type="button"
+                class="product-action add-cart-action"
+                data-action="add_to_cart"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside
+      id="notification-panel"
+      class="notification-panel glass-card"
+      aria-label="Notifications panel"
+    >
+      <div class="notification-header">
+        <div>
+          <span class="eyebrow">Updates</span>
+          <h2>Notifications</h2>
+        </div>
+        <button id="notification-close" class="cart-close" type="button" aria-label="Close">
+          &times;
+        </button>
+      </div>
+
+      <div class="notification-list">
+        <div class="notification-item">
+          <strong>UPY visual refresh</strong>
+          <p>The interface now feels more aligned with an institutional student marketplace.</p>
+        </div>
+        <div class="notification-item">
+          <strong>Core flows intact</strong>
+          <p>Search, filters, cart, product detail, onboarding and insights remain functional.</p>
+        </div>
+        <div class="notification-item">
+          <strong>Cleaner first view</strong>
+          <p>Categories, products and student activity appear faster after the hero section.</p>
+        </div>
+      </div>
+    </aside>
+
+    <aside id="cart-panel" class="cart-panel glass-card" aria-label="Shopping cart">
+      <div class="cart-header">
+        <div>
+          <span class="eyebrow">Current selection</span>
+          <h2>Cart</h2>
+        </div>
+        <button id="cart-close" class="cart-close" type="button" aria-label="Close cart">
+          &times;
+        </button>
+      </div>
+
+      <div id="cart-empty" class="cart-empty">No items added yet.</div>
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">$0.00</strong>
+        </div>
+
+        <div class="payment-select-wrapper">
+          <label for="payment-method" class="payment-label">Payment method</label>
+          <select id="payment-method">
+            <option value="">Select payment method...</option>
+            <option value="Beca Benito Juárez">Beca Benito Juarez</option>
+            <option value="Efectivo">Cash</option>
+            <option value="Tarjeta Bancaria">Card</option>
+            <option value="Transferencia SPEI">Bank transfer</option>
+          </select>
+        </div>
+
+        <button type="button" class="checkout-button">Complete purchase</button>
+      </div>
+    </aside>
+
+    <div id="cart-toast" class="cart-toast" role="status" aria-live="polite">
+      Product added to cart
+    </div>
+
+    <script src="assets/supabase.min.js?v=3.2"></script>
+    <script src="config.js?v=3.2"></script>
+    <script type="module" src="scripts/auth.js?v=3.2"></script>
+    <script type="module" src="scripts/ui.js?v=3.2"></script>
   </body>
 </html>

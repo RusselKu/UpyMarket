@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Other product thumbnail</title>
+  <desc id="desc">Illustration of a community marketplace package</desc>
+  <rect width="320" height="240" rx="28" fill="#F6F1F8"/>
+  <rect x="92" y="74" width="136" height="98" rx="18" fill="#FFFFFF" stroke="#D8CBE0" stroke-width="6"/>
+  <path d="M92 104h136" stroke="#D8CBE0" stroke-width="6"/>
+  <path d="M160 74v98" stroke="#D8CBE0" stroke-width="6"/>
+  <circle cx="160" cy="122" r="18" fill="#5B167D"/>
+  <circle cx="160" cy="122" r="8" fill="#D6A21E"/>
+  <path d="M112 188h96" stroke="#321047" stroke-width="8" stroke-linecap="round" opacity=".16"/>
+</svg>

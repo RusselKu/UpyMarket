@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Gaming laptop product thumbnail</title>
+  <desc id="desc">Illustration of a laptop with a highlighted GPU badge</desc>
+  <rect width="320" height="240" rx="28" fill="#EEEAF6"/>
+  <rect x="74" y="54" width="172" height="108" rx="18" fill="#FFFFFF" stroke="#D0C6DA" stroke-width="6"/>
+  <rect x="90" y="70" width="140" height="76" rx="12" fill="#321047"/>
+  <path d="M102 132l22-20 22 12 30-28 24 18 18-10" fill="none" stroke="#D6A21E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="214" y="44" width="44" height="28" rx="10" fill="#D6A21E"/>
+  <text x="236" y="63" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#321047">GPU</text>
+  <path d="M58 176h204l-18 16H76z" fill="#CFC6D9"/>
+</svg>
