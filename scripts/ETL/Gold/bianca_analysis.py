@@ -46,10 +46,16 @@ from scipy.stats import chi2_contingency
 # ============================================
 # RUTAS DEL PROYECTO (SOLO SALIDA LOCAL DE BIANCA)
 # ============================================
+# Todo lo que genera este script vive dentro de su propia carpeta autocontenida
+# (BiancaAcostaProject/), igual que hicieron otros compañeros del equipo,
+# para no mezclar archivos personales con las carpetas compartidas del repo
+# (charts/, db/) y evitar conflictos de Git.
 ROOT_DIR = Path(__file__).resolve().parents[3]
-CHARTS_DIR = ROOT_DIR / "charts"
-REPORT_PATH = ROOT_DIR / "db" / "statistical_report_bianca.md"  # archivo propio, no compartido
-CSV_PATH = ROOT_DIR / "db" / "resultados_p6_bianca.csv"  # export local, no se manda a la DB
+PROJECT_DIR = ROOT_DIR / "BiancaAcostaProject"
+CHARTS_DIR = PROJECT_DIR / "charts"
+GOLD_OUTPUT_DIR = PROJECT_DIR / "gold_output"
+REPORT_PATH = PROJECT_DIR / "statistical_report_bianca.md"
+CSV_PATH = GOLD_OUTPUT_DIR / "resultados_p6_bianca.csv"
 CHART_FILENAME = "compras_por_genero.png"
 
 ALPHA = 0.05  # Nivel de significancia (95% de confianza)
@@ -72,6 +78,11 @@ def extraer_datos_crudos() -> dict:
     from scripts.ETL.Bronze.raw_data import run_bronze_pipeline
 
     raw_data = run_bronze_pipeline()
+    print(
+        f"  ✓ Extracción completada (solo lectura): "
+        f"usuarios_sesion = {len(raw_data['usuarios_sesion'])} filas | "
+        f"interacciones_telemetria = {len(raw_data['interacciones_telemetria'])} filas"
+    )
     return raw_data
 
 
@@ -97,19 +108,34 @@ def limpiar_y_enriquecer_local(raw_data: dict) -> pd.DataFrame:
     usuarios = raw_data["usuarios_sesion"].copy()
     telemetria = raw_data["interacciones_telemetria"].copy()
 
+    print(f"  • Entrada: usuarios_sesion = {len(usuarios)} filas | interacciones_telemetria = {len(telemetria)} filas")
+
     # --- Limpieza de usuarios (en memoria) ---
+    filas_antes = len(usuarios)
     usuarios = usuarios.drop_duplicates(subset=["id"], keep="first")
+    print(f"  • Dedupe usuarios_sesion: {filas_antes} -> {len(usuarios)} filas ({filas_antes - len(usuarios)} duplicados eliminados)")
+
+    filas_antes = len(usuarios)
     usuarios = usuarios.dropna(subset=["genero"])
+    print(f"  • Validación genero no nulo: {filas_antes} -> {len(usuarios)} filas ({filas_antes - len(usuarios)} descartadas)")
 
     # --- Limpieza de telemetría (en memoria) ---
+    filas_antes = len(telemetria)
     telemetria = telemetria.drop_duplicates(subset=["id"], keep="first")
+    print(f"  • Dedupe interacciones_telemetria: {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} duplicados eliminados)")
+
+    filas_antes = len(telemetria)
     eventos_validos = ["view", "add_to_cart", "purchase"]
     telemetria = telemetria[telemetria["tipo_evento"].isin(eventos_validos)]
+    print(f"  • Validación tipo_evento permitido: {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} descartadas)")
 
     # --- Integridad referencial: solo eventos de usuarios válidos ---
+    filas_antes = len(telemetria)
     telemetria = telemetria[telemetria["usuario_id"].isin(set(usuarios["id"]))]
+    print(f"  • Integridad referencial (usuario_id válido): {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} descartadas)")
 
     # --- Aumentación: enriquecer telemetría con el género del usuario ---
+    filas_antes = len(telemetria)
     df_local = telemetria.merge(
         usuarios[["id", "genero"]],
         left_on="usuario_id",
@@ -117,8 +143,9 @@ def limpiar_y_enriquecer_local(raw_data: dict) -> pd.DataFrame:
         how="inner",
         suffixes=("", "_usuario"),
     ).drop(columns=["id_usuario"], errors="ignore")
+    print(f"  • Aumentación (JOIN con género de usuario): {filas_antes} -> {len(df_local)} filas, {len(df_local.columns)} columnas")
 
-    print(f"  ✓ Dataset local de Bianca listo: {len(df_local)} eventos (solo en memoria)")
+    print(f"  ✓ Dataset local de Bianca listo: {len(df_local)} eventos (solo en memoria, nada escrito a la DB)")
     return df_local
 
 
@@ -372,7 +399,7 @@ realizó localmente, en memoria, sin escribir nada en la base de datos.
 ### Conclusión
 {resultado['conclusion']}
 
-![Compras por género](../charts/{CHART_FILENAME})
+![Compras por género](charts/{CHART_FILENAME})
 """
 
     report_path.parent.mkdir(parents=True, exist_ok=True)

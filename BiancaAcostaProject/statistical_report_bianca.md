@@ -3,7 +3,7 @@
 ## P6: ¿Qué género realiza más compras en la plataforma?
 
 **Autora:** Bianca Acosta
-**Fecha de ejecución:** 2026-07-03 19:47:05
+**Fecha de ejecución:** 2026-07-04 20:05:46
 
 ### Hipótesis
 - **H0:** El género del estudiante y la acción de compra son independientes.
@@ -41,4 +41,4 @@ realizó localmente, en memoria, sin escribir nada en la base de datos.
 ### Conclusión
 No se rechaza H0: no hay evidencia estadística suficiente para afirmar que el género esté asociado a la probabilidad de compra (p-value = 0.853373 >= alpha = 0.05).
 
-![Compras por género](../charts/compras_por_genero.png)
+![Compras por género](charts/compras_por_genero.png)
