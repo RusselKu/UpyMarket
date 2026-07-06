@@ -1,0 +1,52 @@
+==================================================
+ANALYTICAL MODULE - BIANCA ACOSTA (P6)
+==================================================
+
+[1/4] Extracting raw data (read-only)...
+==================================================
+STARTING BRONZE PIPELINE (RAW DATA)
+==================================================
+✓ Supabase connection established
+
+✓ Users extracted: 14 records
+✓ Products extracted: 46 records
+✓ Telemetry events extracted: 148 events
+
+==================================================
+EXTRACTION SUMMARY
+==================================================
+Users:      14 records
+Products:   46 records
+Telemetry:  148 events
+Timestamp:  2026-07-04 20:05:45
+  ✓ Extraction completed (read-only): usuarios_sesion = 14 rows | interacciones_telemetria = 148 rows
+
+[2/4] Cleaning and enriching locally (in memory)...
+  • Input: usuarios_sesion = 14 rows | interacciones_telemetria = 148 rows
+  • Dedupe usuarios_sesion: 14 -> 14 rows (0 duplicates removed)
+  • Validation: non-null gender: 14 -> 14 rows (0 dropped)
+  • Dedupe interacciones_telemetria: 148 -> 148 rows (0 duplicates removed)
+  • Validation: allowed tipo_evento: 148 -> 148 rows (0 dropped)
+  • Referential integrity (valid usuario_id): 148 -> 100 rows (48 dropped)
+  • Augmentation (JOIN with user gender): 100 -> 100 rows, 10 columns
+  ✓ Bianca's local dataset ready: 100 events (in memory only, nothing written to the DB)
+
+[3/4] Computing P6: Purchases by gender...
+  ✓ P6 completed: 2 genders analyzed
+  ✓ Chi2 = 0.0342 | p-value = 0.853373 | df = 1
+  ✗ H0 not rejected (alpha = 0.05)
+
+[4/4] Generating chart, CSV, and individual report (all local)...
+  ✓ Chart saved to: BiancaAcostaProject\charts\purchases_by_gender.png
+  ✓ Local CSV saved to: BiancaAcostaProject\gold_output\resultados_p6_bianca.csv
+  ✓ Individual report saved to: BiancaAcostaProject\statistical_report_bianca.md
+
+==================================================
+P6 SUMMARY
+==================================================
+   genero  total_purchases  percentage
+Masculino               37       94.87
+ Femenino                2        5.13
+
+Chi2 = 0.0342 | p-value = 0.853373
+H0 is not rejected: there is not enough statistical evidence to state that gender is associated with the probability of purchase (p-value = 0.853373 >= alpha = 0.05).

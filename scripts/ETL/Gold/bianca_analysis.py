@@ -1,77 +1,76 @@
 """
-Módulo Analítico Individual - Bianca Acosta
+Individual Analytical Module - Bianca Acosta
 =============================================
-Propósito: Responder la Pregunta de Investigación 6 (P6) y validar su hipótesis
-mediante una prueba de Chi-cuadrado de Independencia.
+Purpose: Answer Research Question 6 (P6) and validate its hypothesis using a
+Chi-Square Test of Independence.
 
-Pregunta de Investigación 6 (P6):
-    ¿Qué género realiza más compras en la plataforma?
+Research Question 6 (P6):
+    Which gender makes more purchases on the platform?
 
-Hipótesis:
-    H0: El género del estudiante y la acción de compra son independientes
-        (no hay asociación significativa entre género y compra).
-    H1: El género del estudiante y la acción de compra están asociados
-        (el género influye de forma significativa en la probabilidad de comprar).
+Hypotheses:
+    H0: Student gender and purchase action are independent
+        (no significant association between gender and purchase).
+    H1: Student gender and purchase action are associated
+        (gender significantly influences the probability of purchase).
 
-Metodología:
-    Prueba de Chi-cuadrado de Independencia (scipy.stats.chi2_contingency)
-    sobre la tabla de contingencia género x acción (purchase / no_purchase).
+Methodology:
+    Chi-Square Test of Independence (scipy.stats.chi2_contingency) over the
+    gender x action (purchase / no_purchase) contingency table.
 
-IMPORTANTE - Alcance de este módulo:
-    Este script es completamente independiente y de solo lectura respecto a la
-    base de datos:
-      1. SOLO LEE de Supabase (extracción cruda, sin modificar nada).
-      2. NO hace drop, delete, update ni upsert de ningún tipo.
-      3. La limpieza/"aumentación" (dedupe, validación, enriquecimiento con
-         JOINs) se hace en memoria, únicamente para este análisis.
-      4. Los resultados (gráfico + reporte) se generan y guardan solo en
-         archivos propios de Bianca, sin tocar el pipeline ni el reporte
-         compartido del equipo. Esto evita conflictos de Git con los demás
-         módulos individuales (rivaldo_analysis.py, etc.).
+IMPORTANT - Scope of this module:
+    This script is completely independent and read-only with respect to the
+    database:
+      1. ONLY READS from Supabase (raw extraction, nothing is modified).
+      2. NO drop, delete, update, or upsert of any kind.
+      3. Cleaning/"augmentation" (dedupe, validation, enrichment via JOINs) is
+         done in memory, only for this analysis.
+      4. Results (chart + report) are generated and saved only to Bianca's own
+         files, without touching the team's shared pipeline or report. This
+         avoids Git conflicts with other individual modules
+         (rivaldo_analysis.py, etc.).
 
-Autora: Bianca Acosta
-Equipo: Analítica y Validación Estadística
+Author: Bianca Acosta
+Team: Analytics and Statistical Validation
 """
 
 from datetime import datetime
 from pathlib import Path
 
 import matplotlib
-matplotlib.use("Agg")  # Backend sin interfaz gráfica, apto para servidores/CI
+matplotlib.use("Agg")  # Headless backend, suitable for servers/CI
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import chi2_contingency
 
 # ============================================
-# RUTAS DEL PROYECTO (SOLO SALIDA LOCAL DE BIANCA)
+# PROJECT PATHS (BIANCA'S LOCAL OUTPUT ONLY)
 # ============================================
-# Todo lo que genera este script vive dentro de su propia carpeta autocontenida
-# (BiancaAcostaProject/), igual que hicieron otros compañeros del equipo,
-# para no mezclar archivos personales con las carpetas compartidas del repo
-# (charts/, db/) y evitar conflictos de Git.
+# Everything this script generates lives inside its own self-contained folder
+# (BiancaAcostaProject/), matching the pattern used by other teammates, so
+# personal files never mix with the repo's shared folders (charts/, db/) and
+# no Git conflicts are created.
 ROOT_DIR = Path(__file__).resolve().parents[3]
 PROJECT_DIR = ROOT_DIR / "BiancaAcostaProject"
 CHARTS_DIR = PROJECT_DIR / "charts"
 GOLD_OUTPUT_DIR = PROJECT_DIR / "gold_output"
 REPORT_PATH = PROJECT_DIR / "statistical_report_bianca.md"
 CSV_PATH = GOLD_OUTPUT_DIR / "resultados_p6_bianca.csv"
-CHART_FILENAME = "compras_por_genero.png"
+CHART_FILENAME = "purchases_by_gender.png"
 
-ALPHA = 0.05  # Nivel de significancia (95% de confianza)
+ALPHA = 0.05  # Significance level (95% confidence)
 
 
 # ============================================
-# 1) EXTRACCIÓN (SOLO LECTURA)
+# 1) EXTRACTION (READ-ONLY)
 # ============================================
-def extraer_datos_crudos() -> dict:
+def extract_raw_data() -> dict:
     """
-    Extrae los datos crudos necesarios directamente desde Supabase,
-    reutilizando el extractor de Bronze del equipo (solo lectura, sin
-    modificar nada en la base de datos).
+    Extracts the raw data needed directly from Supabase, reusing the team's
+    Bronze extractor (read-only, nothing is modified in the database).
 
     Returns:
-        dict con los DataFrames crudos: usuarios_sesion, interacciones_telemetria
+        dict with the raw DataFrames: usuarios_sesion, interacciones_telemetria
     """
     import sys
     sys.path.append(str(ROOT_DIR))
@@ -79,63 +78,63 @@ def extraer_datos_crudos() -> dict:
 
     raw_data = run_bronze_pipeline()
     print(
-        f"  ✓ Extracción completada (solo lectura): "
-        f"usuarios_sesion = {len(raw_data['usuarios_sesion'])} filas | "
-        f"interacciones_telemetria = {len(raw_data['interacciones_telemetria'])} filas"
+        f"  \u2713 Extraction completed (read-only): "
+        f"usuarios_sesion = {len(raw_data['usuarios_sesion'])} rows | "
+        f"interacciones_telemetria = {len(raw_data['interacciones_telemetria'])} rows"
     )
     return raw_data
 
 
 # ============================================
-# 2) LIMPIEZA Y AUMENTACIÓN LOCAL (SOLO EN MEMORIA)
+# 2) LOCAL CLEANING AND AUGMENTATION (IN MEMORY ONLY)
 # ============================================
-def limpiar_y_enriquecer_local(raw_data: dict) -> pd.DataFrame:
+def clean_and_augment_locally(raw_data: dict) -> pd.DataFrame:
     """
-    Realiza la limpieza y el enriquecimiento (aumentación) necesarios para
-    P6, únicamente en memoria y solo para este análisis.
+    Performs the cleaning and enrichment (augmentation) needed for P6,
+    entirely in memory and only for this analysis.
 
-    No modifica ni elimina nada en la base de datos: no hace drop, delete,
-    update ni upsert. Solo transforma copias locales de los DataFrames
-    crudos ya extraídos.
+    Does not modify or delete anything in the database: no drop, delete,
+    update, or upsert. It only transforms local copies of the already
+    extracted raw DataFrames.
 
     Args:
-        raw_data: dict con 'usuarios_sesion' e 'interacciones_telemetria' crudos.
+        raw_data: dict with raw 'usuarios_sesion' and 'interacciones_telemetria'.
 
     Returns:
-        DataFrame local enriquecido con las columnas 'genero' y 'tipo_evento',
-        listo para el análisis de P6.
+        Local enriched DataFrame with 'genero' and 'tipo_evento' columns,
+        ready for the P6 analysis.
     """
     usuarios = raw_data["usuarios_sesion"].copy()
     telemetria = raw_data["interacciones_telemetria"].copy()
 
-    print(f"  • Entrada: usuarios_sesion = {len(usuarios)} filas | interacciones_telemetria = {len(telemetria)} filas")
+    print(f"  \u2022 Input: usuarios_sesion = {len(usuarios)} rows | interacciones_telemetria = {len(telemetria)} rows")
 
-    # --- Limpieza de usuarios (en memoria) ---
-    filas_antes = len(usuarios)
+    # --- User cleaning (in memory) ---
+    rows_before = len(usuarios)
     usuarios = usuarios.drop_duplicates(subset=["id"], keep="first")
-    print(f"  • Dedupe usuarios_sesion: {filas_antes} -> {len(usuarios)} filas ({filas_antes - len(usuarios)} duplicados eliminados)")
+    print(f"  \u2022 Dedupe usuarios_sesion: {rows_before} -> {len(usuarios)} rows ({rows_before - len(usuarios)} duplicates removed)")
 
-    filas_antes = len(usuarios)
+    rows_before = len(usuarios)
     usuarios = usuarios.dropna(subset=["genero"])
-    print(f"  • Validación genero no nulo: {filas_antes} -> {len(usuarios)} filas ({filas_antes - len(usuarios)} descartadas)")
+    print(f"  \u2022 Validation: non-null gender: {rows_before} -> {len(usuarios)} rows ({rows_before - len(usuarios)} dropped)")
 
-    # --- Limpieza de telemetría (en memoria) ---
-    filas_antes = len(telemetria)
+    # --- Telemetry cleaning (in memory) ---
+    rows_before = len(telemetria)
     telemetria = telemetria.drop_duplicates(subset=["id"], keep="first")
-    print(f"  • Dedupe interacciones_telemetria: {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} duplicados eliminados)")
+    print(f"  \u2022 Dedupe interacciones_telemetria: {rows_before} -> {len(telemetria)} rows ({rows_before - len(telemetria)} duplicates removed)")
 
-    filas_antes = len(telemetria)
-    eventos_validos = ["view", "add_to_cart", "purchase"]
-    telemetria = telemetria[telemetria["tipo_evento"].isin(eventos_validos)]
-    print(f"  • Validación tipo_evento permitido: {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} descartadas)")
+    rows_before = len(telemetria)
+    valid_events = ["view", "add_to_cart", "purchase"]
+    telemetria = telemetria[telemetria["tipo_evento"].isin(valid_events)]
+    print(f"  \u2022 Validation: allowed tipo_evento: {rows_before} -> {len(telemetria)} rows ({rows_before - len(telemetria)} dropped)")
 
-    # --- Integridad referencial: solo eventos de usuarios válidos ---
-    filas_antes = len(telemetria)
+    # --- Referential integrity: only events from valid users ---
+    rows_before = len(telemetria)
     telemetria = telemetria[telemetria["usuario_id"].isin(set(usuarios["id"]))]
-    print(f"  • Integridad referencial (usuario_id válido): {filas_antes} -> {len(telemetria)} filas ({filas_antes - len(telemetria)} descartadas)")
+    print(f"  \u2022 Referential integrity (valid usuario_id): {rows_before} -> {len(telemetria)} rows ({rows_before - len(telemetria)} dropped)")
 
-    # --- Aumentación: enriquecer telemetría con el género del usuario ---
-    filas_antes = len(telemetria)
+    # --- Augmentation: enrich telemetry with the user's gender ---
+    rows_before = len(telemetria)
     df_local = telemetria.merge(
         usuarios[["id", "genero"]],
         left_on="usuario_id",
@@ -143,118 +142,119 @@ def limpiar_y_enriquecer_local(raw_data: dict) -> pd.DataFrame:
         how="inner",
         suffixes=("", "_usuario"),
     ).drop(columns=["id_usuario"], errors="ignore")
-    print(f"  • Aumentación (JOIN con género de usuario): {filas_antes} -> {len(df_local)} filas, {len(df_local.columns)} columnas")
+    print(f"  \u2022 Augmentation (JOIN with user gender): {rows_before} -> {len(df_local)} rows, {len(df_local.columns)} columns")
 
-    print(f"  ✓ Dataset local de Bianca listo: {len(df_local)} eventos (solo en memoria, nada escrito a la DB)")
+    print(f"  \u2713 Bianca's local dataset ready: {len(df_local)} events (in memory only, nothing written to the DB)")
     return df_local
 
 
 # ============================================
-# 3) PREPARACIÓN PARA LA PRUEBA ESTADÍSTICA
+# 3) PREPARATION FOR THE STATISTICAL TEST
 # ============================================
-def construir_tabla_contingencia(df: pd.DataFrame) -> pd.DataFrame:
+def build_contingency_table(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Construye la tabla de contingencia género x acción (purchase / no_purchase)
-    requerida por la prueba de Chi-cuadrado de Independencia.
+    Builds the gender x action (purchase / no_purchase) contingency table
+    required by the Chi-Square Test of Independence.
 
     Args:
-        df: DataFrame local enriquecido, con columnas 'genero' y 'tipo_evento'.
+        df: local enriched DataFrame, with 'genero' and 'tipo_evento' columns.
 
     Returns:
-        DataFrame (tabla de contingencia) con géneros como filas y
-        columnas ['purchase', 'no_purchase'].
+        DataFrame (contingency table) with genders as rows and
+        columns ['purchase', 'no_purchase'].
     """
-    datos = df.copy()
-    datos["accion"] = np.where(datos["tipo_evento"] == "purchase", "purchase", "no_purchase")
+    data = df.copy()
+    data["action"] = np.where(data["tipo_evento"] == "purchase", "purchase", "no_purchase")
 
-    tabla = pd.crosstab(datos["genero"], datos["accion"])
+    table = pd.crosstab(data["genero"], data["action"])
 
-    for columna in ["purchase", "no_purchase"]:
-        if columna not in tabla.columns:
-            tabla[columna] = 0
+    for column in ["purchase", "no_purchase"]:
+        if column not in table.columns:
+            table[column] = 0
 
-    return tabla[["purchase", "no_purchase"]]
+    return table[["purchase", "no_purchase"]]
 
 
 # ============================================
-# 4) PREGUNTA DE INVESTIGACIÓN 6
+# 4) RESEARCH QUESTION 6
 # ============================================
-def pregunta_6_compras_genero(df: pd.DataFrame) -> dict:
+def test_hypothesis_p6(df: pd.DataFrame) -> dict:
     """
-    P6 (Bianca Acosta): ¿Qué género realiza más compras en la plataforma?
+    P6 (Bianca Acosta): Which gender makes more purchases on the platform?
 
-    Hipótesis: No existe una diferencia estadísticamente significativa en el
-    volumen de compras en función del género (H0 de independencia).
+    Hypothesis: There is no statistically significant difference in purchase
+    volume based on gender (H0 of independence).
 
     Args:
-        df: DataFrame local enriquecido (salida de limpiar_y_enriquecer_local).
+        df: local enriched DataFrame (output of clean_and_augment_locally).
 
     Returns:
-        Diccionario con resumen, tabla de contingencia, estadísticos y conclusión.
+        Dictionary with summary, contingency table, statistics, and conclusion.
     """
-    compras = df[df["tipo_evento"] == "purchase"].copy()
-    resumen = compras.groupby("genero").size().reset_index(name="total_compras")
-    resumen["porcentaje"] = (
-        resumen["total_compras"] / resumen["total_compras"].sum() * 100
+    purchases = df[df["tipo_evento"] == "purchase"].copy()
+    summary = purchases.groupby("genero").size().reset_index(name="total_purchases")
+    summary["percentage"] = (
+        summary["total_purchases"] / summary["total_purchases"].sum() * 100
     ).round(2)
-    resumen = resumen.sort_values("total_compras", ascending=False).reset_index(drop=True)
+    summary = summary.sort_values("total_purchases", ascending=False).reset_index(drop=True)
 
-    tabla_contingencia = construir_tabla_contingencia(df)
-    chi2_stat, p_value, dof, expected = chi2_contingency(tabla_contingencia)
+    contingency_table = build_contingency_table(df)
+    chi2_stat, p_value, dof, expected = chi2_contingency(contingency_table)
 
-    rechaza_h0 = p_value < ALPHA
+    reject_h0 = p_value < ALPHA
 
-    if rechaza_h0:
+    if reject_h0:
         conclusion = (
-            "Se rechaza H0: existe una asociación estadísticamente significativa "
-            "entre el género del estudiante y la probabilidad de compra "
+            "H0 is rejected: there is a statistically significant association "
+            "between the student's gender and the probability of purchase "
             f"(p-value = {p_value:.6f} < alpha = {ALPHA})."
         )
     else:
         conclusion = (
-            "No se rechaza H0: no hay evidencia estadística suficiente para afirmar "
-            "que el género esté asociado a la probabilidad de compra "
+            "H0 is not rejected: there is not enough statistical evidence to "
+            "state that gender is associated with the probability of purchase "
             f"(p-value = {p_value:.6f} >= alpha = {ALPHA})."
         )
 
-    resultado = {
-        "resumen": resumen,
-        "tabla_contingencia": tabla_contingencia,
+    result = {
+        "summary": summary,
+        "contingency_table": contingency_table,
         "expected_frequencies": pd.DataFrame(
             expected,
-            index=tabla_contingencia.index,
-            columns=tabla_contingencia.columns,
+            index=contingency_table.index,
+            columns=contingency_table.columns,
         ).round(2),
         "chi2_statistic": round(float(chi2_stat), 4),
         "p_value": float(p_value),
-        "grados_libertad": int(dof),
+        "degrees_of_freedom": int(dof),
         "alpha": ALPHA,
-        "rechaza_h0": bool(rechaza_h0),
+        "reject_h0": bool(reject_h0),
         "conclusion": conclusion,
     }
 
-    print(f"  ✓ P6 completada: {len(resumen)} géneros analizados")
-    print(f"  ✓ Chi2 = {resultado['chi2_statistic']} | p-value = {p_value:.6f} | gl = {dof}")
-    print(f"  {'✓ Se rechaza H0' if rechaza_h0 else '✗ No se rechaza H0'} (alpha = {ALPHA})")
+    print(f"  \u2713 P6 completed: {len(summary)} genders analyzed")
+    print(f"  \u2713 Chi2 = {result['chi2_statistic']} | p-value = {p_value:.6f} | df = {dof}")
+    h0_status = "\u2713 H0 rejected" if reject_h0 else "\u2717 H0 not rejected"
+    print(f"  {h0_status} (alpha = {ALPHA})")
 
-    return resultado
+    return result
 
 
 # ============================================
-# 5) VISUALIZACIÓN (SALIDA LOCAL, SOLO ARCHIVO)
+# 5) VISUALIZATION (LOCAL OUTPUT, FILE ONLY)
 # ============================================
-def generar_grafico_compras_genero(resumen: pd.DataFrame, output_path: Path = None) -> Path:
+def generate_purchases_by_gender_chart(summary: pd.DataFrame, output_path: Path = None) -> Path:
     """
-    Genera un gráfico con el total y la proporción de compras por género y lo
-    guarda como archivo local en charts/compras_por_genero.png. No se envía
-    ni se guarda nada a la base de datos.
+    Generates a chart with the total and proportion of purchases by gender
+    and saves it as a local file at charts/purchases_by_gender.png. Nothing
+    is sent or saved to the database.
 
     Args:
-        resumen: DataFrame [genero, total_compras, porcentaje].
-        output_path: Ruta opcional donde guardar el gráfico.
+        summary: DataFrame [genero, total_purchases, percentage].
+        output_path: optional path where the chart should be saved.
 
     Returns:
-        Path del archivo de imagen generado.
+        Path of the generated image file.
     """
     if output_path is None:
         CHARTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -262,201 +262,202 @@ def generar_grafico_compras_genero(resumen: pd.DataFrame, output_path: Path = No
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
-    colores = plt.cm.Set2(np.linspace(0, 1, len(resumen)))
-    axes[0].bar(resumen["genero"], resumen["total_compras"], color=colores)
-    axes[0].set_title("Total de compras por género")
-    axes[0].set_xlabel("Género")
-    axes[0].set_ylabel("Número de compras")
+    colors = plt.cm.Set2(np.linspace(0, 1, len(summary)))
+    axes[0].bar(summary["genero"], summary["total_purchases"], color=colors)
+    axes[0].set_title("Total purchases by gender")
+    axes[0].set_xlabel("Gender")
+    axes[0].set_ylabel("Number of purchases")
     axes[0].tick_params(axis="x", rotation=20)
-    for i, valor in enumerate(resumen["total_compras"]):
-        axes[0].text(i, valor, str(int(valor)), ha="center", va="bottom")
+    for i, value in enumerate(summary["total_purchases"]):
+        axes[0].text(i, value, str(int(value)), ha="center", va="bottom")
 
     axes[1].pie(
-        resumen["total_compras"],
-        labels=resumen["genero"],
+        summary["total_purchases"],
+        labels=summary["genero"],
         autopct="%1.1f%%",
-        colors=colores,
+        colors=colors,
         startangle=90,
     )
-    axes[1].set_title("Proporción de compras por género")
+    axes[1].set_title("Proportion of purchases by gender")
 
-    fig.suptitle("P6: Compras por Género", fontsize=14, fontweight="bold")
+    fig.suptitle("P6: Purchases by Gender", fontsize=14, fontweight="bold")
     fig.tight_layout()
     fig.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
-    print(f"  ✓ Gráfico guardado en: {output_path}")
+    print(f"  \u2713 Chart saved to: {output_path}")
     return output_path
 
 
 # ============================================
-# 6) EXPORT A CSV (SOLO DISCO LOCAL, NO DB)
+# 6) CSV EXPORT (LOCAL DISK ONLY, NOT THE DB)
 # ============================================
-def exportar_csv_local(resultado: dict, csv_path: Path = CSV_PATH) -> Path:
+def export_local_csv(result: dict, csv_path: Path = CSV_PATH) -> Path:
     """
-    Exporta los resultados de P6 a un archivo CSV en disco local. Esto es
-    solo un archivo de texto en tu computadora/repositorio: no involucra
-    ninguna conexión ni escritura a Supabase ni a ninguna base de datos.
+    Exports the P6 results to a CSV file on local disk. This is just a text
+    file on your computer/repository: it involves no connection to, or write
+    into, Supabase or any database.
 
-    Guarda dos bloques en el mismo CSV:
-        1. El resumen de compras por género (con porcentaje).
-        2. La tabla de contingencia usada en la prueba de Chi-cuadrado.
+    Saves two blocks in the same CSV:
+        1. The purchases-by-gender summary (with percentage).
+        2. The contingency table used in the Chi-Square test.
 
     Args:
-        resultado: Diccionario retornado por pregunta_6_compras_genero.
-        csv_path: Ruta local donde guardar el CSV.
+        result: dictionary returned by test_hypothesis_p6.
+        csv_path: local path where the CSV should be saved.
 
     Returns:
-        Path del archivo CSV generado.
+        Path of the generated CSV file.
     """
     csv_path.parent.mkdir(parents=True, exist_ok=True)
 
-    resumen = resultado["resumen"].copy()
-    tabla = resultado["tabla_contingencia"].reset_index()
+    summary = result["summary"].copy()
+    table = result["contingency_table"].reset_index()
 
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
-        f.write("# Resumen: compras por genero\n")
-        resumen.to_csv(f, index=False)
-        f.write("\n# Tabla de contingencia (purchase vs no_purchase)\n")
-        tabla.to_csv(f, index=False)
-        f.write("\n# Prueba estadistica\n")
-        f.write(f"chi2_statistic,{resultado['chi2_statistic']}\n")
-        f.write(f"p_value,{resultado['p_value']}\n")
-        f.write(f"grados_libertad,{resultado['grados_libertad']}\n")
-        f.write(f"alpha,{resultado['alpha']}\n")
+        f.write("# Summary: purchases by gender\n")
+        summary.to_csv(f, index=False)
+        f.write("\n# Contingency table (purchase vs no_purchase)\n")
+        table.to_csv(f, index=False)
+        f.write("\n# Statistical test\n")
+        f.write(f"chi2_statistic,{result['chi2_statistic']}\n")
+        f.write(f"p_value,{result['p_value']}\n")
+        f.write(f"degrees_of_freedom,{result['degrees_of_freedom']}\n")
+        f.write(f"alpha,{result['alpha']}\n")
 
-    print(f"  ✓ CSV local guardado en: {csv_path}")
+    print(f"  \u2713 Local CSV saved to: {csv_path}")
     return csv_path
 
 
 # ============================================
-# 7) REPORTE ESTADÍSTICO PROPIO (ARCHIVO INDIVIDUAL)
+# 7) BIANCA'S OWN STATISTICAL REPORT (INDIVIDUAL FILE)
 # ============================================
-def generar_reporte_bianca(resultado: dict, report_path: Path = REPORT_PATH) -> Path:
+def generate_bianca_report(result: dict, report_path: Path = REPORT_PATH) -> Path:
     """
-    Genera el reporte estadístico de P6 en un archivo propio de Bianca
-    (db/statistical_report_bianca.md), separado del de otros integrantes
-    para evitar conflictos de Git al trabajar cada quien en su módulo.
+    Generates the P6 statistical report in Bianca's own file
+    (BiancaAcostaProject/statistical_report_bianca.md), separate from other
+    teammates' reports to avoid Git conflicts while each person works on
+    their own module.
 
     Args:
-        resultado: Diccionario retornado por pregunta_6_compras_genero.
-        report_path: Ruta del reporte individual.
+        result: dictionary returned by test_hypothesis_p6.
+        report_path: path of the individual report.
 
     Returns:
-        Path del reporte generado.
+        Path of the generated report.
     """
-    resumen = resultado["resumen"]
-    tabla = resultado["tabla_contingencia"]
+    summary = result["summary"]
+    table = result["contingency_table"]
 
-    filas_resumen = "\n".join(
-        f"| {row.genero} | {row.total_compras} | {row.porcentaje}% |"
-        for row in resumen.itertuples()
+    summary_rows = "\n".join(
+        f"| {row.genero} | {row.total_purchases} | {row.percentage}% |"
+        for row in summary.itertuples()
     )
 
-    filas_tabla = "\n".join(
-        f"| {genero} | {fila['purchase']} | {fila['no_purchase']} |"
-        for genero, fila in tabla.iterrows()
+    table_rows = "\n".join(
+        f"| {gender} | {row['purchase']} | {row['no_purchase']} |"
+        for gender, row in table.iterrows()
     )
 
-    contenido = f"""# Reporte Estadístico Individual - Bianca Acosta
+    content = f"""# Individual Statistical Report - Bianca Acosta
 
-## P6: ¿Qué género realiza más compras en la plataforma?
+## P6: Which gender makes more purchases on the platform?
 
-**Autora:** Bianca Acosta
-**Fecha de ejecución:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+**Author:** Bianca Acosta
+**Run timestamp:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-### Hipótesis
-- **H0:** El género del estudiante y la acción de compra son independientes.
-- **H1:** El género del estudiante y la acción de compra están asociados.
-- **Nivel de significancia (α):** {resultado['alpha']}
+### Hypotheses
+- **H0:** Student gender and purchase action are independent.
+- **H1:** Student gender and purchase action are associated.
+- **Significance level (\u03b1):** {result['alpha']}
 
-### Metodología
-Prueba de Chi-cuadrado de Independencia (`scipy.stats.chi2_contingency`) sobre
-la tabla de contingencia género x acción (purchase / no_purchase). Los datos
-crudos se extrajeron de Supabase (solo lectura) y la limpieza/aumentación se
-realizó localmente, en memoria, sin escribir nada en la base de datos.
+### Methodology
+Chi-Square Test of Independence (`scipy.stats.chi2_contingency`) over the
+gender x action (purchase / no_purchase) contingency table. Raw data was
+extracted from Supabase (read-only) and cleaning/augmentation was performed
+locally, in memory, without writing anything to the database.
 
-### Resumen descriptivo
+### Descriptive summary
 
-| Género | Total de compras | Porcentaje |
+| Gender | Total purchases | Percentage |
 |---|---|---|
-{filas_resumen}
+{summary_rows}
 
-### Tabla de contingencia (observada)
+### Contingency table (observed)
 
-| Género | Purchase | No Purchase |
+| Gender | Purchase | No Purchase |
 |---|---|---|
-{filas_tabla}
+{table_rows}
 
-### Resultado de la prueba estadística
+### Statistical test result
 
-| Estadístico | Valor |
+| Statistic | Value |
 |---|---|
-| Chi-cuadrado (χ²) | {resultado['chi2_statistic']} |
-| Grados de libertad | {resultado['grados_libertad']} |
-| p-value | {resultado['p_value']:.6f} |
+| Chi-Square (\u03c7\u00b2) | {result['chi2_statistic']} |
+| Degrees of freedom | {result['degrees_of_freedom']} |
+| p-value | {result['p_value']:.6f} |
 
-### Conclusión
-{resultado['conclusion']}
+### Conclusion
+{result['conclusion']}
 
-![Compras por género](charts/{CHART_FILENAME})
+![Purchases by gender](charts/{CHART_FILENAME})
 """
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(contenido, encoding="utf-8")
-    print(f"  ✓ Reporte individual guardado en: {report_path}")
+    report_path.write_text(content, encoding="utf-8")
+    print(f"  \u2713 Individual report saved to: {report_path}")
     return report_path
 
 
 # ============================================
-# PIPELINE PRINCIPAL DEL MÓDULO (INDEPENDIENTE)
+# MAIN MODULE PIPELINE (INDEPENDENT)
 # ============================================
 def run_bianca_analysis() -> dict:
     """
-    Ejecuta el módulo analítico completo de Bianca Acosta (P6), de forma
-    totalmente independiente:
-        1. Extrae datos crudos (solo lectura de Supabase).
-        2. Limpia y enriquece localmente, en memoria (sin tocar la DB).
-        3. Corre la prueba de Chi-cuadrado.
-        4. Genera el gráfico y el reporte, ambos guardados solo en archivos
-           propios de Bianca.
+    Runs Bianca Acosta's full analytical module (P6), completely
+    independently:
+        1. Extracts raw data (read-only from Supabase).
+        2. Cleans and enriches locally, in memory (without touching the DB).
+        3. Runs the Chi-Square test.
+        4. Generates the chart and report, both saved only to Bianca's own
+           files.
 
     Returns:
-        Diccionario con los resultados de la prueba y las rutas generadas.
+        Dictionary with the test results and the generated paths.
     """
     print("\n" + "=" * 50)
-    print("MÓDULO ANALÍTICO - BIANCA ACOSTA (P6)")
+    print("ANALYTICAL MODULE - BIANCA ACOSTA (P6)")
     print("=" * 50)
 
-    print("\n[1/4] Extrayendo datos crudos (solo lectura)...")
-    raw_data = extraer_datos_crudos()
+    print("\n[1/4] Extracting raw data (read-only)...")
+    raw_data = extract_raw_data()
 
-    print("\n[2/4] Limpiando y enriqueciendo localmente (en memoria)...")
-    df_local = limpiar_y_enriquecer_local(raw_data)
+    print("\n[2/4] Cleaning and enriching locally (in memory)...")
+    df_local = clean_and_augment_locally(raw_data)
 
-    print("\n[3/4] Calculando P6: Compras por género...")
-    resultado = pregunta_6_compras_genero(df_local)
+    print("\n[3/4] Computing P6: Purchases by gender...")
+    result = test_hypothesis_p6(df_local)
 
-    print("\n[4/4] Generando gráfico, CSV y reporte individual (todo local)...")
-    chart_path = generar_grafico_compras_genero(resultado["resumen"])
-    csv_path = exportar_csv_local(resultado)
-    report_path = generar_reporte_bianca(resultado)
+    print("\n[4/4] Generating chart, CSV, and individual report (all local)...")
+    chart_path = generate_purchases_by_gender_chart(result["summary"])
+    csv_path = export_local_csv(result)
+    report_path = generate_bianca_report(result)
 
     print("\n" + "=" * 50)
-    print("RESUMEN P6")
+    print("P6 SUMMARY")
     print("=" * 50)
-    print(resultado["resumen"].to_string(index=False))
-    print(f"\nChi2 = {resultado['chi2_statistic']} | p-value = {resultado['p_value']:.6f}")
-    print(resultado["conclusion"])
+    print(result["summary"].to_string(index=False))
+    print(f"\nChi2 = {result['chi2_statistic']} | p-value = {result['p_value']:.6f}")
+    print(result["conclusion"])
 
-    resultado["chart_path"] = chart_path
-    resultado["csv_path"] = csv_path
-    resultado["report_path"] = report_path
-    return resultado
+    result["chart_path"] = chart_path
+    result["csv_path"] = csv_path
+    result["report_path"] = report_path
+    return result
 
 
 # ============================================
-# EJECUCIÓN
+# EXECUTION
 # ============================================
 if __name__ == "__main__":
-    resultado_p6 = run_bianca_analysis()
+    p6_result = run_bianca_analysis()

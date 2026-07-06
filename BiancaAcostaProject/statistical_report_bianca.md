@@ -1,44 +1,44 @@
-# Reporte Estadístico Individual - Bianca Acosta
+# Individual Statistical Report - Bianca Acosta
 
-## P6: ¿Qué género realiza más compras en la plataforma?
+## P6: Which gender makes more purchases on the platform?
 
-**Autora:** Bianca Acosta
-**Fecha de ejecución:** 2026-07-04 20:05:46
+**Author:** Bianca Acosta
+**Run timestamp:** 2026-07-05 21:47:42
 
-### Hipótesis
-- **H0:** El género del estudiante y la acción de compra son independientes.
-- **H1:** El género del estudiante y la acción de compra están asociados.
-- **Nivel de significancia (α):** 0.05
+### Hypotheses
+- **H0:** Student gender and purchase action are independent.
+- **H1:** Student gender and purchase action are associated.
+- **Significance level (α):** 0.05
 
-### Metodología
-Prueba de Chi-cuadrado de Independencia (`scipy.stats.chi2_contingency`) sobre
-la tabla de contingencia género x acción (purchase / no_purchase). Los datos
-crudos se extrajeron de Supabase (solo lectura) y la limpieza/aumentación se
-realizó localmente, en memoria, sin escribir nada en la base de datos.
+### Methodology
+Chi-Square Test of Independence (`scipy.stats.chi2_contingency`) over the
+gender x action (purchase / no_purchase) contingency table. Raw data was
+extracted from Supabase (read-only) and cleaning/augmentation was performed
+locally, in memory, without writing anything to the database.
 
-### Resumen descriptivo
+### Descriptive summary
 
-| Género | Total de compras | Porcentaje |
+| Gender | Total purchases | Percentage |
 |---|---|---|
 | Masculino | 37 | 94.87% |
 | Femenino | 2 | 5.13% |
 
-### Tabla de contingencia (observada)
+### Contingency table (observed)
 
-| Género | Purchase | No Purchase |
+| Gender | Purchase | No Purchase |
 |---|---|---|
 | Femenino | 2 | 5 |
-| Masculino | 37 | 56 |
+| Masculino | 37 | 66 |
 
-### Resultado de la prueba estadística
+### Statistical test result
 
-| Estadístico | Valor |
+| Statistic | Value |
 |---|---|
-| Chi-cuadrado (χ²) | 0.0342 |
-| Grados de libertad | 1 |
-| p-value | 0.853373 |
+| Chi-Square (χ²) | 0.0 |
+| Degrees of freedom | 1 |
+| p-value | 1.000000 |
 
-### Conclusión
-No se rechaza H0: no hay evidencia estadística suficiente para afirmar que el género esté asociado a la probabilidad de compra (p-value = 0.853373 >= alpha = 0.05).
+### Conclusion
+H0 is not rejected: there is not enough statistical evidence to state that gender is associated with the probability of purchase (p-value = 1.000000 >= alpha = 0.05).
 
-![Compras por género](charts/compras_por_genero.png)
+![Purchases by gender](charts/purchases_by_gender.png)

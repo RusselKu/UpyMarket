@@ -1,15 +1,15 @@
-# Resumen: compras por genero
-genero,total_compras,porcentaje
+# Summary: purchases by gender
+genero,total_purchases,percentage
 Masculino,37,94.87
 Femenino,2,5.13
 
-# Tabla de contingencia (purchase vs no_purchase)
+# Contingency table (purchase vs no_purchase)
 genero,purchase,no_purchase
 Femenino,2,5
-Masculino,37,56
+Masculino,37,66
 
-# Prueba estadistica
-chi2_statistic,0.0342
-p_value,0.8533731728724689
-grados_libertad,1
+# Statistical test
+chi2_statistic,0.0
+p_value,1.0
+degrees_of_freedom,1
 alpha,0.05
