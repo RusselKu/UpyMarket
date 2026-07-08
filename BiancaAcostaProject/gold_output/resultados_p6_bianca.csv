@@ -1,15 +1,47 @@
+# ========== REAL DATA (primary, authoritative result) ==========
 # Summary: purchases by gender
 genero,total_purchases,percentage
-Masculino,37,94.87
-Femenino,2,5.13
+Masculino,39,95.12
+Femenino,2,4.88
 
 # Contingency table (purchase vs no_purchase)
 genero,purchase,no_purchase
-Femenino,2,5
-Masculino,37,66
+Femenino,2,6
+Masculino,39,68
 
 # Statistical test
-chi2_statistic,0.0
-p_value,1.0
+chi2_statistic,0.0726
+p_value,0.7875447019036995
 degrees_of_freedom,1
 alpha,0.05
+min_expected_frequency,2.85
+
+# Robustness check: Fisher's Exact Test (recommended for small 2x2 samples)
+fisher_p_value,0.7096813926627569
+fisher_odds_ratio,0.5811965811965812
+
+
+# ========== AUGMENTED DATA (SIMULATED - secondary/robustness result) ==========
+# WARNING: this section blends the real data with SIMULATED purchase events,
+# seeded from each gender's real observed purchase rate, generated only to
+# reach adequate statistical power. It does NOT represent real user behavior
+# beyond what was actually observed. See augment_with_simulated_data() in
+# bianca_analysis.py for the exact simulation method and random seed used.
+
+# Summary: purchases by gender (augmented)
+genero,total_purchases,percentage
+Masculino,77,73.33
+Femenino,28,26.67
+
+# Contingency table (augmented)
+genero,purchase,no_purchase
+Femenino,28,80
+Masculino,77,130
+
+# Statistical test (augmented)
+chi2_statistic,3.5666
+p_value,0.05895375048299164
+degrees_of_freedom,1
+min_expected_frequency,36.0
+fisher_p_value,0.045174885782336124
+fisher_odds_ratio,0.5909090909090909

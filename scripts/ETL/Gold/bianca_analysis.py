@@ -29,6 +29,17 @@ IMPORTANT - Scope of this module:
          avoids Git conflicts with other individual modules
          (rivaldo_analysis.py, etc.).
 
+Data augmentation disclosure:
+    The real dataset has very few registered users, which limits the
+    statistical power of the Chi-Square test. As required by the course, this
+    module ALSO runs a secondary, clearly labeled analysis on an AUGMENTED
+    dataset that blends the real data with SIMULATED purchase events (see
+    augment_with_simulated_data()). The simulation is seeded with each
+    gender's real observed purchase rate, not an arbitrary or desired
+    outcome, and uses a fixed random seed for reproducibility. The real-data
+    result remains the primary, authoritative finding; the augmented result
+    is always reported separately and explicitly marked as simulated.
+
 Author: Bianca Acosta
 Team: Analytics and Statistical Validation
 """
@@ -41,7 +52,7 @@ matplotlib.use("Agg")  # Headless backend, suitable for servers/CI
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.stats import chi2_contingency
+from scipy.stats import chi2_contingency, fisher_exact
 
 # ============================================
 # PROJECT PATHS (BIANCA'S LOCAL OUTPUT ONLY)
@@ -149,8 +160,67 @@ def clean_and_augment_locally(raw_data: dict) -> pd.DataFrame:
 
 
 # ============================================
-# 3) PREPARATION FOR THE STATISTICAL TEST
+# 2B) DATA AUGMENTATION (SIMULATED DATA, CLEARLY LABELED)
 # ============================================
+def augment_with_simulated_data(df: pd.DataFrame, n_per_gender: int = 100, random_seed: int = 42) -> pd.DataFrame:
+    """
+    Augments the real, cleaned dataset with SIMULATED purchase events, so the
+    Chi-Square test has adequate statistical power (expected cell frequencies
+    >= 5 per the standard rule of thumb). This is required because the
+    platform currently has very few registered users.
+
+    IMPORTANT - Methodology and transparency:
+        - This does NOT modify, inflate, or replace the real dataset used for
+          the descriptive analysis (see test_hypothesis_p6 on the real data).
+          It creates a SEPARATE augmented copy, used ONLY for a secondary,
+          clearly labeled robustness analysis.
+        - Synthetic events are generated using a Bernoulli simulation seeded
+          with each gender's REAL observed purchase rate (purchases / total
+          events for that gender in the real, cleaned dataset). This means
+          the simulation reproduces the real signal at a larger sample size,
+          instead of fabricating an arbitrary or desired outcome.
+        - A fixed random seed is used for full reproducibility.
+        - Every output (script, report, slides) explicitly labels this as
+          SIMULATED / AUGMENTED data, never merged silently with real events.
+
+    Args:
+        df: local enriched DataFrame (output of clean_and_augment_locally).
+        n_per_gender: number of simulated events to generate per gender.
+        random_seed: seed for reproducibility.
+
+    Returns:
+        A new DataFrame combining the real events with the simulated ones,
+        with an added 'is_simulated' column (True/False) so the two sources
+        can always be told apart.
+    """
+    rng = np.random.default_rng(random_seed)
+
+    real = df.copy()
+    real["is_simulated"] = False
+
+    simulated_rows = []
+    for gender, group in real.groupby("genero"):
+        real_purchase_rate = (group["tipo_evento"] == "purchase").mean()
+        simulated_events = rng.choice(
+            ["purchase", "view"],
+            size=n_per_gender,
+            p=[real_purchase_rate, 1 - real_purchase_rate],
+        )
+        for event in simulated_events:
+            simulated_rows.append({"genero": gender, "tipo_evento": event, "is_simulated": True})
+
+    simulated_df = pd.DataFrame(simulated_rows)
+    augmented_df = pd.concat([real, simulated_df], ignore_index=True)
+
+    print(
+        f"  \u26a0 AUGMENTED DATASET (simulated): added {len(simulated_df)} simulated events "
+        f"({n_per_gender} per gender, seed={random_seed}), on top of {len(real)} real events. "
+        f"Total augmented sample = {len(augmented_df)}. This is a SEPARATE, clearly labeled "
+        f"dataset used only for the robustness analysis \u2014 the real dataset is unchanged."
+    )
+    return augmented_df
+
+
 def build_contingency_table(df: pd.DataFrame) -> pd.DataFrame:
     """
     Builds the gender x action (purchase / no_purchase) contingency table
@@ -203,6 +273,20 @@ def test_hypothesis_p6(df: pd.DataFrame) -> dict:
 
     reject_h0 = p_value < ALPHA
 
+    # --- Robustness check: Fisher's Exact Test ---
+    # The Chi-Square test is an asymptotic approximation that assumes expected
+    # cell frequencies of at least 5. With a small sample (few registered
+    # users), this assumption can be violated. Fisher's Exact Test computes
+    # the exact probability instead of relying on that approximation, and is
+    # the recommended alternative for small 2x2 contingency tables. It is
+    # only defined for a 2x2 table (exactly two genders), so it is computed
+    # only when that shape applies.
+    fisher_p_value = None
+    fisher_odds_ratio = None
+    min_expected_frequency = float(expected.min())
+    if contingency_table.shape == (2, 2):
+        fisher_odds_ratio, fisher_p_value = fisher_exact(contingency_table.values)
+
     if reject_h0:
         conclusion = (
             "H0 is rejected: there is a statistically significant association "
@@ -227,6 +311,9 @@ def test_hypothesis_p6(df: pd.DataFrame) -> dict:
         "chi2_statistic": round(float(chi2_stat), 4),
         "p_value": float(p_value),
         "degrees_of_freedom": int(dof),
+        "min_expected_frequency": round(min_expected_frequency, 2),
+        "fisher_p_value": float(fisher_p_value) if fisher_p_value is not None else None,
+        "fisher_odds_ratio": float(fisher_odds_ratio) if fisher_odds_ratio is not None else None,
         "alpha": ALPHA,
         "reject_h0": bool(reject_h0),
         "conclusion": conclusion,
@@ -234,6 +321,9 @@ def test_hypothesis_p6(df: pd.DataFrame) -> dict:
 
     print(f"  \u2713 P6 completed: {len(summary)} genders analyzed")
     print(f"  \u2713 Chi2 = {result['chi2_statistic']} | p-value = {p_value:.6f} | df = {dof}")
+    print(f"  \u2022 Min expected cell frequency = {result['min_expected_frequency']} (rule of thumb: should be >= 5 for Chi-Square to be reliable)")
+    if fisher_p_value is not None:
+        print(f"  \u2022 Robustness check \u2014 Fisher's Exact Test: p-value = {fisher_p_value:.6f} (odds ratio = {fisher_odds_ratio:.4f})")
     h0_status = "\u2713 H0 rejected" if reject_h0 else "\u2717 H0 not rejected"
     print(f"  {h0_status} (alpha = {ALPHA})")
 
@@ -292,18 +382,23 @@ def generate_purchases_by_gender_chart(summary: pd.DataFrame, output_path: Path 
 # ============================================
 # 6) CSV EXPORT (LOCAL DISK ONLY, NOT THE DB)
 # ============================================
-def export_local_csv(result: dict, csv_path: Path = CSV_PATH) -> Path:
+def export_local_csv(result: dict, augmented_result: dict = None, csv_path: Path = CSV_PATH) -> Path:
     """
     Exports the P6 results to a CSV file on local disk. This is just a text
     file on your computer/repository: it involves no connection to, or write
     into, Supabase or any database.
 
-    Saves two blocks in the same CSV:
-        1. The purchases-by-gender summary (with percentage).
-        2. The contingency table used in the Chi-Square test.
+    Saves the REAL data results first, and — if provided — the AUGMENTED
+    (simulated) robustness results in a clearly separated, labeled section
+    afterwards. The two are never merged into a single set of numbers.
 
     Args:
-        result: dictionary returned by test_hypothesis_p6.
+        result: dictionary returned by test_hypothesis_p6, computed on the
+            real (non-simulated) dataset.
+        augmented_result: optional dictionary returned by test_hypothesis_p6,
+            computed on the augmented/simulated dataset (see
+            augment_with_simulated_data). If provided, it's saved in a
+            separate, explicitly labeled block.
         csv_path: local path where the CSV should be saved.
 
     Returns:
@@ -315,6 +410,7 @@ def export_local_csv(result: dict, csv_path: Path = CSV_PATH) -> Path:
     table = result["contingency_table"].reset_index()
 
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
+        f.write("# ========== REAL DATA (primary, authoritative result) ==========\n")
         f.write("# Summary: purchases by gender\n")
         summary.to_csv(f, index=False)
         f.write("\n# Contingency table (purchase vs no_purchase)\n")
@@ -324,6 +420,31 @@ def export_local_csv(result: dict, csv_path: Path = CSV_PATH) -> Path:
         f.write(f"p_value,{result['p_value']}\n")
         f.write(f"degrees_of_freedom,{result['degrees_of_freedom']}\n")
         f.write(f"alpha,{result['alpha']}\n")
+        f.write(f"min_expected_frequency,{result['min_expected_frequency']}\n")
+        f.write("\n# Robustness check: Fisher's Exact Test (recommended for small 2x2 samples)\n")
+        f.write(f"fisher_p_value,{result['fisher_p_value']}\n")
+        f.write(f"fisher_odds_ratio,{result['fisher_odds_ratio']}\n")
+
+        if augmented_result is not None:
+            f.write("\n\n# ========== AUGMENTED DATA (SIMULATED - secondary/robustness result) ==========\n")
+            f.write("# WARNING: this section blends the real data with SIMULATED purchase events,\n")
+            f.write("# seeded from each gender's real observed purchase rate, generated only to\n")
+            f.write("# reach adequate statistical power. It does NOT represent real user behavior\n")
+            f.write("# beyond what was actually observed. See augment_with_simulated_data() in\n")
+            f.write("# bianca_analysis.py for the exact simulation method and random seed used.\n")
+            aug_summary = augmented_result["summary"].copy()
+            aug_table = augmented_result["contingency_table"].reset_index()
+            f.write("\n# Summary: purchases by gender (augmented)\n")
+            aug_summary.to_csv(f, index=False)
+            f.write("\n# Contingency table (augmented)\n")
+            aug_table.to_csv(f, index=False)
+            f.write("\n# Statistical test (augmented)\n")
+            f.write(f"chi2_statistic,{augmented_result['chi2_statistic']}\n")
+            f.write(f"p_value,{augmented_result['p_value']}\n")
+            f.write(f"degrees_of_freedom,{augmented_result['degrees_of_freedom']}\n")
+            f.write(f"min_expected_frequency,{augmented_result['min_expected_frequency']}\n")
+            f.write(f"fisher_p_value,{augmented_result['fisher_p_value']}\n")
+            f.write(f"fisher_odds_ratio,{augmented_result['fisher_odds_ratio']}\n")
 
     print(f"  \u2713 Local CSV saved to: {csv_path}")
     return csv_path
@@ -332,7 +453,7 @@ def export_local_csv(result: dict, csv_path: Path = CSV_PATH) -> Path:
 # ============================================
 # 7) BIANCA'S OWN STATISTICAL REPORT (INDIVIDUAL FILE)
 # ============================================
-def generate_bianca_report(result: dict, report_path: Path = REPORT_PATH) -> Path:
+def generate_bianca_report(result: dict, augmented_result: dict = None, report_path: Path = REPORT_PATH) -> Path:
     """
     Generates the P6 statistical report in Bianca's own file
     (BiancaAcostaProject/statistical_report_bianca.md), separate from other
@@ -340,7 +461,12 @@ def generate_bianca_report(result: dict, report_path: Path = REPORT_PATH) -> Pat
     their own module.
 
     Args:
-        result: dictionary returned by test_hypothesis_p6.
+        result: dictionary returned by test_hypothesis_p6, computed on the
+            real (non-simulated) dataset. This is the primary, authoritative
+            result.
+        augmented_result: optional dictionary returned by test_hypothesis_p6,
+            computed on the augmented/simulated dataset. If provided, it is
+            included in a separate, clearly labeled section of the report.
         report_path: path of the individual report.
 
     Returns:
@@ -359,6 +485,60 @@ def generate_bianca_report(result: dict, report_path: Path = REPORT_PATH) -> Pat
         for gender, row in table.iterrows()
     )
 
+    augmented_section = ""
+    if augmented_result is not None:
+        aug_summary_rows = "\n".join(
+            f"| {row.genero} | {row.total_purchases} | {row.percentage}% |"
+            for row in augmented_result["summary"].itertuples()
+        )
+        aug_table_rows = "\n".join(
+            f"| {gender} | {row['purchase']} | {row['no_purchase']} |"
+            for gender, row in augmented_result["contingency_table"].iterrows()
+        )
+        augmented_section = f"""
+---
+
+## Secondary Analysis: Data Augmentation (SIMULATED DATA)
+
+> **Disclosure:** the platform currently has very few registered users, which
+> limits the statistical power of the Chi-Square test on real data alone (see
+> the minimum expected cell frequency above). To demonstrate the test with
+> adequate power, this section blends the real, cleaned dataset with
+> **simulated purchase events**, generated via a Bernoulli simulation seeded
+> with each gender's **real observed purchase rate** (not an arbitrary or
+> desired outcome). A fixed random seed guarantees reproducibility. This
+> augmented result is a **secondary, clearly labeled robustness check** \u2014
+> it does **not** replace or get merged with the real-data result above,
+> which remains the primary, authoritative finding of this analysis. See
+> `augment_with_simulated_data()` in `bianca_analysis.py` for the exact
+> simulation method.
+
+### Descriptive summary (augmented)
+
+| Gender | Total purchases | Percentage |
+|---|---|---|
+{aug_summary_rows}
+
+### Contingency table (augmented)
+
+| Gender | Purchase | No Purchase |
+|---|---|---|
+{aug_table_rows}
+
+### Statistical test result (augmented)
+
+| Statistic | Value |
+|---|---|
+| Chi-Square (\u03c7\u00b2) | {augmented_result['chi2_statistic']} |
+| Degrees of freedom | {augmented_result['degrees_of_freedom']} |
+| p-value | {augmented_result['p_value']:.6f} |
+| Minimum expected cell frequency | {augmented_result['min_expected_frequency']} |
+| Fisher's Exact Test p-value | {f"{augmented_result['fisher_p_value']:.6f}" if augmented_result['fisher_p_value'] is not None else "N/A"} |
+
+### Conclusion (augmented)
+{augmented_result['conclusion']}
+"""
+
     content = f"""# Individual Statistical Report - Bianca Acosta
 
 ## P6: Which gender makes more purchases on the platform?
@@ -376,6 +556,8 @@ Chi-Square Test of Independence (`scipy.stats.chi2_contingency`) over the
 gender x action (purchase / no_purchase) contingency table. Raw data was
 extracted from Supabase (read-only) and cleaning/augmentation was performed
 locally, in memory, without writing anything to the database.
+
+## Primary Analysis: Real Data
 
 ### Descriptive summary
 
@@ -396,12 +578,25 @@ locally, in memory, without writing anything to the database.
 | Chi-Square (\u03c7\u00b2) | {result['chi2_statistic']} |
 | Degrees of freedom | {result['degrees_of_freedom']} |
 | p-value | {result['p_value']:.6f} |
+| Minimum expected cell frequency | {result['min_expected_frequency']} |
 
-### Conclusion
+### Robustness check: Fisher's Exact Test
+The Chi-Square test is an asymptotic approximation that assumes expected cell
+frequencies of at least 5. With a small sample, this assumption can be
+violated, which can make the Chi-Square p-value unreliable. Fisher's Exact
+Test computes the exact probability instead of relying on that approximation,
+and is the recommended alternative for small 2x2 contingency tables.
+
+| Statistic | Value |
+|---|---|
+| Fisher's Exact Test p-value | {f"{result['fisher_p_value']:.6f}" if result['fisher_p_value'] is not None else "N/A (table is not 2x2)"} |
+| Odds ratio | {f"{result['fisher_odds_ratio']:.4f}" if result['fisher_odds_ratio'] is not None else "N/A"} |
+
+### Conclusion (real data \u2014 primary finding)
 {result['conclusion']}
 
 ![Purchases by gender](charts/{CHART_FILENAME})
-"""
+{augmented_section}"""
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(content, encoding="utf-8")
@@ -412,48 +607,80 @@ locally, in memory, without writing anything to the database.
 # ============================================
 # MAIN MODULE PIPELINE (INDEPENDENT)
 # ============================================
-def run_bianca_analysis() -> dict:
+def run_bianca_analysis(include_augmented: bool = True, n_per_gender: int = 100) -> dict:
     """
     Runs Bianca Acosta's full analytical module (P6), completely
     independently:
         1. Extracts raw data (read-only from Supabase).
         2. Cleans and enriches locally, in memory (without touching the DB).
-        3. Runs the Chi-Square test.
-        4. Generates the chart and report, both saved only to Bianca's own
+        3. Runs the Chi-Square test on the REAL data (primary, authoritative result).
+        4. Optionally runs the same test again on an AUGMENTED dataset that
+           blends the real data with clearly labeled simulated events, seeded
+           from the real observed purchase rates, to demonstrate the test
+           with adequate statistical power (expected frequencies >= 5). This
+           secondary result is always reported separately and explicitly
+           marked as simulated \u2014 it never replaces or is mixed silently
+           with the real result.
+        5. Generates the chart and reports, all saved only to Bianca's own
            files.
 
+    Args:
+        include_augmented: whether to also run the augmented/simulated
+            robustness analysis (step 4). Set to False to run only the real
+            data analysis.
+        n_per_gender: number of simulated events per gender for the
+            augmented analysis.
+
     Returns:
-        Dictionary with the test results and the generated paths.
+        Dictionary with both the real and (if requested) augmented results,
+        plus the generated file paths.
     """
     print("\n" + "=" * 50)
     print("ANALYTICAL MODULE - BIANCA ACOSTA (P6)")
     print("=" * 50)
 
-    print("\n[1/4] Extracting raw data (read-only)...")
+    print("\n[1/5] Extracting raw data (read-only)...")
     raw_data = extract_raw_data()
 
-    print("\n[2/4] Cleaning and enriching locally (in memory)...")
+    print("\n[2/5] Cleaning and enriching locally (in memory)...")
     df_local = clean_and_augment_locally(raw_data)
 
-    print("\n[3/4] Computing P6: Purchases by gender...")
-    result = test_hypothesis_p6(df_local)
+    print("\n[3/5] Computing P6 on REAL data (primary result)...")
+    real_result = test_hypothesis_p6(df_local)
 
-    print("\n[4/4] Generating chart, CSV, and individual report (all local)...")
-    chart_path = generate_purchases_by_gender_chart(result["summary"])
-    csv_path = export_local_csv(result)
-    report_path = generate_bianca_report(result)
+    augmented_result = None
+    if include_augmented:
+        print("\n[4/5] Computing P6 on AUGMENTED data (simulated robustness check)...")
+        augmented_df = augment_with_simulated_data(df_local, n_per_gender=n_per_gender)
+        augmented_result = test_hypothesis_p6(augmented_df)
+    else:
+        print("\n[4/5] Skipping augmented analysis (include_augmented=False)...")
+
+    print("\n[5/5] Generating chart, CSV, and individual report (all local)...")
+    chart_path = generate_purchases_by_gender_chart(real_result["summary"])
+    csv_path = export_local_csv(real_result, augmented_result)
+    report_path = generate_bianca_report(real_result, augmented_result)
 
     print("\n" + "=" * 50)
-    print("P6 SUMMARY")
+    print("P6 SUMMARY \u2014 REAL DATA (primary result)")
     print("=" * 50)
-    print(result["summary"].to_string(index=False))
-    print(f"\nChi2 = {result['chi2_statistic']} | p-value = {result['p_value']:.6f}")
-    print(result["conclusion"])
+    print(real_result["summary"].to_string(index=False))
+    print(f"\nChi2 = {real_result['chi2_statistic']} | p-value = {real_result['p_value']:.6f}")
+    print(real_result["conclusion"])
 
-    result["chart_path"] = chart_path
-    result["csv_path"] = csv_path
-    result["report_path"] = report_path
-    return result
+    if augmented_result is not None:
+        print("\n" + "=" * 50)
+        print("P6 SUMMARY \u2014 AUGMENTED DATA (simulated, secondary/robustness result)")
+        print("=" * 50)
+        print(augmented_result["summary"].to_string(index=False))
+        print(f"\nChi2 = {augmented_result['chi2_statistic']} | p-value = {augmented_result['p_value']:.6f}")
+        print(augmented_result["conclusion"])
+
+    real_result["chart_path"] = chart_path
+    real_result["csv_path"] = csv_path
+    real_result["report_path"] = report_path
+    real_result["augmented_result"] = augmented_result
+    return real_result
 
 
 # ============================================
